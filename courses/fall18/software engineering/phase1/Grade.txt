@@ -1,0 +1,13 @@
+Grade:
+
+Problemspace Decomposition
+   o Reasonable decomposition of problem space given current knowns/unknowns
+   
+Object Decomposition
+   o Good encapsulation of "atomic" classes like Location and Direction
+   o Could be thourough describing multiplicities
+   o Good job describing associations
+
+o Good verbal presentation ideas clearly articulated.
+
+o Grade 28.5/30

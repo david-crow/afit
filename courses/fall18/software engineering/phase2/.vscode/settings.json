@@ -1,0 +1,23 @@
+{
+    "editor.tabSize": 3,
+   "files.associations": {
+      "__split_buffer": "cpp",
+      "string": "cpp",
+      "vector": "cpp",
+      "__locale": "cpp",
+      "__config": "cpp",
+      "__nullptr": "cpp",
+      "cstddef": "cpp",
+      "exception": "cpp",
+      "initializer_list": "cpp",
+      "new": "cpp",
+      "stdexcept": "cpp",
+      "type_traits": "cpp",
+      "typeinfo": "cpp",
+      "algorithm": "cpp",
+      "deque": "cpp",
+      "chrono": "cpp",
+      "iostream": "cpp"
+   },
+    "editor.detectIndentation": false
+}
