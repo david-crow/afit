@@ -1,0 +1,79 @@
+Welcome to graphplan. 'graphplan -h' gives help on command-line args.
+
+give file name for operators: open
+close
+fetch
+put-away
+loosen
+tighten
+jack-up
+jack-down
+undo
+do-up
+remove-wheel
+put-on-wheel
+inflate
+cuss
+give file name for initial facts: facts loaded.
+number of time steps, or <CR> for automatic: CR
+Info type: (2 = max, 0 or <CR> = min): CR
+Other: 'I' = look for irrelevants
+       'L' = Lower bound time needed by counting steps
+       'B' = Build up to goals
+       'E' = Don't do mutual exclusions (for testing)
+       'S' = examine subsets:
+time: 1, 13 facts and 1 exclusive pairs.
+time: 2, 17 facts and 9 exclusive pairs.
+time: 3, 20 facts and 13 exclusive pairs.
+time: 4, 20 facts and 10 exclusive pairs.
+time: 5, 22 facts and 24 exclusive pairs.
+time: 6, 25 facts and 38 exclusive pairs.
+time: 7, 27 facts and 41 exclusive pairs.
+time: 8, 27 facts and 30 exclusive pairs.
+time: 9, 27 facts and 28 exclusive pairs.
+Goals first reachable in 9 steps.
+546 nodes created.
+goals at time 10:
+  on_wheel2_the-hub in_wheel1_boot inflated_wheel2 in_wrench_boot in_jack_boot in_pump_boot tight_nuts_the-hub closed_boot 
+
+Can't solve in 9 steps
+time: 10, 27 facts and 28 exclusive pairs.
+80 new nodes added.
+goals at time 11:
+  on_wheel2_the-hub in_wheel1_boot inflated_wheel2 in_wrench_boot in_jack_boot in_pump_boot tight_nuts_the-hub closed_boot 
+
+Can't solve in 10 steps
+time: 11, 27 facts and 28 exclusive pairs.
+80 new nodes added.
+goals at time 12:
+  on_wheel2_the-hub in_wheel1_boot inflated_wheel2 in_wrench_boot in_jack_boot in_pump_boot tight_nuts_the-hub closed_boot 
+
+Can't solve in 11 steps
+time: 12, 27 facts and 28 exclusive pairs.
+80 new nodes added.
+goals at time 13:
+  on_wheel2_the-hub in_wheel1_boot inflated_wheel2 in_wrench_boot in_jack_boot in_pump_boot tight_nuts_the-hub closed_boot 
+
+1 open_boot
+2 fetch_jack_boot
+2 fetch_pump_boot
+2 fetch_wrench_boot
+2 fetch_wheel2_boot
+3 loosen_nuts_the-hub
+3 inflate_wheel2
+4 jack-up_the-hub
+4 put-away_pump_boot
+5 undo_nuts_the-hub
+6 remove-wheel_wheel1_the-hub
+7 put-on-wheel_wheel2_the-hub
+7 put-away_wheel1_boot
+8 do-up_nuts_the-hub
+9 jack-down_the-hub
+10 tighten_nuts_the-hub
+10 put-away_jack_boot
+11 put-away_wrench_boot
+12 close_boot
+76 entries in hash table, 153 hash hits, avg set size 8.
+240 total set-creation steps (entries + hits + plan length - 1).
+320 actions tried
+  0.00 secs

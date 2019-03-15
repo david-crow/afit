@@ -1,0 +1,306 @@
+----- Otter 3.3f, August 2004 -----
+The process was started by david on Davids-MBP-2,
+Sat Feb 23 14:28:53 2019
+The command was "bin/otter".  The process ID is 19064.
+
+set(ur_res).
+set(hyper_res).
+
+formula_list(usable).
+all x y z (fights(x,z)&usedagainst(y,z)->wields(x,y)).
+all x y z (wields(x,y)&usedagainst(y,z)->fights(x,z)).
+all x y z (wields(x,y)&fights(x,z)->usedagainst(y,z)).
+all x (fights(Zelda,x)<-> -fights(Ganondorf,x)& -fights(Link,x)).
+all x (fights(Link,x)<-> -fights(Ganondorf,x)& -fights(Zelda,x)).
+all x (fights(x,Octorock)<-> -fights(x,Ironknuckle)& -fights(x,Poe)).
+all x (fights(x,Poe)<-> -fights(x,Ironknuckle)& -fights(x,Octorock)).
+all x (usedagainst(x,Ironknuckle)<-> -usedagainst(x,Octorock)& -usedagainst(x,Poe)).
+all x (usedagainst(x,Poe)<-> -usedagainst(x,Octorock)& -usedagainst(x,Ironknuckle)).
+all x (usedagainst(Bow,x)<-> -usedagainst(Sword,x)& -usedagainst(Magic,x)).
+all x (usedagainst(Sword,x)<-> -usedagainst(Magic,x)& -usedagainst(Bow,x)).
+all x (wields(Ganondorf,x)<-> -wields(Zelda,x)& -wields(Link,x)).
+all x (wields(Zelda,x)<-> -wields(Link,x)& -wields(Ganondorf,x)).
+all x (wields(x,Sword)<-> -wields(x,Magic)& -wields(x,Bow)).
+all x (wields(x,Magic)<-> -wields(x,Sword)& -wields(x,Bow)).
+-(exists x y (fights(Link,x)&wields(Link,y)&usedagainst(y,x))).
+end_of_list.
+
+-------> usable clausifies to:
+
+list(usable).
+1 [] -fights(x,z)| -usedagainst(y,z)|wields(x,y).
+2 [] -wields(x,y)| -usedagainst(y,z)|fights(x,z).
+3 [] -wields(x,y)| -fights(x,z)|usedagainst(y,z).
+4 [] -fights(Zelda,x)| -fights(Ganondorf,x).
+5 [] -fights(Zelda,x)| -fights(Link,x).
+6 [] fights(Zelda,x)|fights(Ganondorf,x)|fights(Link,x).
+7 [] -fights(Link,x)| -fights(Ganondorf,x).
+8 [] -fights(Link,x)| -fights(Zelda,x).
+9 [] fights(Link,x)|fights(Ganondorf,x)|fights(Zelda,x).
+10 [] -fights(x,Octorock)| -fights(x,Ironknuckle).
+11 [] -fights(x,Octorock)| -fights(x,Poe).
+12 [] fights(x,Octorock)|fights(x,Ironknuckle)|fights(x,Poe).
+13 [] -fights(x,Poe)| -fights(x,Ironknuckle).
+14 [] -fights(x,Poe)| -fights(x,Octorock).
+15 [] fights(x,Poe)|fights(x,Ironknuckle)|fights(x,Octorock).
+16 [] -usedagainst(x,Ironknuckle)| -usedagainst(x,Octorock).
+17 [] -usedagainst(x,Ironknuckle)| -usedagainst(x,Poe).
+18 [] usedagainst(x,Ironknuckle)|usedagainst(x,Octorock)|usedagainst(x,Poe).
+19 [] -usedagainst(x,Poe)| -usedagainst(x,Octorock).
+20 [] -usedagainst(x,Poe)| -usedagainst(x,Ironknuckle).
+21 [] usedagainst(x,Poe)|usedagainst(x,Octorock)|usedagainst(x,Ironknuckle).
+22 [] -usedagainst(Bow,x)| -usedagainst(Sword,x).
+23 [] -usedagainst(Bow,x)| -usedagainst(Magic,x).
+24 [] usedagainst(Bow,x)|usedagainst(Sword,x)|usedagainst(Magic,x).
+25 [] -usedagainst(Sword,x)| -usedagainst(Magic,x).
+26 [] -usedagainst(Sword,x)| -usedagainst(Bow,x).
+27 [] usedagainst(Sword,x)|usedagainst(Magic,x)|usedagainst(Bow,x).
+28 [] -wields(Ganondorf,x)| -wields(Zelda,x).
+29 [] -wields(Ganondorf,x)| -wields(Link,x).
+30 [] wields(Ganondorf,x)|wields(Zelda,x)|wields(Link,x).
+31 [] -wields(Zelda,x)| -wields(Link,x).
+32 [] -wields(Zelda,x)| -wields(Ganondorf,x).
+33 [] wields(Zelda,x)|wields(Link,x)|wields(Ganondorf,x).
+34 [] -wields(x,Sword)| -wields(x,Magic).
+35 [] -wields(x,Sword)| -wields(x,Bow).
+36 [] wields(x,Sword)|wields(x,Magic)|wields(x,Bow).
+37 [] -wields(x,Magic)| -wields(x,Sword).
+38 [] -wields(x,Magic)| -wields(x,Bow).
+39 [] wields(x,Magic)|wields(x,Sword)|wields(x,Bow).
+40 [] -fights(Link,x)| -wields(Link,y)| -usedagainst(y,x).
+end_of_list.
+
+formula_list(sos).
+-fights(Ganondorf,Octorock).
+-usedagainst(Magic,Ironknuckle).
+fights(Zelda,Octorock).
+wields(Link,Sword).
+-fights(Link,Poe).
+wields(Zelda,Bow).
+end_of_list.
+
+-------> sos clausifies to:
+
+list(sos).
+41 [] -fights(Ganondorf,Octorock).
+42 [] -usedagainst(Magic,Ironknuckle).
+43 [] fights(Zelda,Octorock).
+44 [] wields(Link,Sword).
+45 [] -fights(Link,Poe).
+46 [] wields(Zelda,Bow).
+end_of_list.
+
+======= end of input processing =======
+
+=========== start of search ===========
+
+given clause #1: (wt=3) 41 [] -fights(Ganondorf,Octorock).
+** KEPT (pick-wt=6): 47 [hyper,41,15] fights(Ganondorf,Poe)|fights(Ganondorf,Ironknuckle).
+
+given clause #2: (wt=3) 42 [] -usedagainst(Magic,Ironknuckle).
+** KEPT (pick-wt=6): 48 [hyper,42,27] usedagainst(Sword,Ironknuckle)|usedagainst(Bow,Ironknuckle).
+** KEPT (pick-wt=6): 49 [hyper,42,21] usedagainst(Magic,Poe)|usedagainst(Magic,Octorock).
+
+given clause #3: (wt=3) 43 [] fights(Zelda,Octorock).
+** KEPT (pick-wt=6): 50 [hyper,43,14,9] fights(Link,Poe)|fights(Ganondorf,Poe).
+** KEPT (pick-wt=6): 51 [hyper,43,10,9] fights(Link,Ironknuckle)|fights(Ganondorf,Ironknuckle).
+** KEPT (pick-wt=6): 52 [hyper,43,8,15] fights(Link,Poe)|fights(Link,Ironknuckle).
+** KEPT (pick-wt=9): 53 [hyper,43,3,39] usedagainst(Bow,Octorock)|wields(Zelda,Magic)|wields(Zelda,Sword).
+** KEPT (pick-wt=9): 54 [hyper,43,3,33] usedagainst(x,Octorock)|wields(Link,x)|wields(Ganondorf,x).
+** KEPT (pick-wt=9): 55 [hyper,43,1,27] wields(Zelda,Magic)|usedagainst(Sword,Octorock)|usedagainst(Bow,Octorock).
+** KEPT (pick-wt=9): 56 [hyper,43,1,27] wields(Zelda,Sword)|usedagainst(Magic,Octorock)|usedagainst(Bow,Octorock).
+** KEPT (pick-wt=9): 57 [hyper,43,1,21] wields(Zelda,x)|usedagainst(x,Poe)|usedagainst(x,Ironknuckle).
+** KEPT (pick-wt=3): 58 [ur,43,14] -fights(Zelda,Poe).
+** KEPT (pick-wt=3): 59 [ur,43,10] -fights(Zelda,Ironknuckle).
+** KEPT (pick-wt=3): 60 [ur,43,8] -fights(Link,Octorock).
+
+given clause #4: (wt=3) 44 [] wields(Link,Sword).
+** KEPT (pick-wt=12): 61 [hyper,44,40,15,27] fights(Link,Poe)|fights(Link,Octorock)|usedagainst(Magic,Ironknuckle)|usedagainst(Bow,Ironknuckle).
+** KEPT (pick-wt=12): 62 [hyper,44,40,15,21] fights(Link,Poe)|fights(Link,Octorock)|usedagainst(Sword,Poe)|usedagainst(Sword,Octorock).
+** KEPT (pick-wt=12): 63 [hyper,44,40,15,27] fights(Link,Ironknuckle)|fights(Link,Octorock)|usedagainst(Magic,Poe)|usedagainst(Bow,Poe).
+** KEPT (pick-wt=12): 64 [hyper,44,40,15,21] fights(Link,Ironknuckle)|fights(Link,Octorock)|usedagainst(Sword,Octorock)|usedagainst(Sword,Ironknuckle).
+** KEPT (pick-wt=12): 65 [hyper,44,40,9,27] fights(Ganondorf,x)|fights(Zelda,x)|usedagainst(Magic,x)|usedagainst(Bow,x).
+** KEPT (pick-wt=12): 66 [hyper,44,40,9,21] fights(Ganondorf,Ironknuckle)|fights(Zelda,Ironknuckle)|usedagainst(Sword,Poe)|usedagainst(Sword,Octorock).
+** KEPT (pick-wt=12): 67 [hyper,44,40,9,21] fights(Ganondorf,Poe)|fights(Zelda,Poe)|usedagainst(Sword,Octorock)|usedagainst(Sword,Ironknuckle).
+** KEPT (pick-wt=6): 68 [hyper,44,37,33] wields(Zelda,Magic)|wields(Ganondorf,Magic).
+** KEPT (pick-wt=6): 69 [hyper,44,29,39] wields(Ganondorf,Magic)|wields(Ganondorf,Bow).
+** KEPT (pick-wt=9): 70 [hyper,44,3,15] usedagainst(Sword,Ironknuckle)|fights(Link,Poe)|fights(Link,Octorock).
+** KEPT (pick-wt=9): 71 [hyper,44,3,15] usedagainst(Sword,Poe)|fights(Link,Ironknuckle)|fights(Link,Octorock).
+** KEPT (pick-wt=9): 72 [hyper,44,3,9] usedagainst(Sword,x)|fights(Ganondorf,x)|fights(Zelda,x).
+** KEPT (pick-wt=9): 73 [hyper,44,2,27] fights(Link,x)|usedagainst(Magic,x)|usedagainst(Bow,x).
+** KEPT (pick-wt=9): 74 [hyper,44,2,21] fights(Link,Ironknuckle)|usedagainst(Sword,Poe)|usedagainst(Sword,Octorock).
+** KEPT (pick-wt=9): 75 [hyper,44,2,21] fights(Link,Octorock)|usedagainst(Sword,Poe)|usedagainst(Sword,Ironknuckle).
+** KEPT (pick-wt=9): 76 [hyper,44,2,21] fights(Link,Poe)|usedagainst(Sword,Octorock)|usedagainst(Sword,Ironknuckle).
+** KEPT (pick-wt=3): 77 [ur,44,37] -wields(Link,Magic).
+** KEPT (pick-wt=3): 78 [ur,44,35] -wields(Link,Bow).
+** KEPT (pick-wt=3): 79 [ur,44,31] -wields(Zelda,Sword).
+** KEPT (pick-wt=3): 80 [ur,44,29] -wields(Ganondorf,Sword).
+
+given clause #5: (wt=3) 45 [] -fights(Link,Poe).
+** KEPT (pick-wt=6): 81 [hyper,45,15] fights(Link,Ironknuckle)|fights(Link,Octorock).
+** KEPT (pick-wt=6): 82 [hyper,45,9] fights(Ganondorf,Poe)|fights(Zelda,Poe).
+81 back subsumes 71.
+81 back subsumes 64.
+81 back subsumes 63.
+82 back subsumes 67.
+** KEPT (pick-wt=3): 83 [ur,45,2,44] -usedagainst(Sword,Poe).
+
+given clause #6: (wt=3) 46 [] wields(Zelda,Bow).
+** KEPT (pick-wt=6): 84 [hyper,46,38,33] wields(Link,Magic)|wields(Ganondorf,Magic).
+** KEPT (pick-wt=6): 85 [hyper,46,32,39] wields(Ganondorf,Magic)|wields(Ganondorf,Sword).
+** KEPT (pick-wt=3): 86 [hyper,46,3,43] usedagainst(Bow,Octorock).
+** KEPT (pick-wt=9): 87 [hyper,46,3,9] usedagainst(Bow,x)|fights(Link,x)|fights(Ganondorf,x).
+** KEPT (pick-wt=9): 88 [hyper,46,2,27] fights(Zelda,x)|usedagainst(Sword,x)|usedagainst(Magic,x).
+86 back subsumes 56.
+86 back subsumes 55.
+86 back subsumes 53.
+** KEPT (pick-wt=3): 89 [ur,46,38] -wields(Zelda,Magic).
+** KEPT (pick-wt=3): 90 [ur,46,32] -wields(Ganondorf,Bow).
+
+given clause #7: (wt=3) 58 [ur,43,14] -fights(Zelda,Poe).
+** KEPT (pick-wt=3): 91 [ur,58,9,45] fights(Ganondorf,Poe).
+** KEPT (pick-wt=3): 92 [ur,58,2,46] -usedagainst(Bow,Poe).
+91 back subsumes 82.
+91 back subsumes 50.
+91 back subsumes 47.
+
+given clause #8: (wt=3) 59 [ur,43,10] -fights(Zelda,Ironknuckle).
+** KEPT (pick-wt=3): 93 [ur,59,2,46] -usedagainst(Bow,Ironknuckle).
+
+given clause #9: (wt=3) 60 [ur,43,8] -fights(Link,Octorock).
+** KEPT (pick-wt=3): 94 [ur,60,15,45] fights(Link,Ironknuckle).
+** KEPT (pick-wt=3): 95 [ur,60,2,44] -usedagainst(Sword,Octorock).
+94 back subsumes 81.
+94 back subsumes 74.
+94 back subsumes 52.
+94 back subsumes 51.
+
+given clause #10: (wt=3) 77 [ur,44,37] -wields(Link,Magic).
+
+given clause #11: (wt=3) 78 [ur,44,35] -wields(Link,Bow).
+
+given clause #12: (wt=3) 79 [ur,44,31] -wields(Zelda,Sword).
+
+given clause #13: (wt=3) 80 [ur,44,29] -wields(Ganondorf,Sword).
+
+given clause #14: (wt=3) 83 [ur,45,2,44] -usedagainst(Sword,Poe).
+** KEPT (pick-wt=6): 96 [hyper,83,27] usedagainst(Magic,Poe)|usedagainst(Bow,Poe).
+** KEPT (pick-wt=6): 97 [hyper,83,21] usedagainst(Sword,Octorock)|usedagainst(Sword,Ironknuckle).
+97 back subsumes 76.
+
+given clause #15: (wt=3) 86 [hyper,46,3,43] usedagainst(Bow,Octorock).
+** KEPT (pick-wt=6): 98 [hyper,86,26,21] usedagainst(Sword,Poe)|usedagainst(Sword,Ironknuckle).
+** KEPT (pick-wt=6): 99 [hyper,86,23,21] usedagainst(Magic,Poe)|usedagainst(Magic,Ironknuckle).
+** KEPT (pick-wt=6): 100 [hyper,86,19,27] usedagainst(Sword,Poe)|usedagainst(Magic,Poe).
+** KEPT (pick-wt=6): 101 [hyper,86,16,27] usedagainst(Sword,Ironknuckle)|usedagainst(Magic,Ironknuckle).
+** KEPT (pick-wt=9): 102 [hyper,86,2,39] fights(x,Octorock)|wields(x,Magic)|wields(x,Sword).
+** KEPT (pick-wt=9): 103 [hyper,86,1,15] wields(x,Bow)|fights(x,Poe)|fights(x,Ironknuckle).
+98 back subsumes 75.
+** KEPT (pick-wt=3): 104 [ur,86,23] -usedagainst(Magic,Octorock).
+
+given clause #16: (wt=3) 89 [ur,46,38] -wields(Zelda,Magic).
+** KEPT (pick-wt=3): 105 [ur,89,33,77] wields(Ganondorf,Magic).
+105 back subsumes 85.
+105 back subsumes 84.
+105 back subsumes 69.
+105 back subsumes 68.
+
+given clause #17: (wt=3) 90 [ur,46,32] -wields(Ganondorf,Bow).
+
+given clause #18: (wt=3) 91 [ur,58,9,45] fights(Ganondorf,Poe).
+** KEPT (pick-wt=9): 106 [hyper,91,3,39] usedagainst(Magic,Poe)|wields(Ganondorf,Sword)|wields(Ganondorf,Bow).
+** KEPT (pick-wt=9): 107 [hyper,91,3,33] usedagainst(x,Poe)|wields(Zelda,x)|wields(Link,x).
+** KEPT (pick-wt=9): 108 [hyper,91,1,21] wields(Ganondorf,x)|usedagainst(x,Octorock)|usedagainst(x,Ironknuckle).
+** KEPT (pick-wt=3): 109 [ur,91,13] -fights(Ganondorf,Ironknuckle).
+
+given clause #19: (wt=3) 92 [ur,58,2,46] -usedagainst(Bow,Poe).
+** KEPT (pick-wt=3): 110 [ur,92,27,83] usedagainst(Magic,Poe).
+110 back subsumes 106.
+110 back subsumes 100.
+110 back subsumes 99.
+110 back subsumes 96.
+110 back subsumes 49.
+
+given clause #20: (wt=3) 93 [ur,59,2,46] -usedagainst(Bow,Ironknuckle).
+** KEPT (pick-wt=3): 111 [ur,93,27,42] usedagainst(Sword,Ironknuckle).
+111 back subsumes 101.
+111 back subsumes 98.
+111 back subsumes 97.
+111 back subsumes 70.
+111 back subsumes 48.
+
+given clause #21: (wt=3) 94 [ur,60,15,45] fights(Link,Ironknuckle).
+** KEPT (pick-wt=6): 112 [hyper,94,40,44,27] usedagainst(Magic,Ironknuckle)|usedagainst(Bow,Ironknuckle).
+** KEPT (pick-wt=6): 113 [hyper,94,40,44,21] usedagainst(Sword,Poe)|usedagainst(Sword,Octorock).
+** KEPT (pick-wt=12): 114 [hyper,94,40,33,21] wields(Zelda,x)|wields(Ganondorf,x)|usedagainst(x,Poe)|usedagainst(x,Octorock).
+** KEPT (pick-wt=9): 115 [hyper,94,3,33] usedagainst(x,Ironknuckle)|wields(Zelda,x)|wields(Ganondorf,x).
+** KEPT (pick-wt=9): 116 [hyper,94,1,21] wields(Link,x)|usedagainst(x,Poe)|usedagainst(x,Octorock).
+112 back subsumes 61.
+113 back subsumes 66.
+113 back subsumes 62.
+** KEPT (pick-wt=3): 117 [ur,94,40,44] -usedagainst(Sword,Ironknuckle).
+
+----> UNIT CONFLICT at   0.00 sec ----> 118 [binary,117.1,111.1] $F.
+
+Length of proof is 6.  Level of proof is 3.
+
+---------------- PROOF ----------------
+
+2 [] -wields(x,y)| -usedagainst(y,z)|fights(x,z).
+8 [] -fights(Link,x)| -fights(Zelda,x).
+10 [] -fights(x,Octorock)| -fights(x,Ironknuckle).
+15 [] fights(x,Poe)|fights(x,Ironknuckle)|fights(x,Octorock).
+27 [] usedagainst(Sword,x)|usedagainst(Magic,x)|usedagainst(Bow,x).
+40 [] -fights(Link,x)| -wields(Link,y)| -usedagainst(y,x).
+42 [] -usedagainst(Magic,Ironknuckle).
+43 [] fights(Zelda,Octorock).
+44 [] wields(Link,Sword).
+45 [] -fights(Link,Poe).
+46 [] wields(Zelda,Bow).
+59 [ur,43,10] -fights(Zelda,Ironknuckle).
+60 [ur,43,8] -fights(Link,Octorock).
+93 [ur,59,2,46] -usedagainst(Bow,Ironknuckle).
+94 [ur,60,15,45] fights(Link,Ironknuckle).
+111 [ur,93,27,42] usedagainst(Sword,Ironknuckle).
+117 [ur,94,40,44] -usedagainst(Sword,Ironknuckle).
+118 [binary,117.1,111.1] $F.
+
+------------ end of proof -------------
+
+
+Search stopped by max_proofs option.
+
+============ end of search ============
+
+-------------- statistics -------------
+clauses given                 21
+clauses generated            457
+  hyper_res generated        384
+  ur_res generated            73
+demod & eval rewrites          0
+clauses wt,lit,sk delete       0
+tautologies deleted            0
+clauses forward subsumed     386
+  (subsumed by sos)          190
+unit deletions                 0
+factor simplifications         0
+clauses kept                  71
+new demodulators               0
+empty clauses                  1
+clauses back demodulated       0
+clauses back subsumed         33
+usable size                   61
+sos size                      23
+demodulators size              0
+passive size                   0
+hot size                       0
+Kbytes malloced              976
+
+----------- times (seconds) -----------
+user CPU time          0.00          (0 hr, 0 min, 0 sec)
+system CPU time        0.00          (0 hr, 0 min, 0 sec)
+wall-clock time        0             (0 hr, 0 min, 0 sec)
+
+That finishes the proof of the theorem.
+
+Process 19064 finished Sat Feb 23 14:28:53 2019

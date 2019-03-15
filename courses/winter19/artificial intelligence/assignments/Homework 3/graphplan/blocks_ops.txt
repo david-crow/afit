@@ -1,0 +1,33 @@
+# old style
+
+(operator
+    PICK-UP
+    (params (<ob> OBJECT))
+    (preconds 
+        (clear <ob>) (on-table <ob>) (arm-empty))
+    (effects 
+        (holding <ob>))
+
+(operator
+    PUT-DOWN
+    (params (<ob> OBJECT))
+    (preconds
+        (holding <ob>))
+    (effects 
+        (clear <ob>) (arm-empty) (on-table <ob>)))
+
+(operator
+    STACK
+    (params (<ob> OBJECT) (<underob> OBJECT))
+    (preconds 
+        (clear <underob>) (holding <ob>))
+    (effects 
+        (arm-empty) (clear <ob>) (on <ob> <underob>)))
+
+(operator
+    UNSTACK
+    (params (<ob> OBJECT) (<underob> OBJECT))
+    (preconds
+        (on <ob> <underob>) (clear <ob>) (arm-empty))
+    (effects 
+        (holding <ob>) (clear <underob>)))

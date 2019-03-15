@@ -1,0 +1,151 @@
+----- Otter 3.3f, August 2004 -----
+The process was started by david on Davids-MBP-2,
+Sat Feb 23 18:52:58 2019
+The command was "../otter/bin/otter".  The process ID is 19730.
+
+set(ur_res).
+set(hyper_res).
+
+formula_list(usable).
+all x y (sister(x,y)->siblings(x,y)).
+all x y (brother(x,y)->siblings(x,y)).
+all x y (brother(x,y)&female(y)->sister(y,x)).
+all x y (siblings(x,y)->siblings(y,x)).
+all x y (married(x,y)->married(y,x)).
+all x y z (siblings(x,y)&uncle(z,y)->uncle(z,x)).
+all x y z (uncle(x,y)&aunt(z,y)->married(x,z)).
+all x y z (uncle(x,y)&married(z,x)->aunt(z,y)).
+all x y z (siblings(x,y)&siblings(y,z)->siblings(x,z)).
+all x y (brother(x,y)<->male(x)&siblings(x,y)).
+end_of_list.
+
+-------> usable clausifies to:
+
+list(usable).
+1 [] -sister(x,y)|siblings(x,y).
+2 [] -brother(x,y)|siblings(x,y).
+3 [] -brother(x,y)| -female(y)|sister(y,x).
+4 [] -siblings(x,y)|siblings(y,x).
+5 [] -married(x,y)|married(y,x).
+6 [] -siblings(x,y)| -uncle(z,y)|uncle(z,x).
+7 [] -uncle(x,y)| -aunt(z,y)|married(x,z).
+8 [] -uncle(x,y)| -married(z,x)|aunt(z,y).
+9 [] -siblings(x,y)| -siblings(y,z)|siblings(x,z).
+10 [] -brother(x,y)|male(x).
+11 [] -brother(x,y)|siblings(x,y).
+12 [] brother(x,y)| -male(x)| -siblings(x,y).
+end_of_list.
+
+formula_list(sos).
+uncle(John,Jack).
+aunt(Mary,Amy).
+female(Amy).
+brother(Jack,Amy).
+brother(Bill,Jack).
+-brother(Bill,Amy).
+end_of_list.
+
+-------> sos clausifies to:
+
+list(sos).
+13 [] uncle(John,Jack).
+14 [] aunt(Mary,Amy).
+15 [] female(Amy).
+16 [] brother(Jack,Amy).
+17 [] brother(Bill,Jack).
+18 [] -brother(Bill,Amy).
+end_of_list.
+
+======= end of input processing =======
+
+=========== start of search ===========
+
+given clause #1: (wt=2) 15 [] female(Amy).
+
+given clause #2: (wt=3) 13 [] uncle(John,Jack).
+
+given clause #3: (wt=3) 14 [] aunt(Mary,Amy).
+
+given clause #4: (wt=3) 16 [] brother(Jack,Amy).
+** KEPT (pick-wt=3): 19 [hyper,16,11] siblings(Jack,Amy).
+** KEPT (pick-wt=2): 20 [hyper,16,10] male(Jack).
+** KEPT (pick-wt=3): 21 [hyper,16,3,15] sister(Amy,Jack).
+
+given clause #5: (wt=2) 20 [hyper,16,10] male(Jack).
+
+given clause #6: (wt=3) 17 [] brother(Bill,Jack).
+** KEPT (pick-wt=3): 22 [hyper,17,11] siblings(Bill,Jack).
+** KEPT (pick-wt=2): 23 [hyper,17,10] male(Bill).
+
+given clause #7: (wt=2) 23 [hyper,17,10] male(Bill).
+
+given clause #8: (wt=3) 18 [] -brother(Bill,Amy).
+** KEPT (pick-wt=3): 24 [ur,18,12,23] -siblings(Bill,Amy).
+
+given clause #9: (wt=3) 19 [hyper,16,11] siblings(Jack,Amy).
+** KEPT (pick-wt=3): 25 [hyper,19,4] siblings(Amy,Jack).
+
+given clause #10: (wt=3) 21 [hyper,16,3,15] sister(Amy,Jack).
+
+given clause #11: (wt=3) 22 [hyper,17,11] siblings(Bill,Jack).
+** KEPT (pick-wt=3): 26 [hyper,22,9,19] siblings(Bill,Amy).
+
+----> UNIT CONFLICT at   0.00 sec ----> 27 [binary,26.1,24.1] $F.
+
+Length of proof is 5.  Level of proof is 2.
+
+---------------- PROOF ----------------
+
+9 [] -siblings(x,y)| -siblings(y,z)|siblings(x,z).
+10 [] -brother(x,y)|male(x).
+11 [] -brother(x,y)|siblings(x,y).
+12 [] brother(x,y)| -male(x)| -siblings(x,y).
+16 [] brother(Jack,Amy).
+17 [] brother(Bill,Jack).
+18 [] -brother(Bill,Amy).
+19 [hyper,16,11] siblings(Jack,Amy).
+22 [hyper,17,11] siblings(Bill,Jack).
+23 [hyper,17,10] male(Bill).
+24 [ur,18,12,23] -siblings(Bill,Amy).
+26 [hyper,22,9,19] siblings(Bill,Amy).
+27 [binary,26.1,24.1] $F.
+
+------------ end of proof -------------
+
+
+Search stopped by max_proofs option.
+
+============ end of search ============
+
+-------------- statistics -------------
+clauses given                 11
+clauses generated             23
+  hyper_res generated         12
+  ur_res generated            11
+demod & eval rewrites          0
+clauses wt,lit,sk delete       0
+tautologies deleted            0
+clauses forward subsumed      15
+  (subsumed by sos)           12
+unit deletions                 0
+factor simplifications         0
+clauses kept                   8
+new demodulators               0
+empty clauses                  1
+clauses back demodulated       0
+clauses back subsumed          0
+usable size                   23
+sos size                       3
+demodulators size              0
+passive size                   0
+hot size                       0
+Kbytes malloced              976
+
+----------- times (seconds) -----------
+user CPU time          0.00          (0 hr, 0 min, 0 sec)
+system CPU time        0.00          (0 hr, 0 min, 0 sec)
+wall-clock time        0             (0 hr, 0 min, 0 sec)
+
+That finishes the proof of the theorem.
+
+Process 19730 finished Sat Feb 23 18:52:58 2019

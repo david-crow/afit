@@ -1,0 +1,113 @@
+World
+
+25 25
+V O V V V O V O O O V V V V V V V V O O O V V V O 
+V V O O V V V V O V V V V V O O V V O V V V O V V 
+O V V V V V V V V V O V V V V V V V V V V V V V V 
+V V V O O V V V V O O V V V V V V V V V V V V O O 
+O O V V V O O V V V O V V V V V O O O V V V V V O 
+V V O V V V O V V V V O V V V V V V V V V V V O V 
+V V V V V V O V V V O V V V V V O V O V V V O V V 
+V V V V O V V V V V V V V V V O V V V V V V V V V 
+V V V V V V V O V V O V V V O V V V V V V V V V V 
+V V O V V V V O O O V O V O O V V V V V V V V V O 
+V V V V V V V V V V O V O O V V V V V V V V V O V 
+V V O V V V V V V O O V V O V V V V V V V V O O V 
+V V V O O O V V V V V V V O V V V V V V O V V V V 
+V V O V V V V V V O O V V V V V V V O V V V V V V 
+V O V V V O V V O V V V V O V V V O V V O V V V V 
+O V V V O O V V V O V V V V V O O O V V V V O O V 
+V V V O V O V V V V V V O V V V V V O V V V V O V 
+O O O V V V V V V O V V V V V V V V V O V V O V V 
+V O O V V O V V V V V O V V V V O O V V V V O V V 
+V V V V V V V V V O O O O V O V V V V V O V V V V 
+V V V V V O V V V V O V V V V O V V O V O V O V O 
+V V V V V V V V V O V V O V O V V V V V V O V V G 
+O V V V V V O O V V O V V V V O V O O V V V O V V 
+V V V O O V V V V V V V V V V V V V V V V V O V V 
+O V O V V V V V V O O V V V V O V V V V O V O V O 
+
+Value Iteration
+
+S - E E S - S - - - E S S S E E S S - - - S W S - 
+E S - - E S E S - E E S S S - - E S - S S S - S S 
+- E S W E S S S E N - E E E S S E E S S S S S W W 
+E E S - - E E S S - - S S E S S E E E S S S S - - 
+- - E S S - - S S S - E S E S S - - - S S S S W - 
+S S - E E S - S S S W - E E E E E S E S S S W - S 
+E E S E E S - S S S - E N E E N - S - S S S - S W 
+S S S S - E S W W E E N E E N - E E S S S S S W W 
+E E E S S S S - N N - E E N - S S S S S S S S S W 
+S S - E S S S - - - N - N - - E E E S S S S S W - 
+E E E S E E E S S W - S - - S E E E S S S S W - S 
+N N - E E E S S S - - E S - S E E E S S E S - - S 
+E N W - - - E E E E E S S - E E E E E S - S S S S 
+E N - E E E S S N - - E S E S E E N - S E S S S S 
+N - E N N - S S - E S E S - S W N - S S - S E E S 
+- E N N - - E E S - E E E S S - - - E E S S - - S 
+E N N - S - E E E E S S - E E E E S - E S S W - S 
+- - - E E E S S S - E E E E E E E E S - E S - S W 
+S - - E N - E E E E N - E E E S - - E E E S - S S 
+E E E E E E N N N - - - - N - E E E N N - E E S W 
+N E E N N - N N N W - E E N W - E N - N - N - S - 
+E E E E E E N N N - E N - N - E E N E N W - E E N 
+- E E E E N - - N S - E E N S - N - - N N W - E N 
+E N N - - E E E E E E E E E E E N E E N N W - E N 
+- N - E E N N N N - - E E E N - N N N N - N - N - 
+
+TD(0)
+
+S - E E S - S - - - E E E E E E S W - - - S W W - 
+E S - - E E E S - E N E S S - - E S - E E S - E S 
+- E E E N S W E E N - S E S S E S E E S S S W W W 
+E E S - - E E E N - - S E E E E E E E S S S S - - 
+- - E S S - - N N S - E E E E N - - - E S S W W - 
+S W - S E S - N W S W - N E E E E S E E S S W - S 
+S N W S W W - S N W - S E E E N - S - S S S - S W 
+E E S W - S W E S E E E N S W - S E E E E S W W S 
+E N E E S S S - E N - N W W - S W E E E S S S S W 
+N S - E S S S - - - N - N - - S S E S E E S W W - 
+N W E S E E E S S W - S - - E E S S S S E S W - S 
+N N - E E E S S S - - E S - N E E S S S E S - - S 
+E N W - - - E S S E E S S - N S E E E S - S W S S 
+N W - E E E S S W - - S S E S E N N - E E S W W S 
+N - E N N - E S - E S S S - S W N - S N - S W W S 
+- E N W - - E S S - S E E S S - - - E E E S - - S 
+E N W - S - E E E E S S - E S S S S - E E S W - S 
+- - - S E E S S S - E E E E E E E E S - S S - S S 
+S - - E S - E E E E N - E N E N - - E E E S - S W 
+E S S E E E E N N - - - - N - E E E N N - E E S W 
+S E E E S - E N N W - E E N W - N N - N - N - S - 
+E E N E E E E N N - E N - N - E E N E N W - E E W 
+- N E E E N - - N S - E E N S - N - - N W W - N W 
+E N W - - E E S E E E E E E E E N E E N W N - N N 
+- N - E E N E E N - - E E N N - N E E N - N - N - 
+
+TD(λ)
+
+S - E E S - S - - - E S S W W W W W - - - S E S - 
+E S - - S W E S - E E S S W - - S S - S S S - S W 
+- S W W W N S W E N - S S S E E E E E S S S S W N 
+E E S - - N W S W - - E E E E S E E E S S S S - - 
+- - E E S - - S N W - N E S E S - - - S S S W W - 
+S W - S S W - S S N W - N E E E E S E E E S W - S 
+S N W W W N - S S N - E E E N N - S - S S S - S W 
+S E S N - S W W E E E E E E N - S S S E E S S W S 
+E N E E S S S - N W - N W W - S S S S S E S S S W 
+E S - S S S S - - - N - N - - S S E S S E S S W - 
+N E E S E E E S S W - S - - E E E E S S S S W - S 
+N N - E E E S S S - - E S - E E E E S S E S - - S 
+N S W - - - E S E E E S S - E E E E E S - S S S S 
+N W - E E E S S W - - S E E S E E N - E E S S S S 
+N - E E N - S S - E S S S - S W W - S S - S W E S 
+- E N N - - S S S - E E E S S - - - E S S S - - S 
+E N N - S - E E E E S S - S E E S S - E E S W - S 
+- - - E E E E N N - E E E E E E E E S - S S - S S 
+S - - N N - E E E E N - E E E S - - E E E S - S S 
+E E E N E E N N N - - - - N - E E E E N - E E S W 
+S N E E N - E N N W - E E N W - N N - N - N - S - 
+E N S N E E E E S - E N - N - E E E E N W - E E N 
+- E E E N S - - E S - E E N S - N - - N W W - N W 
+E E N - - S E E E E E E E E E E E E E N W W - W N 
+- N - E E E E E N - - E N N N - E E E N - N - N - 
+

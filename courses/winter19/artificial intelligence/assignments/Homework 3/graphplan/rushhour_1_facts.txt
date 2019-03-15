@@ -1,0 +1,47 @@
+(af LOCATION) (bf LOCATION) (cf LOCATION) (df LOCATION) (ef LOCATION) (ff LOCATION)
+(ae LOCATION) (be LOCATION) (ce LOCATION) (de LOCATION) (ee LOCATION) (fe LOCATION)
+(ad LOCATION) (bd LOCATION) (cd LOCATION) (dd LOCATION) (ed LOCATION) (fd LOCATION)
+(ac LOCATION) (bc LOCATION) (cc LOCATION) (dc LOCATION) (ec LOCATION) (fc LOCATION)
+(ab LOCATION) (bb LOCATION) (cb LOCATION) (db LOCATION) (eb LOCATION) (fb LOCATION)
+(aa LOCATION) (ba LOCATION) (ca LOCATION) (da LOCATION) (ea LOCATION) (fa LOCATION)
+
+(carO1 CAR)
+(carA1 CAR)
+(carB1 CAR)
+(carX0 CAR)
+
+(preconds
+    (vertical carA1)
+    (horizontal carO1)
+    (horizontal carB1)
+    (horizontal carX0)
+
+    (tail carO1 cf) (head carO1 df)
+    (tail carA1 cd) (head carA1 ce)
+    (tail carB1 cc) (head carB1 dc)
+    (tail carX0 ad) (head carX0 bd)
+
+    (free af) (free bf)                     (free ef) (free ff)
+    (free ae) (free be)           (free de) (free ee) (free fe)
+                                  (free dd) (free ed) (free fd)
+    (free ac) (free bc)                     (free ec) (free fc)
+    (free ab) (free bb) (free cb) (free db) (free eb) (free fb)
+    (free aa) (free ba) (free ca) (free da) (free ea) (free fa)
+
+    (right bf af) (right cf bf) (right df cf) (right ef df) (right ff ef)
+    (right be ae) (right ce be) (right de ce) (right ee de) (right fe ee)
+    (right bd ad) (right cd bd) (right dd cd) (right ed dd) (right fd ed)
+    (right bc ac) (right cc bc) (right dc cc) (right ec dc) (right fc ec)
+    (right bb ab) (right cb bb) (right db cb) (right eb db) (right fb eb)
+    (right ba aa) (right ca ba) (right da ca) (right ea da) (right fa ea)
+
+    (above af ae) (above bf be) (above cf ce) (above df de) (above ef ee) (above ff fe)
+    (above ae ad) (above be bd) (above ce cd) (above de dd) (above ee ed) (above fe fd)
+    (above ad ac) (above bd bc) (above cd cc) (above dd dc) (above ed ec) (above fd fc)
+    (above ac ab) (above bc bb) (above cc cb) (above dc db) (above ec eb) (above fc fb)
+    (above ab aa) (above bb ba) (above cb ca) (above db da) (above eb ea) (above fb fa)
+)
+
+(effects
+    (tail carX0 ed) (head carX0 fd)
+)

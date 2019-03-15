@@ -1,0 +1,55 @@
+Welcome to graphplan. 'graphplan -h' gives help on command-line args.
+
+give file name for operators: PICK-UP
+PUT-DOWN
+STACK
+UNSTACK
+give file name for initial facts: facts loaded.
+number of time steps, or <CR> for automatic: Info type: (2 = max, 0 or <CR> = min): Other: 'I' = look for irrelevants
+       'L' = Lower bound time needed by counting steps
+       'B' = Build up to goals
+       'E' = Don't do mutual exclusions (for testing)
+       'S' = examine subsets:      time: 1, 10 facts and 11 exclusive pairs.
+time: 2, 13 facts and 24 exclusive pairs.
+time: 3, 15 facts and 36 exclusive pairs.
+time: 4, 19 facts and 68 exclusive pairs.
+time: 5, 20 facts and 69 exclusive pairs.
+time: 6, 25 facts and 126 exclusive pairs.
+time: 7, 25 facts and 110 exclusive pairs.
+time: 8, 25 facts and 96 exclusive pairs.
+Goals first reachable in 8 steps.
+449 nodes created.
+goals at time 9:
+  on-table_blockB on_blockA_blockB on_blockC_blockA on_blockD_blockC 
+
+trying first 1 goals
+trying first 2 goals
+trying first 3 goals
+failed
+Can't solve in 8 steps
+time: 9, 25 facts and 96 exclusive pairs.
+82 new nodes added.
+goals at time 10:
+  on-table_blockB on_blockA_blockB on_blockC_blockA on_blockD_blockC 
+
+failed
+Can't solve in 9 steps
+time: 10, 25 facts and 96 exclusive pairs.
+82 new nodes added.
+goals at time 11:
+  on-table_blockB on_blockA_blockB on_blockC_blockA on_blockD_blockC 
+
+1 UNSTACK_blockC_blockD
+2 PUT-DOWN_blockC
+3 UNSTACK_blockD_blockA
+4 PUT-DOWN_blockD
+5 PICK-UP_blockA
+6 STACK_blockA_blockB
+7 PICK-UP_blockC
+8 STACK_blockC_blockA
+9 PICK-UP_blockD
+10 STACK_blockD_blockC
+5 entries in hash table, 3 hash hits, avg set size 4.
+17 total set-creation steps (entries + hits + plan length - 1).
+26 actions tried
+  0.00 secs

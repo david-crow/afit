@@ -1,0 +1,46 @@
+set(ur_res).
+set(hyper_res).
+
+formula_list(usable).
+
+all x all y all z (fights(x,z) & usedagainst(y,z) -> wields(x,y)).
+all x all y all z (wields(x,y) & usedagainst(y,z) -> fights(x,z)).
+all x all y all z (wields(x,y) & fights(x,z) -> usedagainst(y,z)).
+
+all x (fights(Zelda,x) <-> -fights(Ganondorf,x) & -fights(Link,x)).
+all x (fights(Link,x) <-> -fights(Ganondorf,x) & -fights(Zelda,x)).
+
+all x (fights(x,Octorock) <-> -fights(x,Ironknuckle) & -fights(x,Poe)).
+all x (fights(x,Poe) <-> -fights(x,Ironknuckle) & -fights(x,Octorock)).
+
+all x (usedagainst(x,Ironknuckle) <-> -usedagainst(x,Octorock) & -usedagainst(x,Poe)).
+all x (usedagainst(x,Poe) <-> -usedagainst(x,Octorock) & -usedagainst(x,Ironknuckle)).
+
+all x (usedagainst(Bow,x) <-> -usedagainst(Sword,x) & -usedagainst(Magic,x)).
+all x (usedagainst(Sword,x) <-> -usedagainst(Magic,x) & -usedagainst(Bow,x)).
+
+all x (wields(Ganondorf,x) <-> -wields(Zelda,x) & -wields(Link,x)).
+all x (wields(Zelda,x) <-> -wields(Link,x) & -wields(Ganondorf,x)).
+
+all x (wields(x,Sword) <-> -wields(x,Magic) & -wields(x,Bow)).
+all x (wields(x,Magic) <-> -wields(x,Sword) & -wields(x,Bow)).
+
+% ----- Delete the first, second, or third percent sign below to obtain
+% ----- information about Link, Zelda, or Ganondorf (respectively).
+
+%-(exists x exists y (fights(Link,x) & wields(Link,y) & usedagainst(y,x))).
+%-(exists x exists y (fights(Zelda,x) & wields(Zelda,y) & usedagainst(y,x))).
+%-(exists x exists y (fights(Ganondorf,x) & wields(Ganondorf,y) & usedagainst(y,x))).
+
+end_of_list.
+
+formula_list(sos).
+
+-fights(Ganondorf,Octorock).
+-usedagainst(Magic,Ironknuckle).
+fights(Zelda,Octorock).
+wields(Link,Sword).
+-fights(Link,Poe).
+wields(Zelda,Bow).
+
+end_of_list.

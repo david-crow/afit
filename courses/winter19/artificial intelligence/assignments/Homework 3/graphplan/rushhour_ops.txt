@@ -1,0 +1,201 @@
+# old style
+
+(operator
+    MOVE-NORTH
+    (params 
+        (<c> CAR)
+
+        (<l3> LOCATION)
+        (<l2> LOCATION)
+        (<l1> LOCATION)
+    )
+    (preconds
+        (vertical <c>)
+        (above <l3> <l2>)
+        (above <l2> <l1>)
+
+        (free <l3>)
+        (head <c> <l2>)
+        (tail <c> <l1>)
+    )
+    (effects
+        (vertical <c>)
+        (above <l3> <l2>)
+        (above <l2> <l1>)
+
+        (head <c> <l3>)
+        (tail <c> <l2>)
+        (free <l1>)
+    )
+)
+
+(operator
+    MOVE-NORTH
+    (params 
+        (<c> CAR)
+
+        (<l3> LOCATION)
+        (<l2> LOCATION)
+        (<l1> LOCATION)
+    )
+    (preconds
+        (vertical <c>)
+        (above <l3> <l2>)
+        (above <l2> <l1>)
+
+        (free <l3>)
+        (tail <c> <l2>)
+        (head <c> <l1>)
+    )
+    (effects
+        (vertical <c>)
+        (above <l3> <l2>)
+        (above <l2> <l1>)
+        
+        (tail <c> <l3>)
+        (head <c> <l2>)
+        (free <l1>)
+    )
+)
+
+(operator
+    MOVE-SOUTH
+    (params 
+        (<c> CAR)
+
+        (<l3> LOCATION)
+        (<l2> LOCATION)
+        (<l1> LOCATION)
+    )
+    (preconds
+        (vertical <c>)
+        (above <l3> <l2>)
+        (above <l2> <l1>)
+        
+        (tail <c> <l3>)
+        (head <c> <l2>)
+        (free <l1>)
+    )
+    (effects
+        (vertical <c>)
+        (above <l3> <l2>)
+        (above <l2> <l1>)
+        
+        (free <l3>)
+        (tail <c> <l2>)
+        (head <c> <l1>)
+    )
+)
+
+(operator
+    MOVE-SOUTH
+    (params 
+        (<c> CAR)
+
+        (<l3> LOCATION)
+        (<l2> LOCATION)
+        (<l1> LOCATION)
+    )
+    (preconds
+        (vertical <c>)
+        (above <l3> <l2>)
+        (above <l2> <l1>)
+
+        (head <c> <l3>)
+        (tail <c> <l2>)
+        (free <l1>)
+    )
+    (effects
+        (vertical <c>)
+        (above <l3> <l2>)
+        (above <l2> <l1>)
+        
+        (free <l3>)
+        (head <c> <l2>)
+        (tail <c> <l1>)
+    )
+)
+
+(operator
+    MOVE-EAST
+    (params 
+        (<c> CAR)
+
+        (<l1> LOCATION) (<l2> LOCATION) (<l3> LOCATION)
+    )
+    (preconds
+        (horizontal <c>)
+        (right <l3> <l2>) (right <l2> <l1>)
+
+        (tail <c> <l1>) (head <c> <l2>) (free <l3>)
+    )
+    (effects
+        (horizontal <c>)
+        (right <l3> <l2>) (right <l2> <l1>)
+        
+        (free <l1>) (tail <c> <l2>) (head <c> <l3>)
+    )
+)
+
+(operator
+    MOVE-EAST
+    (params 
+        (<c> CAR)
+
+        (<l1> LOCATION) (<l2> LOCATION) (<l3> LOCATION)
+    )
+    (preconds
+        (horizontal <c>)
+        (right <l3> <l2>) (right <l2> <l1>)
+
+        (head <c> <l1>) (tail <c> <l2>) (free <l3>)
+    )
+    (effects
+        (horizontal <c>)
+        (right <l3> <l2>) (right <l2> <l1>)
+
+        (free <l1>) (head <c> <l2>) (tail <c> <l3>)
+    )
+)
+
+(operator
+    MOVE-WEST
+    (params 
+        (<c> CAR)
+
+        (<l1> LOCATION) (<l2> LOCATION) (<l3> LOCATION)
+    )
+    (preconds
+        (horizontal <c>)
+        (right <l3> <l2>) (right <l2> <l1>)
+
+        (free <l1>) (head <c> <l2>) (tail <c> <l3>)
+    )
+    (effects
+        (horizontal <c>)
+        (right <l3> <l2>) (right <l2> <l1>)
+        
+        (head <c> <l1>) (tail <c> <l2>) (free <l3>)
+    )
+)
+
+(operator
+    MOVE-WEST
+    (params 
+        (<c> CAR)
+
+        (<l1> LOCATION) (<l2> LOCATION) (<l3> LOCATION)
+    )
+    (preconds
+        (horizontal <c>)
+        (right <l3> <l2>) (right <l2> <l1>)
+        
+        (free <l1>) (tail <c> <l2>) (head <c> <l3>)
+    )
+    (effects
+        (horizontal <c>)
+        (right <l3> <l2>) (right <l2> <l1>)
+        
+        (tail <c> <l1>) (head <c> <l2>) (free <l3>)
+    )
+)

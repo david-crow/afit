@@ -1,0 +1,44 @@
+Welcome to graphplan. 'graphplan -h' gives help on command-line args.
+
+give file name for operators: rushhour_ops.txt
+MOVE-NORTH
+MOVE-NORTH
+MOVE-SOUTH
+MOVE-SOUTH
+MOVE-EAST
+MOVE-EAST
+MOVE-WEST
+MOVE-WEST
+give file name for initial facts: rushhour_2_facts.txt
+facts loaded.
+number of time steps, or <CR> for automatic: CR
+Info type: (2 = max, 0 or <CR> = min): CR
+Other: 'I' = look for irrelevants
+       'L' = Lower bound time needed by counting steps
+       'B' = Build up to goals
+       'E' = Don't do mutual exclusions (for testing)
+       'S' = examine subsets: B
+time: 1, 115 facts and 45 exclusive pairs.
+time: 2, 130 facts and 153 exclusive pairs.
+time: 3, 143 facts and 316 exclusive pairs.
+time: 4, 153 facts and 471 exclusive pairs.
+time: 5, 155 facts and 521 exclusive pairs.
+time: 6, 157 facts and 588 exclusive pairs.
+Goals first reachable in 6 steps.
+1977 nodes created.
+goals at time 7:
+  tail_carX0_ed head_carX0_fd 
+
+trying first 1 goals
+1 MOVE-SOUTH_carB1_ff_fe_fd
+2 MOVE-SOUTH_carB1_fe_fd_fc
+2 MOVE-EAST_carQ1_df_ef_ff
+3 MOVE-NORTH_carC1_df_de_dd
+3 MOVE-SOUTH_carB1_fd_fc_fb
+4 MOVE-EAST_carX0_bd_cd_dd
+5 MOVE-EAST_carX0_cd_dd_ed
+6 MOVE-EAST_carX0_dd_ed_fd
+0 entries in hash table, 
+5 total set-creation steps (entries + hits + plan length - 1).
+16 actions tried
+  0.03 secs
