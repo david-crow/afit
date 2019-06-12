@@ -1,0 +1,107 @@
+\documentclass[../main.tex]{subfiles}
+ 
+\begin{document}
+
+\section{Proof of Complexity}\label{app:complexity}
+
+One goal for this research is that we develop approximation algorithms for difficult, multi-domain optimization problems. To ensure that \probs is \textit{difficult} enough, we show here that both \ac{mcp} and \ac{mrp} are \ac{npc} problems.
+
+The \acl{mcp} portion of \probs is similar to each of the following \ac{npc} problems: bin-packing, traveling salesman decision, and vertex cover \cite{wikipedia:npc-problems}. One can reduce \ac{mcp} -- which is exactly the problem of routing $n$ \acp{uav} (of capacity $b$) through a $d\times d$ grid to maximize coverage -- to any of these problems (and to any other \ac{npc} problem \cite{Kleinberg2005}). Additionally, these \ac{npc} are reducible to \ac{mcp}. Thus, \ac{mcp} is itself \ac{npc} \cite{Hochbaum1996, wikipedia:max-coverage}.
+
+The \acl{mrp} portion of \probs concerns the problem of routing an agent through a $d\times d$ grid without visiting penalty squares. For this reason, we assert that \ac{mrp} is similar to the subset sum, graph coloring, and graph partition problems, all of which are \ac{npc} \cite{wikipedia:npc-problems}, and each of which penalizes the algorithm for incorrectly visiting/coloring adjacent nodes. Because \ac{mrp} is polynomial-time reducible to any of these \ac{npc} problems, and because all are reducible to \ac{mrp}, we claim that \ac{mrp} is also \ac{npc} \cite{Kleinberg2005}.
+
+Because both \ac{mcp} and \ac{mrp} are \ac{npc} problems, we absolutely cannot guarantee an optimal solution to all problem instances with a deterministic, polynomial-time algorithm. This is why we developed various approximation algorithms in an attempt to solve \probs \cite{Williamson2011}. It is certainly possible that the algorithms we implemented -- A$^*$, \acl{sbs}, and \ac{lbs} -- are not suitable to solving \prob, so we discuss other algorithms in the following Appendices.
+
+\section{Other Search Techniques}\label{app:other-search}
+
+The ``no free lunch'' theorem ``state[s] that any two optimization algorithms are equivalent when their performance is averaged across all possible problems'' \cite{Wolpert1997}. However, we know that \probs is an exceedingly difficult problem, so are not concerned with \textit{all possible problems}; rather, we are concerned with small-to-medium problem instances. For this reason, it's possible that some variations on the search techniques already described may perform better than the techniques themselves.
+
+In this Appendix, then, we describe potentially-useful variations on the algorithms used to solve \probs in Sections \ref{sec:deterministic}, \ref{sec:stochastic}, and \ref{sec:local}. We present these variations on A$^*$, on \acl{sbs}, and on \acl{lbs} in Appendices \ref{app:other-deterministic}, \ref{app:other-stochastic}, and \ref{app:other-local}, respectively. Additionally, we discuss in Appendix \ref{app:other-insect} why an insect-inspired search algorithm may or may not be useful for this problem.
+
+\subsection{Deterministic Search}\label{app:other-deterministic}
+
+We showed that A$^*$, itself a variation of breadth-first search (via informedness) \cite{Moore1959, Pearl1984, handout:global-search}, is somewhat successful at solving \prob. However, the problem's search space is simply too large to fully utilize standard A$^*$; for this reason, we believe \ac{ida*} can sufficiently restrict the search space to allow for better results \cite{Korf1985, wikipedia:ida*}. Because the heuristic seeks to maximize the \ac{uav} coverage of the surveillance area, and because each new level of the tree indicates that one \ac{uav} has moved one square, A$^*$ is likely to explore to extreme depths before exploring the width of the tree. By iteratively bounding the exploration depth with \ac{ida*}, we expect to identify \textit{sufficient} solutions to \prob. Although this won't guarantee the optimality of a given solution, it does guarantee that the search finishes in a reasonable amount of time. Of course, large values for $n$ significantly increase the search tree's branching factor, so \ac{ida*} won't \textit{always} perform better than A$^*$ (see \cite{Wolpert1997} for a discussion on the ``no free lunch'' theorem).
+
+\subsection{Stochastic Search}\label{app:other-stochastic}
+
+The stochastic search we implemented, \acl{sbs}, worked for our purposes (that is, problem demonstration and solution feasibility). However, it's not good enough for the \textit{\acl{usaf}'s} purposes. It's possible that a different stochastic search algorithm outperforms \ac{sbs} in solving \prob. For this reason, we turn to \acp{ga}. Genetic algorithms utilize stochasticity to solve difficult problems by emulating evolutionary biology \cite{Lamont2006, Talbi2009}. Because \acp{ga} build a population of solutions (individuals) by combining high-value solution candidates, and because the \probs search space contains numerous possible paths, a \ac{ga} approach is likely to work well in solving this problem. Of course, we must develop well-tuned selection, combination, and mutation operators, but this is possible through metaheuristic tuning \cite{Talbi2009}. In doing so, we can utilize a \ac{ga} algorithm to solve \prob, and we expect results to improve upon those given by \ac{sbs}.
+
+\subsection{Local Search}\label{app:other-local}
+
+Of the three algorithms implemented to solve \prob, \acl{lbs} is the weakest. \ac{lbs} is not able to escape locally-optimal solutions, so it fails to find the optimum (or close to the optimum) as often as needed. Perhaps another local search algorithm can give better performance than \ac{lbs}. Specifically, \ac{sa}, which \textit{can} escape local optima, is likely to outperform \ac{lbs}. \ac{sa} is a well-known local search technique, but it avoids many of the pitfalls of other local techniques while still reaching the globally-optimal solution in many cases \cite{Kirkpatrick1983, Talbi2009}. With a slow enough cooling schedule, \ac{sa} will certainly improve on \ac{lbs}'s \probs results -- and it might also improve on the deterministic and stochastic approach results, too.
+
+Of course, other local search algorithms might prove better for our desired problem instances (again, see \cite{Wolpert1997}'s discussion of the ``no free lunch'' theorem). Tabu search is one other local search technique that might work well because it too can escape local optima \cite{Glover1986}. Further research is required to determine the effectiveness of Tabu search in solving \prob.
+
+\subsection{Insect-Inspired Search}\label{app:other-insect}
+
+In this research, we implemented one deterministic search algorithm, one stochastic search algorithm, and one local search algorithm. However, other search techniques are available. Specifically, the field of insect-inspired search algorithms includes numerous techniques that might apply to \prob. One such technique is \ac{aco}, a search algorithm that utilizes a collection of ants, each of which returns a solution candidate at every time step \cite{Moyson1988, handout:ants}. As discussed in Appendix \ref{app:other-stochastic}, the huge number of potential paths through a $d\times d$ grid can be represented by a large population of solution candidates. Like in a \ac{ga} approach, an \ac{aco} approach can construct a large population and guide the search (that is, the ants) towards an optimal solution. The pheromones, of course, must be finely-tuned with a hyperparameter evaluation scheme to ensure the \ac{aco} algorithm can reach the best possible solution \cite{handout:ants}.
+
+\section{Implemented Code}\label{app:code}
+
+We now present a representation of the input file, \texttt{data.py}. In general, this file should contain all problem instances one wishes to test, but the reader should have an idea of the structure of each problem instance by examining this code.
+
+\lstinputlisting[language=Python]{code/data.txt}
+
+\onecolumn
+
+In the remainder of this appendix, the reader may view information about the entire Python codebase. Much of the \texttt{MaxCoverageMinRisk} class functions serve only to output data or to compute various metrics for the deterministic, stochastic, and local search techniques. Still, the reader may find the different sections in the locations given in Table \ref{tab:code-details}.
+
+\begin{table}[h!]
+\centering
+\caption{Line Number Ranges for Various Code Sections}
+\label{tab:code-details}
+\begin{tabular}{|l|l|}
+\hline
+\textbf{Section} & \textbf{Line Numbers}  \\
+\hline
+Initialization       & 8--13, 58--74      \\
+Visual output        & 15--56             \\
+Helper tools         & 76--165            \\
+Risk evaluation      & 167--195           \\
+State evaluation     & 197--256           \\
+Deterministic search & 300--411           \\
+Stochastic search    & 258--284, 413--521 \\
+Local search         & 286--298, 523--631 \\
+Testing              & 633--666           \\
+\hline
+\end{tabular}
+\end{table}
+
+Although the standard header format is not present in the code itself, Table \ref{tab:header} presents the contents of such a header.
+
+\begin{table}[h!]
+\centering
+\caption{Standard Header Details for \texttt{MaxCoverageMinRisk}}
+\label{tab:header}
+\begin{tabular}{|l|l|}
+\hline
+\textbf{Header Item}     & \textbf{Details}                                                                                           \\
+\hline
+    Title                & Maximum Coverage -- Minimum Risk                                                                           \\
+    Date                 & 7 June 2019                                                                                                \\
+    Version              & 1.1                                                                                                        \\
+    Project              & CSCE 686 Multi-Domain Optimization                                                                         \\
+    Author               & 2d Lt David Crow                                                                                           \\
+    Problem domain       & \ac{npc}$^+$                                                                                               \\
+    Design process       & Problem domain/algorithm domain design process                                                             \\
+    Abstract data types  & Lists (including \ac{2d} lists), sets, classes, primitives                                                 \\
+    Algorithm            & A$^*$, \acl{sbs}, \acl{sbs}                                                                                \\
+    Algorithm complexity & $O(n^2\times P(d^2,b))$ for each algorithm                                                                 \\
+    Operating system     & macOS Mojave, Version 10.14.4                                                                              \\
+    Language             & Python 3.7.3                                                                                               \\
+    Globals              & None                                                                                                       \\
+    Parameters           & input: $n$, $b$, $L$, $r$, $d$; output: $p'$, $v=value(p')$                                                \\
+    Local variables      & \texttt{frontier}, \texttt{explored}, \texttt{world}, \texttt{paths}, \texttt{value}                       \\
+    Modules              & \texttt{main}, \texttt{data}                                                                               \\
+    Imports              & \texttt{numpy}, \texttt{copy.deepcopy}, \texttt{itertools.combinations}, \texttt{data.problems}            \\
+    Files                & \texttt{main.py}, \texttt{data.py}                                                                         \\
+    History/revisions    & 1.0: individual algorithms developed over two weeks in Sp2019; 1.1: combined algorithms into one project   \\
+\hline
+\end{tabular}
+\end{table}
+
+The full \texttt{main.py}, which contains all algorithms and overhead, is shown below.
+
+\lstinputlisting[language=Python]{code/main.txt}
+
+\end{document}

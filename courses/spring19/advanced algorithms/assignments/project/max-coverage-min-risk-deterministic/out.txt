@@ -1,0 +1,265 @@
+PROBLEM INSTANCE 1:	
+	size : 4
+	drones : 2
+	battery : 3
+	radius : 1.2
+	locations : [(0.3, 1.8), (3.1, 2.7)]
+
+World
+-----
+x	-	-	-	
+x	-	-	-	
+x	-	-	x	
+-	-	x	x	
+
+Paths
+-----
+0	0	0	0	|	1	0	0	0	
+0	0	0	0	|	2	0	0	0	
+0	0	0	3	|	3	0	0	0	
+0	0	1	2	|	0	0	0	0	
+
+Value
+-----
+Total ratio   : 0.375
+Edge ratio    : 0.5
+Other repeats : 0
+Same repeats  : 0
+Maximum risk  : 0.43836291913214986
+State value   : 0.16831854043392508
+
+
+PROBLEM INSTANCE 2:	
+	size : 2
+	drones : 1
+	battery : 3
+	radius : 0.3
+	locations : [(0.3, 1.8)]
+
+World
+-----
+-	x	
+x	x	
+
+Paths
+-----
+0	1	
+2	3	
+
+Value
+-----
+Total ratio   : 0.75
+Edge ratio    : 0.25
+Other repeats : 0
+Same repeats  : 0
+Maximum risk  : 0.0
+State value   : 0.7000000000000001
+
+
+PROBLEM INSTANCE 3:	
+	size : 2
+	drones : 1
+	battery : 4
+	radius : 3
+	locations : [(1, 1)]
+
+World
+-----
+x	x	
+x	x	
+
+Paths
+-----
+2	1	
+3	4	
+
+Value
+-----
+Total ratio   : 1.0
+Edge ratio    : 0.0
+Other repeats : 0
+Same repeats  : 0
+Maximum risk  : 0.972972972972973
+State value   : 0.4135135135135135
+
+
+PROBLEM INSTANCE 4:	
+	size : 3
+	drones : 2
+	battery : 7
+	radius : 1.1
+	locations : [(0.5, 0.9), (0.6, 1.1)]
+
+World
+-----
+x	x	x	
+x	x	x	
+x	x	x	
+
+Paths
+-----
+4	3	2	|	0	0	0	
+6	5	1	|	0	0	0	
+7	0	0	|	0	2	1	
+
+Value
+-----
+Total ratio   : 1.0
+Edge ratio    : 0.0
+Other repeats : 0
+Same repeats  : 0
+Maximum risk  : 0.9467954990215264
+State value   : 0.42660225048923683
+
+
+PROBLEM INSTANCE 5:	
+	size : 3
+	drones : 3
+	battery : 5
+	radius : 0.5
+	locations : [(0.5, 1), (1.5, 1), (2.5, 1)]
+
+World
+-----
+x	x	x	
+x	x	x	
+x	x	x	
+
+Paths
+-----
+0	1	0	|	1	0	0	|	0	0	1	
+3	2	0	|	0	0	0	|	0	0	2	
+4	5	0	|	0	0	0	|	0	0	3	
+
+Value
+-----
+Total ratio   : 1.0
+Edge ratio    : 0.0
+Other repeats : 0
+Same repeats  : 0
+Maximum risk  : 0.3666666666666667
+State value   : 0.7166666666666667
+
+
+PROBLEM INSTANCE 6:	
+	size : 3
+	drones : 4
+	battery : 2
+	radius : 0.3
+	locations : [(0.3, 1.8), (1.1, 2.9), (2.7, 2.7), (3.1, 2.7)]
+
+World
+-----
+x	x	x	
+x	-	x	
+x	x	x	
+
+Paths
+-----
+2	1	0	|	0	0	2	|	0	0	0	|	0	0	0	
+0	0	0	|	0	0	1	|	2	0	0	|	0	0	0	
+0	0	0	|	0	0	0	|	1	0	0	|	0	2	1	
+
+Value
+-----
+Total ratio   : 0.8888888888888888
+Edge ratio    : 0.0
+Other repeats : 0
+Same repeats  : 0
+Maximum risk  : 0.6507352941176471
+State value   : 0.4746323529411764
+
+
+PROBLEM INSTANCE 7:	
+	size : 4
+	drones : 2
+	battery : 7
+	radius : 3
+	locations : [(-1, -1), (3.5, 2)]
+
+World
+-----
+-	x	x	x	
+x	x	x	x	
+x	x	x	x	
+x	x	x	-	
+
+Paths
+-----
+0	1	0	0	|	0	0	1	2	
+0	2	3	0	|	7	0	0	3	
+6	0	4	0	|	0	6	0	4	
+7	5	0	0	|	0	0	5	0	
+
+Value
+-----
+Total ratio   : 0.875
+Edge ratio    : 0.16666666666666663
+Other repeats : 0
+Same repeats  : 0
+Maximum risk  : 1.253861003861004
+State value   : 0.17723616473616466
+
+
+PROBLEM INSTANCE 8:	
+	size : 4
+	drones : 4
+	battery : 3
+	radius : 0.6
+	locations : [(0.2, 0.1), (0.3, 0.7), (0.8, 3.4), (3.3, -0.2)]
+
+World
+-----
+x	x	x	x	
+-	x	x	x	
+-	-	x	x	
+-	x	x	x	
+
+Paths
+-----
+0	0	0	0	|	3	0	1	0	|	0	0	0	0	|	0	3	0	1	
+0	0	0	0	|	0	2	0	0	|	0	0	0	1	|	0	0	2	0	
+0	0	0	1	|	0	0	0	0	|	0	0	2	0	|	0	0	0	0	
+0	0	3	2	|	0	0	0	0	|	0	3	0	0	|	0	0	0	0	
+
+Value
+-----
+Total ratio   : 0.75
+Edge ratio    : 0.25
+Other repeats : 0
+Same repeats  : 0
+Maximum risk  : 0.35655737704918034
+State value   : 0.5217213114754099
+
+
+PROBLEM INSTANCE 9:	
+	size : 5
+	drones : 3
+	battery : 3
+	radius : 2.1
+	locations : [(1, 1), (3, 1), (4, 1), (4.8, 5.1)]
+
+World
+-----
+x	x	x	x	x	
+x	-	-	-	-	
+x	-	-	-	-	
+x	-	-	-	-	
+x	-	-	-	-	
+
+Paths
+-----
+2	1	0	0	0	|	0	0	0	0	0	|	0	0	3	2	1	
+3	0	0	0	0	|	0	0	0	0	0	|	0	0	0	0	0	
+0	0	0	0	0	|	1	0	0	0	0	|	0	0	0	0	0	
+0	0	0	0	0	|	2	0	0	0	0	|	0	0	0	0	0	
+0	0	0	0	0	|	3	0	0	0	0	|	0	0	0	0	0	
+
+Value
+-----
+Total ratio   : 0.36
+Edge ratio    : 0.4375
+Other repeats : 0
+Same repeats  : 0
+Maximum risk  : 1.1881855030996662
+State value   : -0.22634275154983308

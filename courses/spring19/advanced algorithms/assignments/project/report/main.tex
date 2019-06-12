@@ -1,0 +1,116 @@
+\documentclass[journal]{IEEEtran}
+
+\usepackage[printonlyused]{acronym}
+\usepackage[bottom]{footmisc}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{cite}
+\usepackage{color}
+\usepackage{etoolbox}
+\usepackage{footmisc}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{tabularx}
+\usepackage{subfiles}
+
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+
+\graphicspath{{figures/}}
+
+\definecolor{offwhite}{rgb}{0.96, 0.96, 0.96}
+\definecolor{green}{rgb}{0,0.6,0}
+\definecolor{purple}{rgb}{0.58,0,0.82}
+
+\apptocmd{\sloppy}{\hbadness 10000\relax}{}{}
+
+\lstset{
+    backgroundcolor=\color{offwhite},
+    commentstyle=\color{green},
+    keywordstyle=\color{blue},
+    stringstyle=\color{purple},
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2,
+    basicstyle=\footnotesize,
+    numbers=left
+}
+
+\title{Maximizing Surveillance and Minimizing Risk of Detection for Unmanned Aerial Vehicles}
+\author{David R Crow, 2d Lt, USAF}
+
+\begin{document}
+\maketitle
+
+\subfile{sections/0-Abstract}
+
+\begin{IEEEkeywords}
+    algorithm design, multi-domain optimization, guided search, software analysis
+\end{IEEEkeywords}
+
+\tableofcontents
+
+\addcontentsline{toc}{section}{List of Acronyms}
+\section*{List of Acronyms}
+\begin{acronym}[PD/AD]
+    \acro{2d}[2D]{two-dimensional}
+    \acro{aco}[ACO]{ant colony optimization}
+    \acro{ga}[GA]{genetic algorithm}
+    \acro{ida*}[IDA$^*$]{iterative deepening A$^*$}
+    \acro{ide}[IDE]{integrated development environment}
+    \acro{lbs}[LBS]{local beam search}
+    \acro{mcp}[MCP]{maximum coverage problem}
+    \acro{mrp}[MRP]{minimum risk problem}
+    \acro{np}[NP]{nondeterministic polynomial time}
+    \acro{npc}[NP-C]{nondeterministic polynomial time-complete}
+    \acro{pdad}[PD/AD]{problem domain/algorithm domain}
+    \acro{sa}[SA]{simulated annealing}
+    \acro{sbs}[SBS]{stochastic beam search}
+    \acro{uav}[UAV]{unmanned aerial vehicle}
+    \acro{usaf}[USAF]{United States Air Force}
+\end{acronym}
+
+\def\prob{MCP/MRP}
+\def\probs{MCP/MRP }
+
+\section{Introduction}\label{sec:introduction}
+\subfile{sections/1-Introduction}
+
+\section{Problem Domain}\label{sec:domain}
+\subfile{sections/2-Problem-Domain}
+
+\section{Deterministic Search}\label{sec:deterministic}
+\subfile{sections/3-Deterministic-Search}
+
+\section{Stochastic Search}\label{sec:stochastic}
+\subfile{sections/4-Stochastic-Search}
+
+\section{Local Search}\label{sec:local}
+\subfile{sections/5-Local-Search}
+
+\section{Experimental Design \& Evaluation}\label{sec:experiment}
+\subfile{sections/6-Experiment}
+
+\section{Conclusions}\label{sec:conclusions}
+\subfile{sections/7-Conclusions}
+
+\bibliographystyle{ieeetr}
+\bibliography{references/references}
+
+\appendices
+\subfile{sections/8-Appendix}
+
+\end{document}

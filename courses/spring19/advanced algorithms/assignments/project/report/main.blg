@@ -1,0 +1,59 @@
+This is BibTeX, Version 0.99d (TeX Live 2019)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: main.aux
+The style file: ieeetr.bst
+Database file #1: references/references.bib
+I was expecting a `,' or a `}'---line 28 of file references/references.bib
+ :     year = "
+ :             2019",
+I'm skipping whatever remains of this entry
+Warning--empty journal in Cobham1965
+Warning--empty note in handout:lecture2
+Warning--empty booktitle in Young2018
+Warning--empty note in handout:heuristics
+Warning--empty booktitle in Hochbaum1996
+Warning--empty booktitle in Moore1959
+Warning--empty note in handout:global-search
+Warning--empty note in handout:ants
+You've used 43 entries,
+            1876 wiz_defined-function locations,
+            713 strings with 9401 characters,
+and the built_in function-call counts, 8219 in all, are:
+= -- 802
+> -- 274
+< -- 0
++ -- 115
+- -- 72
+* -- 484
+:= -- 1171
+add.period$ -- 66
+call.type$ -- 43
+change.case$ -- 36
+chr.to.int$ -- 0
+cite$ -- 51
+duplicate$ -- 402
+empty$ -- 909
+format.name$ -- 72
+if$ -- 2041
+int.to.chr$ -- 0
+int.to.str$ -- 43
+missing$ -- 38
+newline$ -- 156
+num.names$ -- 43
+pop$ -- 206
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 237
+stack$ -- 0
+substring$ -- 325
+swap$ -- 112
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 8
+while$ -- 75
+width$ -- 45
+write$ -- 392
+(There was 1 error message)

@@ -1,0 +1,71 @@
+13-08-33
+takeoff points  : 39-458
+cruise points	: -
+turn points	: -
+takeoff		: 419
+cruise		: 0
+turn		: 0
+total		: 419
+
+13-13-53
+takeoff points  : 36-391
+cruise points	: 392-959
+turn points	: -
+takeoff		: 356, 775
+cruise		: 568
+turn		: 0
+total		: 1343
+
+13-18-55
+takeoff points  : 2-379
+cruise points	: 380-892
+turn points	: 893-1114
+takeoff		: 378, 1153
+cruise		: 513, 1081
+turn		: 222
+total		: 2456
+
+13-25-03
+takeoff points  : 2-366
+cruise points	: -
+turn points	: 367-732
+takeoff		: 365, 1518
+cruise		: 1081
+turn		: 367, 589
+total		: 3188
+
+13-30-35
+takeoff points  : -
+cruise points	: 2-511
+turn points	: 512-817
+takeoff		: 1518
+cruise		: 510, 1591
+turn		: 306, 895
+total		: 4004
+
+13-35-05
+takeoff points  : 2-84
+cruise points	: 85-221
+turn points	: 222-641
+takeoff		: 83, 1601
+cruise		: 137, 1728
+turn		: 420, 1315
+total		: 4644
+
+13-41-34
+takeoff points  : -
+cruise points	: -
+turn points	: 2-193
+takeoff		: 1601
+cruise		: 1728
+turn		: 192, 1507
+total		: 4836
+
+13-44-54
+takeoff points  : -
+cruise points	: -
+turn points	: 2-119
+takeoff		: 1601
+cruise		: 1728
+turn		: 118, 1625
+total		: 4954

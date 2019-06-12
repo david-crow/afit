@@ -1,0 +1,50 @@
+\documentclass[journal]{IEEEtran}
+\usepackage[printonlyused]{acronym}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{subfiles}
+
+\graphicspath{{../figures/}}
+
+\title{Predicting Aircraft Maneuvers to Evaluate the Reliability of Non-Expert Human Observers}
+\author{David R Crow, 2d Lt, USAF}
+
+% acronyms
+\newacro{afrl}[AFRL]{Air Force Research Lab}
+\newacro{avas}[AVAS]{Avionics Vulnerability Assessment System}
+\newacro{cv}[CV]{cross-validation}
+\newacro{knn}[KNN]{$k$-nearest neighbors}
+\newacro{ml}[ML]{machine learning}
+\newacro{qda}[QDA]{quadratic discriminant analysis}
+\newacro{svc}[SVC]{support vector classifier}
+\newacro{usaf}[USAF]{United States Air Force}
+\newacro{3d}[3D]{three-dimensional}
+
+\begin{document}
+\maketitle
+
+\subfile{sections/0-Abstract}
+
+\begin{IEEEkeywords}
+classification, aircraft flight dynamics, \newline human reliability, supervised learning
+\end{IEEEkeywords}
+
+\section{Introduction}\label{sec:intro}
+\subfile{sections/1-Introduction}
+
+\section{Related Work}\label{sec:related}
+\subfile{sections/2-Related-Work}
+
+\section{Methodology}\label{sec:method}
+\subfile{sections/3-Methodology}
+
+\section{Results \& Discussion}\label{sec:results}
+\subfile{sections/4-Results-Discussion}
+
+\section{Conclusions \& Future Work}\label{sec:conclusion}
+\subfile{sections/5-Conclusions}
+
+\bibliographystyle{ieeetr}
+\bibliography{../references/references}
+
+\end{document}

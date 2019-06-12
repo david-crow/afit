@@ -1,0 +1,19 @@
+\documentclass[../main.tex]{subfiles}
+ 
+\begin{document}
+
+% identify and discuss references found, indicate that the paper is well informed, show where to find more info, see what prior work I rely on, see why the research is necessary, ensure prior work is organized by themes/messages
+
+The primary reference material for this research is \cite{James2013}. Without it (and its accompanying resources), we likely would not have developed a sufficient understanding of relevant \ac{ml} techniques. Specifically, \cite{James2013} details dataset partitioning, the best subset and ridge feature selection and regularization methods, $k$-fold \ac{cv}, binary classification, \ac{knn} classification, classification foests, \acp{svc}, and the evaluation of classifier performance.
+
+When \cite{James2013} proves insufficient, we reference \cite{Bishop2006}. This resource describes classification in greater detail, and it also explains several classification methods not covered in \cite{James2013}. Additionally, \cite{Bishop2006} discusses multiple sampling methods not detailed elsewhere. Although we mostly utilize Python libraries for sampling, this reference provides insight into why other methods might be more appropriate.
+
+The work performed in \cite{Blanks2017} is closely-aligned with our own research. The researchers utilize an open-source dataset consisting of worldwide flight data. After collecting flight characteristics from the dataset via robust feature engineering, they predict the aircraft's type. Clearly, this research is in the same domain as our own, and we thus refer to it when evaluating the models and reporting the performance. Note that the researchers are only concerned with objective labels (i.e., aircraft type), instead of the subjective labels predicted in this research.
+
+Reference \cite{Rodin1992} is also related to our research. Like us, the researchers predict aircraft maneuvers, but they fit an artificial neural networks model to a partially-unknown dataset. However, the class labels -- although more complex than our own -- are already given by expert systems; there is little subjectivity or doubt in the labels (for those observations that actually have labels). This resource does not address the correctness of the labels themselves.
+
+% summary/transition paragraph
+
+This research is necessary because previous research does not evaluate questionable class labels. In other words, it does not evaluate the reliability of humans in characterizing aircraft flight maneuvers. The following section details the dataset and its components: the generation process, the features, and the class balance. Additionally, it explores the various features and hypothesize about the best and worst predictors of airplane maneuvers.
+
+\end{document}

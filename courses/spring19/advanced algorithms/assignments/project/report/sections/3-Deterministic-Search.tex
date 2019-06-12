@@ -1,0 +1,242 @@
+\documentclass[../main.tex]{subfiles}
+ 
+\begin{document}
+
+According to \cite{wikipedia:determinism}, ``a deterministic algorithm is an algorithm which, given a particular input, will always produce the same output, with the underlying machine always passing through the same sequence of states." In our first attempt at solving \prob, we employ a well-known determistic search algorithm: A$^*$ \cite{Hart1968}. A$^*$ is one of the premier search algorithms in computer science because it is easy to understand and to implement. Additionally, when the user's heuristic is admissible (for a tree search) or consistent (for a graph search), A$^*$ is guaranteed to return the optimal solution \cite{handout:heuristics, Russell2009, Pearl1984}. This is a positive for the \ac{usaf}, of course, because it means that A$^*$ will always give the correct solution to \probs -- assuming we can devise a suitable heuristic.
+
+Of course, we must correctly utilize and document the \ac{pdad} process to develop an effective algorithm. Specifically, we must define and refine the standard search constructs (see Table \ref{tab:search-constructs}) from the algorithm domain (see Section \ref{sec:domain}) to our exact program implementation \cite{handout:lecture2}.
+
+\begin{table}
+\caption{The Standard Elements in Search Algorithm Design}
+\centering
+\label{tab:search-constructs}
+\begin{tabularx}{\columnwidth}{|l|X|}
+\hline
+\textbf{Element}     & \textbf{Description} \\
+\hline
+Set of candidates    & A set of possible next-state candidates (implicit or explicit) \\
+Next-state generator & Generates the next-state candidates from a parent state candidate \\
+Feasibility          & Determines if various next-state candidates meet the feasibility criteria or constraint \\
+Selection            & A function to select/extract/delete one or more of the feasible next state candidates \\
+Solution             & A function to determine if the current-state candidate is an acceptable solution \\
+Objective            & A function that reflects the selected optimization criteria \\
+Heuristics           & A function that, as appropriate, contains algorithmic strategies usually based upon a reduced set-of-candidates via insight from the problem domain's structure and the objective function \\
+\hline
+\end{tabularx}
+\end{table}
+
+The remainder of this section discusses Steps 2--6 for the deterministic approach to \prob. Details for these steps can be found in Sections \ref{det:specification}, \ref{det:refinement}, \ref{det:pseudocode}, and \ref{det:implementation}.
+
+\subsection{Design Specification}\label{det:specification}
+
+Step 2 requires that we select an algorithm domain specification strategy. In essence, this step defines the standard search constructs from a high vantage point. We do this as follows:
+
+\begin{itemize}
+    \item Set of candidates
+    \begin{itemize}
+        \item A$^*$ stores its set of candidates in an \texttt{open} list
+        \item To reduce the search space, we also store \textit{visited} candidates in a \texttt{closed} list
+    \end{itemize}
+    
+    \item Next-state generator
+    \begin{itemize}
+        \item Given an empty world of size $d\times d$, we create $P(4d-4,n)$ initial next-states, one for each starting configuration of $n$ \acp{uav}
+        \item For a given world, the set of next-states includes all copies of the world with one additional movement of one \ac{uav}
+        \begin{itemize}
+            \item \textit{Constraint}: the \ac{uav}'s path length $p$ must be less than $b$
+            \item \textit{Constraint}: the \ac{uav} cannot move to a non-edge square if $p=b-1$
+        \end{itemize}
+    
+    \end{itemize}
+    
+    \item Feasibility
+    \begin{itemize}
+        \item For a given state $S$, determine whether, for every \ac{uav} $u\in S$, $u$ is on an edge square and either \textit{a)} remaining\_battery($u$) $=0$ or \textit{b)} every square $s\in S$ is covered
+        \item Determine whether $S$ meets constraints defined in the problem domain
+    \end{itemize}
+
+    \item Selection
+    \begin{itemize}
+        \item A$^*$ always selects the candidate with the lowest $f(S)=g(S)+h(S)$, where $S$ is the state, $g(S)$ is the cost to reach $S$ from the start, and $h(S)$ is the estimate of the remaining cost to the goal
+        \item Delete those candidates for which $\exists u\in$ \acp{uav} such that remaining\_battery($u$) $=0$ and $u$ is not on an edge square
+    \end{itemize}
+
+    \item Solution
+    \begin{itemize}
+        \item If \textit{feasibility} constraints are met and $V_S$ is minimized, return $S$
+    \end{itemize}
+
+    \item Objective
+    \begin{itemize}
+        \item Minimize $f(S)$ using \textit{heuristics} (defined in Section \ref{det:refinement}) while meeting the \textit{feasibility} constraints
+    \end{itemize}
+\end{itemize}
+
+\subsection{Design Refinement}\label{det:refinement}
+
+In Steps 3 and 4 of the \ac{pdad} process, one must evolve a general solution design specification and instantiate the problem design. This section includes a discussion of the required abstract data types and a refinement of the standard search constructs detailed in Section \ref{det:specification}.
+
+Because the end-goal is functional Python code, we must specify the data structures used to solve \prob. As stated previously, A$^*$ requires \texttt{open} and \texttt{closed} sets, so we use simple Python lists to store all new and previously-visited states. For this research, lists are effecient and effective, and we feel no need to reinvent the wheel. At this somewhat-abstract level, there does not seem to be a need for other complex data structures -- only primitive data types.
+
+We now refine our design specification so as to bridge the gap between the theoretical algorithm domain and the pseudocode. The refined standard search constructs are as follows:
+
+\begin{itemize}
+    \item Set of candidates
+    \begin{itemize}
+        \item open $=\emptyset$
+        \item closed $=\emptyset$
+    \end{itemize}
+    
+    \item Next-state generator
+    \begin{itemize}
+        \item If $S=\emptyset$, $\forall c\in$ start\_configurations, $S=S\cup \{c\}$
+        \item Otherwise, $\forall u\in$ \acp{uav} and $\forall a\in$ adjacent\_squares$_u$, $S=S\cup \{u\cup \{u_a\}\}$
+        \begin{itemize}
+            \item \textit{Constraint}: $|u|\leq b$
+            \item \textit{Constraint}: If $p=b-1$, let adjacent\_squares$_u=$ adjacent\_edge\_squares$_u$
+        \end{itemize}
+    \end{itemize}
+    
+    \item Feasibility
+    \begin{itemize}
+        \item Feasible if, $\forall u\in$ \acp{uav}, edge(location($u$)) $=1$ and one of the following holds:
+        \begin{itemize} 
+            \item remaining\_battery($u$) $=0$
+            \item $\forall s\in S$, covered($s$) $=1$
+        \end{itemize}
+
+        \item Additionally, each of these problem domain constraints must hold:
+        \begin{itemize}
+            \item $|P|=n$; every \ac{uav} must have a path (even if the path is empty)
+            \item $\forall p\in P, |p|\leq b$; no \ac{uav} can fly more than $b$ unit squares
+            \item $\forall p\in P, \ edge(first(p)) = 1, \ edge(last(p)) = 1$; every \ac{uav} must start and end on an edge square
+            \item $\forall Q, \ Q\neq P \Rightarrow V_Q<V_P$; the value of the path set $P$ must be maximal
+        \end{itemize}
+    \end{itemize}
+
+    \item Selection
+    \begin{itemize}
+        \item At each time $t$, select $\argmin_S f(S)$
+        \item Delete $S$ if $\exists u\in$ \acp{uav} s.t. remaining\_battery($u$) $=0$ and edge(location($u$)) $\neq 1$
+    \end{itemize}
+
+    \item Solution
+    \begin{itemize}
+        \item Return \[
+            \begin{cases}
+                S & \text{if feasibility(}S\text{)}=1 \text{ and }V_s\text{ is maximized} \\
+                \emptyset & \text{otherwise} \\
+            \end{cases}
+        \]
+    \end{itemize}
+
+    \item Objective
+    \begin{itemize}
+        \item Maximize $f(S)$ using \textit{heuristics} while meeting the \textit{feasibility} constraints
+        \item As defined in the problem domain, $f(S)=v$, the overall state value, which concerns the following: 
+        \begin{itemize}
+            \item Maximized $\sum_{i=1}^{n}{squares\_covered_i}$
+            \item Minimized $\sum_{i=1}^{n}{risk_i}$
+        \end{itemize}
+    \end{itemize}
+
+    \item Heuristics
+    \begin{itemize}
+        \item For a given state $S$, $h(S)$ concerns the following:
+        \begin{itemize}
+            \item $total\_ratio=squares\_covered\div d^2$
+            \item $edge\_ratio=edges\_covered\div (4d-4)$
+            \item $same\_repeats$, number of times a \ac{uav} visits a square it has already visited
+            \item $other\_repeats$, number of times a \ac{uav} visits a square another \ac{uav} has already visited
+            \item $risk=total\_risk\div path\_length$
+        \end{itemize}
+        
+        \item $g(S)=\sum_u b\ -$ remaining\_battery$_u$
+    \end{itemize}
+\end{itemize}
+
+Note that the heuristic is \textit{not} monotonic. However, careful tuning of the weights over multiple iterations generated this heuristic. All other heuristic weights tested performed poorly when compared to this one. Additionally, although monotonicity is desirable, we note that the size of the search space for \probs guarantees that a deterministic approach is likely infeasible for large problem instances. See Sections \ref{sec:experiment} and \ref{sec:conclusions} for further discussion.
+
+\subsection{Pseudocode}\label{det:pseudocode}
+
+Without an intermediate step between the algorithm design and the actual implementation, one can easily fail to correctly implement one's solution. Pseudocode, the \ac{pdad} process's Step 5 requirement, serves as this intermediary. Because a large portion of our implemented code is used for overhead and for evaluation, the pseudocode given here describes only the essential search function. In other words, we do not give pseudocode for extraneous implementation details (e.g., library imports, output functions, initialization steps); these details can be found in Appendix \ref{app:code}. 
+
+A$^*$ requires a \texttt{frontier} (\texttt{open}) set and an \texttt{explored} (\texttt{closed}) set. In our actual implementation, we use Python lists for these sets. Each \texttt{world} instance (that is, the \ac{2d} $d\times d$ grid that contains the sensors and the \ac{uav} paths) is contained within a \ac{2d} Python list; the path sets are also stored as \ac{2d} lists. All other data structures are one of the primitive Python types: \texttt{string}, \texttt{integer}, \texttt{float}, or \texttt{boolean} \cite{python:primitives}.
+
+Pseudocode for the deterministic approach -- with the standard search elements labeled with comments -- is shown in Algorithm \ref{fig:det-pseudocode}.
+
+\begin{algorithm}
+\caption{A Deterministic Approach for \prob}
+\label{fig:det-pseudocode}
+    \begin{algorithmic}[1]
+        \REQUIRE $w$, an empty $d\times d$ grid
+        \REQUIRE $p$, a set of $n$ empty paths
+        \ENSURE $p'$, a set of $n$ paths
+        \ENSURE $v$, the value of $p'$ in $w$
+
+        \STATE \textcolor{red}{// set of candidates}
+        \STATE frontier $=\emptyset$
+        \STATE explored $=\emptyset$
+
+        \FOR{each starting configuration $s$ of $n$ \acp{uav} in $w$}
+            \STATE new\_world $=w$
+            \STATE new\_paths $=p$
+
+            \FOR{all $u\in$ \acp{uav}}
+                \STATE new\_world[location($u$)] $=1$
+                \STATE new\_paths $=$ new\_paths$_u$ $\cup$ \{location($u$)\}
+            \ENDFOR
+
+            \STATE $v=$ value(new\_world, new\_paths)
+            \STATE frontier $=$ frontier $\cup$ \{$v$, new\_world, new\_paths\}
+        \ENDFOR
+
+        \WHILE{$|$frontier$|\neq 0$}
+            \STATE \textcolor{red}{// heuristics}
+            \STATE frontier $=$ frontier.sort() \COMMENT{sort on $v$}
+            \STATE \textcolor{red}{// selection}
+            \STATE $v,w,p=$ frontier.pop\_front()
+            \STATE explored $=$ frontier $\cup\ \{w\}$
+
+            \STATE \textcolor{red}{// objective}
+            \IF{$\forall u\in$ \acp{uav}, edge(location($u$)) $=1$ \AND every square is covered or every \ac{uav}'s battery is depleted}
+                \STATE \textcolor{red}{// solution}
+                \RETURN $(w,p)$
+            \ENDIF
+
+            \STATE \textcolor{red}{// feasibility}
+            \FOR{all $u\in$ \acp{uav}}
+                \IF{$u$'s battery has $1$ unit remaining}
+                    \STATE neighbors $=$ adjacent\_edges($u$)
+                \ELSE
+                    \STATE neighbors $=$ adjacent($u$)
+                \ENDIF
+
+                \FOR{all $q\in$ neighbors}
+                    \STATE $w'=w$
+                    \STATE $p'=p$
+                    \STATE $w'$[location($q$)] $=1$
+                    \STATE $p'_u=p'_u\ \cup$ location($q$)
+                    \STATE state $=$ \{value($w',p'$), $w'$, $p'$\}
+                    \IF{state $\notin$ frontier \AND state $\notin$ explored}
+                        \STATE \textcolor{red}{// next-state generator}
+                        \STATE frontier $=$ frontier $\cup$ \{state\}
+                    \ENDIF
+                \ENDFOR
+            \ENDFOR
+        \ENDWHILE
+        \RETURN ``No solution found!"
+    \end{algorithmic}
+\end{algorithm}
+
+\subsection{Implementation}\label{det:implementation}
+
+Step 6 of the \ac{pdad} process requires a mapping from Step 5's pseudocode to an actual, executable implementation. We decided to implement the deterministic approach in Python because it an easy-to-write language, it's moderately-fast, and it has a large, well-documented set of tools. PyCharm Professional 2019.1 served as the \ac{ide} \cite{python:pycharm}. All code was written on a 2017 MacBook Pro \cite{apple:macbook}. Because we do not test exceptionally difficult \probs instances in Section \ref{sec:experiment} (because \probs is far too difficult to do so), neither the computer nor the \ac{ide} failed to perform.
+
+The code was written using good software development principles. We draw upon our undergraduate- and graduate-level computer science courses in software engineering and upon references \cite{Sommerville2010, Gamma1994, Gomaa2011} for all questions concerning effective software engineering principles.
+
+We can analyze the complexity of the A$^*$ search algorithm by referring to Algorithm \ref{fig:det-pseudocode}. The \texttt{for-loop} on line 4 performs $P(4d-4, n)$ iterations because there are $P(4d-4,n)$ ways to initialize $n$ \acp{uav} on the edges of a $d\times d$ grid \cite{wikipedia:permutation}. The inner loop on line 7 iterates over $n$ \acp{uav}, so the loop on line 4 is bounded by $O(n\times P(4d-4,n))$. Because there are $n\times P(d^2,b)$ possible paths for the $n$ \acp{uav}, and because each location in the world has up to eight adjacent squares, the \texttt{while-loop} on line 14 is bounded by $O(8n^2\times P(d^2,b))$. Overall, then, the A$^*$ algorithm \textit{for \prob} has a complexity of $O(n\times P(4d-4,n)+8n^2\times P(d^2,b))=O(n^2\times P(d^2,b))$. Clearly, this is an exceedingly difficult problem.
+
+The reader can view the full software implementation in Appendix \ref{app:code}.
+
+\end{document}

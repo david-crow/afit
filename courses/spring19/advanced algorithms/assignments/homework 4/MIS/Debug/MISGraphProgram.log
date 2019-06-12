@@ -1,0 +1,10 @@
+﻿  graphprogram.cpp
+c:\users\user\documents\afit\spring2019\algorithms 2\homework\mis\src\graphprogram.cpp(945): warning C4018: '<': signed/unsigned mismatch
+c:\users\user\documents\afit\spring2019\algorithms 2\homework\mis\src\graphprogram.cpp(1014): warning C4244: '=': conversion from 'double' to 'short', possible loss of data
+c:\users\user\documents\afit\spring2019\algorithms 2\homework\mis\src\graphprogram.cpp(1034): warning C4018: '<': signed/unsigned mismatch
+c:\users\user\documents\afit\spring2019\algorithms 2\homework\mis\src\graphprogram.cpp(1047): warning C4018: '<': signed/unsigned mismatch
+c:\users\user\documents\afit\spring2019\algorithms 2\homework\mis\src\graphprogram.cpp(1054): warning C4018: '<': signed/unsigned mismatch
+c:\users\user\documents\afit\spring2019\algorithms 2\homework\mis\src\graphprogram.cpp(2266): warning C4244: 'argument': conversion from 'jchar' to 'char', possible loss of data
+c:\users\user\documents\afit\spring2019\algorithms 2\homework\mis\src\graphprogram.cpp(2292): warning C4244: 'argument': conversion from 'jchar' to 'char', possible loss of data
+     Creating library C:\Users\user\Documents\AFIT\Spring2019\Algorithms 2\Homework\MIS\Debug\MISGraphProgram.lib and object C:\Users\user\Documents\AFIT\Spring2019\Algorithms 2\Homework\MIS\Debug\MISGraphProgram.exp
+  MISGraphProgram.vcxproj -> C:\Users\user\Documents\AFIT\Spring2019\Algorithms 2\Homework\MIS\Debug\MISGraphProgram.exe

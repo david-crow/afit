@@ -1,0 +1,10 @@
+Maximal independent set:  [  1  3]
+Maximal independent set:  [  2  4]
+Maximal independent set:  [  2  5]
+  independence number = 2
+MIS calculation took 0.012 seconds.
+clique:  [  1  2]
+clique:  [  1  4  5]
+clique:  [  2  3]
+clique:  [  3  4  5]
+  clique number = 3

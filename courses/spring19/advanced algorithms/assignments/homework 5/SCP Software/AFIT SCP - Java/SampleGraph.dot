@@ -1,0 +1,31 @@
+digraph g
+{
+	node [fontsize = "16" shape = "record"];
+
+	ranksep="1.0 equally";
+	nodesep="1.0 equally";
+	center=true; ratio=auto;
+
+	Legend [label = "{ F | {cost|total cost} |\{E set\}}" style=bold,color=dark_green];
+
+	Start[shape="ellipse"];
+
+	6 [label = "{6| {2|10} |\{1, 2, 3, 5\}}"];
+	Start -> 6;
+
+	65 [label = "{5| {3|13} |\{1, 2, 3, 4, 5\}}"];
+	6 -> 65;
+
+	651 [label = "{1| {4|17} |\{1, 2, 3, 4, 5, 6\}}"style=bold,color=blue];
+	65 -> 651;
+
+	67 [label = "{7| {6|16} |\{1, 2, 3, 4, 5, 6\}}"style=bold,color=blue];
+	6 -> 67;
+
+	1 [label = "{1| {4|12} |\{1, 2, 3, 6\}}"];
+	Start -> 1;
+
+	15 [label = "{5| {3|15} |\{1, 2, 3, 4, 5, 6\}}"style=bold,color=blue];
+	1 -> 15;
+
+}

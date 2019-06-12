@@ -1,0 +1,23 @@
+\begin{thebibliography}{1}
+
+\bibitem{Rodin1992}
+E.~Y. Rodin and M.~Amin, ``{Maneuver Prediction in Air Combat via Artificial
+  Neural Networks},'' {\em Computers and Mathematics with Applications},
+  vol.~24, no.~3, pp.~95--112, 1992.
+
+\bibitem{James2013}
+G.~James, D.~Witten, T.~Hastie, and R.~Tibshirani, {\em {An Introduction to
+  Statistical Learning}}.
+\newblock New York: Springer, 2013.
+
+\bibitem{Bishop2006}
+C.~M. Bishop, {\em {Pattern Recognition and Machine Learning}}.
+\newblock New York: Springer, 2006.
+
+\bibitem{Blanks2017}
+Z.~Blanks, A.~Sedgwick, B.~Bone, and A.~Mayerchak, ``{Identification of Flight
+  Maneuvers and Aircraft Types Utilizing Unsupervised Learning with Big
+  Data},'' in {\em Systems and Information Engineering Design Symposium},
+  (Charlottesville, VA), pp.~180--185, IEEE, 2017.
+
+\end{thebibliography}

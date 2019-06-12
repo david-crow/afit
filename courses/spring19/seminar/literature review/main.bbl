@@ -1,0 +1,37 @@
+\begin{thebibliography}{1}
+
+\bibitem{Shirani2015}
+P.~Shirani, M.~A. Azgomi, and S.~Alrabaee, ``{A method for intrusion detection
+  in web services based on time series},'' {\em Canadian Conference on
+  Electrical and Computer Engineering}, vol.~2015-June, no.~June, pp.~836--841,
+  2015.
+
+\bibitem{ACMTPS2018}
+{ACM TPS}, ``{Cyber-Physical Systems (TCPS): About},'' 2018.
+
+\bibitem{Kotu2019}
+V.~Kotu and B.~Deshpande, {\em {Time Series Forecasting}}.
+\newblock 2019.
+
+\bibitem{ISO2012}
+ISO, ``{ISO 27145-1:2012(en), Road vehicles — Implementation of World-Wide
+  Harmonized On-Board Diagnostics (WWH-OBD) communication requirements — Part
+  1: General information and use case definition},'' 2012.
+
+\bibitem{Stone2018}
+B.~Stone, S.~Graham, B.~Mullins, and C.~{Schubert Kabban}, {\em {Enabling
+  Auditing and Intrusion Detection for Proprietary Controller Area Networks}}.
+\newblock Dissertation, Air Force Institute of Technology, 2018.
+
+\bibitem{SAE2017}
+{SAE International}, ``Sae j1979: E/e diagnostic test modes,'' 2017.
+
+\bibitem{Takens1981}
+F.~Takens, ``Detecting strange attractors in turbulence,'' {\em Dynamical
+  Systems and Turbulence}, pp.~366--381.
+
+\bibitem{SugiharaLab2019}
+{Sugihara Lab}, ``{Empirical Data Modeling: Quantitative Ecology and Data-
+  Driven Theory},'' 2019.
+
+\end{thebibliography}

@@ -1,0 +1,65 @@
+\documentclass[12pt]{article}
+\usepackage[bottom=0.75in, includefoot]{geometry}
+\usepackage{setspace}
+\usepackage{acronym}
+
+\title{Literature Review}
+\author{David R Crow, 2d Lt, USAF}
+\date{\today}
+
+\newacro{acm}[ACM]{Association of Computer Machinery}
+\newacro{can}[CAN]{Controller Area Network}
+\newacro{cps}[CPS]{cyber-physical systems}
+\newacro{ecu}[ECU]{Electronic Control Unit}
+\newacro{edm}[EDM]{Empirical Dynamic Modeling}
+\newacro{ids}[IDS]{intrusion detection system}
+\newacro{ml}[ML]{machine learning}
+\newacro{obd}[OBD]{on-board diagnostics}
+\newacro{oem}[OEM]{original equipment manufacturer}
+\newacro{rpm}[RPM]{revolutions per minute}
+\newacro{sae}[SAE]{Society of Automotive Engineers}
+\newacro{tcps}[TCPS]{Transactions on Cyber-Physical Systems}
+\newacro{usaf}[USAF]{United States Air Force}
+
+\begin{document}
+\doublespacing
+\maketitle
+
+\section*{Intrusion Detection}
+
+In cybersecurity, an \ac{ids} is a device or software program that monitors a network for malicious activity. There are two primary types of \ac{ids}: misuse detection and anomaly detection \cite{Shirani2015}. Misuse detection systems compare network traffic to predefined attack signatures stored in large databases; a match indicates an attack on the network. Anomaly detection systems, on the other hand, compare traffic to a predetermined baseline to identify anomalies. In an environment of ever-increasing numbers of malicious actors, the \ac{usaf} requires an \ac{ids} in each of its vital systems. Because we do not have significant access to \ac{usaf} airplanes, this research concerns \aclp{ids} in passenger vehicles.
+
+\section*{Cyber-Physical Systems \& Time-Series Data}
+
+The \ac{acm} \ac{tcps} defines \ac{cps} as follows:
+
+\begin{quote}
+    Cyber-Physical Systems (CPS) has emerged as a unifying name for systems where the cyber parts, i.e., the computing and communication parts, and the physical parts are tightly integrated, both at the design time and during operation. Such systems use computations and communication deeply embedded in and interacting with physical processes to add new capabilities to physical systems. These cyber-physical systems range from miniscule (pace makers) to large-scale (a national power-grid). \cite{ACMTPS2018}
+\end{quote}
+
+Often, the output of \ac{cps} monitoring is a time series representing the value of some process over time. One example of a time series in a passenger vehicle is the engine's \ac{rpm} over time, as measured by the vehicle's \ac{ecu}. ``Time series \textit{analysis} is the process of extracting meaningful non-trivial information and patterns from time series [and time series] \textit{forecasting} is the process of predicting the future value of time series data based on past observations and other inputs" \cite{Kotu2019}. Time series plots relate the value of the measurement for some given process to the relative or absolute time at measurement. These plots are used to increase interpretability of time series data, and they can be used to illustrate time series analysis and forecasting.
+
+The \acp{cps} present in passenger vehicles are capable of generating large quantities of time series data. One must only collect the data present on the vehicle's \acl{can} bus to construct human-readable time series plots.
+
+\section*{Causality}
+
+Causality is the relationship between cause and effect. For two processes $a$ and $b$ that exhibit a highly-causal relationship, we can expect that some set of parameters for $a$ predicts some other set of parameters for $b$. If $a$ and $b$ are not highly-causal, modifying $a$ is not likely to elicit a predictable response in $b$. In passenger vehicles, causality is ever-present. The engine's \ac{rpm}, for example, directly affects the vehicle's speed. Brake position indirectly affects engine \ac{rpm} and thus the vehicle's speed. If one has access to a vehicle's brake position and engine \ac{rpm} at time $t=0$ and to the vehicle's brake position at time $t=1$, one can estimate the vehicle's engine \ac{rpm} at time $t=2$.
+
+Causal relationships also hold in the reverse direction. Some perceived value for vehicle speed implies that the vehicle must have had an engine \ac{rpm} in some predetermined range at some previous point in time. This research shows that the significant presence of causal relationships in vehicles can serve as the foundation for an intrusion detection system.
+
+\section*{\acf{can}}
+
+Before identifying causal relationships, we need data. The \ac{can} protocol is a link-layer protocol commonly used in the automotive, manufacturing, and healthcare industries due to its low-cost, low-weight, and architectural simplicity. United States federal regulations require that all passenger vehicles manufactured after 2007 provide an \ac{obd}-II interface connected to the \ac{can} bus. Consumers, mechanics, and \acp{oem} can utilize this \ac{obd}-II port to monitor some of the car's communications \cite{ISO2012}. In 2018, \cite{Stone2018} showed that data collected via an \ac{obd}-II port can be automatically reverse engineered, processed, and converted into time series data. Additionally, \cite{Stone2018} hypothesized that one can quantify the causal relationships present in these time series with \ac{edm}.
+
+Although auto manufacturers are required to provide the \ac{obd}-II interface, they are not entirely required to abide by a message protocol. Often, \acp{oem} develop proprietary packet frames and to obfuscate data traveling on the car's network. However, the \ac{sae} J1979 diagnostic protocol is a federally-mandated diagnostic standard for information requests from light-duty passenger vehicles \cite{SAE2017}. Even if \acp{oem} deliberately misconfigure or obfuscate the CAN bus data, J1979 guarantees some truth data. Specifically, J1979 allows those with access to a vehicle's \ac{obd}-II interface to request specific information from the car; response data is standardized and must contain the truth. This protocol allows better interpretability of the time series plots given by the reverse engineering pipeline \cite{Stone2018} developed.
+
+\section*{\acf{edm}}
+
+To identify causal relationships in a system, we use \ac{edm}, which is focused on modeling nonlinear dynamic systems using time series data. Univariate time series data can be converted to a higher dimensional representation by using time-lagged versions of itself as additional dimensions. We call the resulting manifold a shadow manifold. In 1981, Floris Takens showed that shadow manifolds created in this manner are diffeomorphic to the original attractor manifold \cite{Takens1981}.
+
+Sugihara et al demonstrated that this diffeomorphic property of shadow manifolds can be leveraged to determine whether two time series belong to the same dynamic system \cite{SugiharaLab2019}. If they do belong to the same system, we can quantify the causal relationship between them by examining the various manifolds and attractors.
+
+\bibliographystyle{ieeetr}
+\bibliography{references}
+
+\end{document}

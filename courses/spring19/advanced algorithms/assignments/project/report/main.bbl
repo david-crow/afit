@@ -1,0 +1,199 @@
+\begin{thebibliography}{10}
+
+\bibitem{Garey1979}
+M.~R. Garey and D.~S. Johnson, {\em Computers and Intractability: A Guide to
+  the Theory of NP-Completeness}.
+\newblock New York, NY, USA: W. H. Freeman \& Co., 1979.
+
+\bibitem{Cobham1965}
+A.~Cobham, ``The intrinsic computational difficulty of functions,'' pp.~24--30,
+  1965.
+
+\bibitem{wikipedia:max-coverage}
+{Wikipedia contributors}, ``Maximum coverage problem --- {W}ikipedia{,} the
+  free encyclopedia,'' 2019.
+\newblock [Online; accessed 04-June-2019].
+
+\bibitem{Cook1971}
+S.~A. Cook, ``The complexity of theorem-proving procedures,'' in {\em
+  Proceedings of the Third Annual ACM Symposium on Theory of Computing}, STOC
+  '71, (New York, NY, USA), pp.~151--158, ACM, 1971.
+
+\bibitem{handout:lecture2}
+G.~B. Lamont, ``Lecture 2 `designing solutions for p-time problems'.'' 03 2019.
+
+\bibitem{wikipedia:problem-domain}
+{Wikipedia contributors}, ``Problem domain --- {W}ikipedia{,} the free
+  encyclopedia,'' 2019.
+\newblock [Online; accessed 06-June-2019].
+
+\bibitem{Young2018}
+J.~Young and E.~Walkingshaw, ``A domain analysis of data structure and
+  algorithm explanations in the wild,'' pp.~870--875, 02 2018.
+
+\bibitem{Barr1995}
+R.~S. Barr, B.~L. Golden, J.~P. Kelly, M.~G.~C. Resende, and W.~R. Stewart,
+  ``Designing and reporting on computational experiments with heuristic
+  methods,'' {\em J. Heuristics}, vol.~1, pp.~9--32, 1995.
+
+\bibitem{Liu2018}
+J.~Liu, W.~Wang, X.~Li, T.~Wang, S.~Bai, and Y.~Wang, ``Solving a
+  multi-objective mission planning problem for uav swarms with an improved
+  nsga-iii algorithm,'' {\em International Journal of Computational
+  Intelligence Systems}, vol.~11, p.~1067, 05 2018.
+
+\bibitem{Caska2016}
+S.~Çaşka and A.~Gayretli, ``An algorithm for collaborative surveillance
+  systems with unmanned aerial and ground vehicles,'' {\em International
+  Journal of Engineering Trends and Technology}, vol.~33, 04 2016.
+
+\bibitem{Lamont2007}
+G.~B. {Lamont}, J.~N. {Slear}, and K.~{Melendez}, ``Uav swarm mission planning
+  and routing using multi-objective evolutionary algorithms,'' in {\em 2007
+  IEEE Symposium on Computational Intelligence in Multi-Criteria
+  Decision-Making}, pp.~10--20, April 2007.
+
+\bibitem{wikipedia:determinism}
+{Wikipedia contributors}, ``Deterministic algorithm --- {W}ikipedia{,} the free
+  encyclopedia,'' 2019.
+\newblock [Online; accessed 05-June-2019].
+
+\bibitem{Hart1968}
+P.~E. {Hart}, N.~J. {Nilsson}, and B.~{Raphael}, ``A formal basis for the
+  heuristic determination of minimum cost paths,'' {\em IEEE Transactions on
+  Systems Science and Cybernetics}, vol.~4, pp.~100--107, July 1968.
+
+\bibitem{handout:heuristics}
+G.~B. Lamont, ``Admissible h vs. monotonic h in {A}*.'' 05 2019.
+
+\bibitem{Russell2009}
+S.~Russell and P.~Norvig, {\em Artificial Intelligence: A Modern Approach}.
+\newblock Upper Saddle River, NJ, USA: Prentice Hall Press, 3rd~ed., 2009.
+
+\bibitem{Pearl1984}
+J.~Pearl, {\em Heuristics: Intelligent Search Strategies for Computer Problem
+  Solving}.
+\newblock Boston, MA, USA: Addison-Wesley Longman Publishing Co., Inc., 1984.
+
+\bibitem{python:primitives}
+{Python Software Foundation}, ``Built-in types,'' 2019.
+\newblock [Online; accessed 05-June-2019].
+
+\bibitem{python:pycharm}
+{JetBrains s.r.o.}, ``Pycharm: The python ide for professional developers,''
+  2019.
+\newblock [Online; accessed 05-June-2019].
+
+\bibitem{apple:macbook}
+{Apple, Inc.}, ``Macbook pro,'' 2019.
+\newblock [Online; accessed 05-June-2019].
+
+\bibitem{Sommerville2010}
+I.~Sommerville, {\em Software Engineering}.
+\newblock USA: Addison-Wesley Publishing Company, 9th~ed., 2010.
+
+\bibitem{Gamma1994}
+E.~Gamma, R.~Helm, R.~Johnson, and J.~M. Vlissides, {\em Design Patterns:
+  Elements of Reusable Object-Oriented Software}.
+\newblock Addison-Wesley Professional, 1~ed., 1994.
+
+\bibitem{Gomaa2011}
+H.~Gomaa, {\em Software Modeling and Design: UML, Use Cases, Patterns, and
+  Software Architectures}.
+\newblock Cambridge University Press, 2011.
+
+\bibitem{wikipedia:permutation}
+{Wikipedia contributors}, ``Permutation --- {W}ikipedia{,} the free
+  encyclopedia,'' 2019.
+\newblock [Online; accessed 05-June-2019].
+
+\bibitem{wikipedia:stochastic-optimization}
+{Wikipedia contributors}, ``Stochastic optimization --- {W}ikipedia{,} the free
+  encyclopedia,'' 2019.
+\newblock [Online; accessed 06-June-2019].
+
+\bibitem{Brownlee2011}
+J.~Brownlee, {\em Clever Algorithms: Nature-Inspired Programming Recipes}.
+\newblock Lulu.com, 1st~ed., 2011.
+
+\bibitem{wikipedia:beam-search}
+{Wikipedia contributors}, ``Beam search --- {W}ikipedia{,} the free
+  encyclopedia,'' 2019.
+\newblock [Online; accessed 06-June-2019].
+
+\bibitem{wikipedia:local-search}
+{Wikipedia contributors}, ``Local search (optimization) --- {W}ikipedia{,} the
+  free encyclopedia,'' 2019.
+\newblock [Online; accessed 06-June-2019].
+
+\bibitem{wikipedia:computational_complexity_theory}
+{Wikipedia contributors}, ``Computational complexity theory --- {W}ikipedia{,}
+  the free encyclopedia,'' 2019.
+\newblock [Online; accessed 06-June-2019].
+
+\bibitem{wikipedia:npc-problems}
+{Wikipedia contributors}, ``List of np-complete problems year =.''
+
+\bibitem{Kleinberg2005}
+J.~Kleinberg and E.~Tardos, {\em Algorithm Design}.
+\newblock Boston, MA, USA: Addison-Wesley Longman Publishing Co., Inc., 2005.
+
+\bibitem{Hochbaum1996}
+D.~S. Hochbaum, ``Approximation algorithms for np-hard problems,''
+  ch.~Approximating Covering and Packing Problems: Set Cover, Vertex Cover,
+  Independent Set, and Related Problems, pp.~94--143, Boston, MA, USA: PWS
+  Publishing Co., 1997.
+
+\bibitem{Williamson2011}
+D.~P. Williamson and D.~B. Shmoys, {\em The Design of Approximation
+  Algorithms}.
+\newblock New York, NY, USA: Cambridge University Press, 1st~ed., 2011.
+
+\bibitem{Wolpert1997}
+D.~H. Wolpert and W.~G. Macready, ``No free lunch theorems for optimization,''
+  {\em Trans. Evol. Comp}, vol.~1, pp.~67--82, Apr. 1997.
+
+\bibitem{Moore1959}
+E.~F~Moore, ``The shortest path through a maze,'' pp.~285--292, 01 1959.
+
+\bibitem{handout:global-search}
+G.~B. Lamont, ``3.4 global search - breath first search.'' 04 2019.
+
+\bibitem{Korf1985}
+R.~E. Korf, ``Depth-first iterative-deepening: An optimal admissible tree
+  search,'' {\em Artif. Intell.}, vol.~27, pp.~97--109, Sept. 1985.
+
+\bibitem{wikipedia:ida*}
+{Wikipedia contributors}, ``Iterative deepening {A}* --- {W}ikipedia{,} the
+  free encyclopedia,'' 2018.
+\newblock [Online; accessed 07-June-2019].
+
+\bibitem{Lamont2006}
+C.~A.~C. Coello, G.~B. Lamont, and D.~A.~V. Veldhuizen, {\em Evolutionary
+  Algorithms for Solving Multi-Objective Problems (Genetic and Evolutionary
+  Computation)}.
+\newblock Berlin, Heidelberg: Springer-Verlag, 2006.
+
+\bibitem{Talbi2009}
+E.-G. Talbi, {\em Metaheuristics: From Design to Implementation}.
+\newblock John Wiley \& Sons, 2009.
+
+\bibitem{Kirkpatrick1983}
+S.~Kirkpatrick, C.~D. Gelatt, and M.~P. Vecchi, ``Optimization by simulated
+  annealing,'' {\em SCIENCE}, vol.~220, no.~4598, pp.~671--680, 1983.
+
+\bibitem{Glover1986}
+F.~Glover, ``Future paths for integer programming and links to artificial
+  intelligence,'' {\em Comput. Oper. Res.}, vol.~13, pp.~533--549, May 1986.
+
+\bibitem{Moyson1988}
+F.~Moyson, B.~Manderick, and V.~U. B. A.~I. Laboratory, {\em The Collective
+  Behavior of Ants: An Example of Self-organization in Massive Parallelism}.
+\newblock AI memo, Artificial Intelligence Laboratory, Vrije Universiteit
+  Brussel, 1988.
+
+\bibitem{handout:ants}
+G.~B. Lamont, ``Swarm intelligence: Part {I}: The origins of ant colony
+  optimization techniques.'' 2016.
+
+\end{thebibliography}

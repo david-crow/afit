@@ -1,0 +1,19 @@
+problems = [
+    {
+        "size": 4,
+        "drones": 2,
+        "battery": 3,
+        "radius": 1.2,
+        "locations": [(0.3,1.8),(3.1,2.7)]
+    },
+
+    ...
+    
+    {
+        "size": 5,
+        "drones": 3,
+        "battery": 4,
+        "radius": 2.1,
+        "locations": [(1,1),(3,1),(4,1),(4.8,5.1)]
+    },
+]

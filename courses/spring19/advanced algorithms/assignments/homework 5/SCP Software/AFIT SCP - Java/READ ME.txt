@@ -1,0 +1,66 @@
+SCP Solver 2006
+Written by Lt Walter Hayden
+
+The following file describes the SCP Solver 2006 and how to use it. 
+
+The SCP Solver 2006 was written to solve Set Coverage Problem, while allowing the user (student) to explore ways different sorting and preprocessing techniques to solve 
+the problem sooner.  Others programs were written in C and for the UNIX environment.  This makes it difficult to modify the program to explore other search criteria 
+especially if you are using a Windows environment.  The SCP Solver was written in Java using Eclipse 3.1.  The archive file can easily be imported into Eclipse for 
+modification and execution.
+
+The SCP Solver used an algorithm presented by Nicos Christofides in his book “Graph Theory An Algorithmic Approach” 1975.  
+
+1.  After you import the project into Eclipse, right click on the Main class and Run as Java Application.
+
+2.  The program will run in the console window.  You will be prompted for the input file (See SampleInput.txt for the input format).  You must enter the FULL FILE NAME, 
+this includes the drive and folder hierarchy and the file name.  
+(For example: C:\SCP Solver\SampleInput.txt)
+Note: The program does not catch file exceptions and will print a stack trace if the file does not exist.
+
+3.  Next you will be asked if you want to produce an output file.  You must also enter the full file name of the path.  The output file contains the following information:
+
+a. The input for the file with a numbering of the input set for future reference.  
+
+b. Next will be two tableau matrices.  The first tableau matrix is produce from the original input and then a matrix produce after the preprocess reductions have been 
+performed.  For some inputs this will make no changes (thus the two matrices are the same), for some inputs this will reduce the matrix, and for other inputs it may 
+solve the problem complete (thus the Reduced Matrix will be empty).  You may turn off the preprocess reductions by commenting out the method call within the 
+Tableau constructor.
+
+c. Following the matrices will be the sorting strategies employed.  This is how the input was arranged before passing it to the algorithm to solve.  These strategies 
+may be changes.  Currently the program has three or four predefined sorting strategies.  You may simple uncomment the one you would like to use and run the program again.  
+The sorting strategies are broken into two categories.  One is to sort the sets within a block (group of set that all cover the same item r) the default is to sort 
+from least cost to greatest cost.  The second category will sort the blocks.  The default is to sort the block based on the item r it covers from smallest item to 
+largest item.  You may create new strategies by creating a new class that implement the Comparator <E> interface.  Note: Some sorting techniques may not find the 
+optimum solution without relaxing the search constraints.  To relax the search constraints comment out the following line in solveSCP() method of the SCPSolver class:
+
+approx line 262
+
+else
+{
+   // Finished checking this block, our cost is already larger 
+   // then the best solution thus far.
+
+   // Perform step 4
+
+   keepSearchingBlock = false; <-- *** comment out this line *** 
+}
+
+d. The next set of information in the output file is the search metrics.  The program counts the number of nodes the algorithm considers, the number it determines is 
+feasible (thus adds it to the search graph and continues the search branching on that node), and finally the number of better solutions it finds (this number is 
+incremented only when a better solution is found).  This information can be used to evaluate your preprocessing and sorting criteria.  Smaller numbers means the program 
+had to search a smaller number of nodes to find the optimum solution.
+
+e. The final set of information in the output file is the solution.  The numbers in the solution set will correspond to the number of the sets in the first part of the 
+output file (see a.).  The cost will be the total cost of the solution.  If the cost of all of the set in the input is 0 and the algorithm will find a set that will 
+cover the set R (not necessarily the best solution), if the cost of each set is 1 then the algorithm will find the fewest number of sets to cover the set R.
+
+4.  After prompting you for the output file, the program will ask if you would like to produce a graph (dot) file.  This file should have a .dot extension and can 
+be read by Graphvis (http://www.graphviz.org/) to produce a visual representation of the search graph. (see SampleGraph.jpeg).  The graph stores the set selected to 
+search, its cost, the total cost, and the set of items (r) that have been covered at each point in the search.  The node outlined in green (to the left of the start node) 
+is the legend.  Nodes that are outlined in blue are optimal solutions with the right most blue outlined node will be the optimum.  Note: You should not produce a graph 
+for a very large input.  It will slow down the program and will produce a graph that is very large.
+
+That just about covers the main details of the SCP Solver.  Currently the program does not solve the Set Partitioning Problem, however the program may be easily modified 
+to solve this as well.
+
+You may modify the program any way you deem necessary, but the program is only attended for academic purposes and should not be used for commercial purposes. 

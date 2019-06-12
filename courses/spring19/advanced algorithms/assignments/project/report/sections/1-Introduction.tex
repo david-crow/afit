@@ -1,0 +1,31 @@
+\documentclass[../main.tex]{subfiles}
+ 
+\begin{document}
+
+Consider the following problem: the \ac{usaf} possesses a set of \acp{uav}, all identical, and each with a limited flight time. The Air Force wants to conduct surveillance over City X in Country Y. City X, however, possesses a set of \ac{uav} detectors distributed throughout the city limits. How can the \ac{usaf} surveil as much of City X as possible without attracting unnecessary attention?
+
+This research concerns the problem of maximizing the coverage of an area with a swarm of \acp{uav} while minimizing the risk of detection to said \acp{uav}. Because both the \textit{\ac{mcp}} and the \textit{\ac{mrp}} are \ac{np}-complete (\acsu{npc}) problems, the multi-domain optimization of both \ac{mcp} and \ac{mrp} is at least \ac{np}-hard \cite{Garey1979, Cobham1965, wikipedia:max-coverage}. (We prove the exact complexity class of \ac{mcp} and of \ac{mrp} in Appendix \ref{app:complexity}.)
+
+To approximate solutions to example problem instances, then, we utilize several different algorithmic techniques: deterministic search, stochastic search, and local search. We compare the results of each technique to determine which search algorithm best solves the problem at hand. Because optimally solving a problem as difficult as \probs is impossible (unless $P=NP$ \cite{Cook1971}), we cannot guarantee a perfect solution; however, our results show that approximate solutions are feasible.
+
+This research employs the \ac{pdad} process for algorithm design to generate all algorithms \cite{handout:lecture2, wikipedia:problem-domain, Young2018}. Table \ref{tab:pdad} shows the \ac{pdad} process. We follow this process for each of the algorithmic techniques (deterministic, stochastic, and local). Step 1 is the same for all three techniques, so it is explained in Section \ref{sec:domain}. Sections \ref{sec:deterministic}, \ref{sec:stochastic}, and \ref{sec:local} detail the remaining steps for the deterministic, stochastic, and local approaches, respectively. Section \ref{sec:experiment} describes the testing and evaluation process, for which we use the reporting approach found in \cite{Barr1995}. Finally, Section \ref{sec:conclusions} discusses the conclusions one can draw from this research.
+
+\begin{table}
+\caption{The \acl{pdad} Process for Effective, Efficient Algorithm Design}
+\centering
+\label{tab:pdad}
+\begin{tabular}{|l|l|}
+\hline
+\textbf{\#} & \textbf{Step}                                              \\
+\hline
+1               & Define/analyze the problem domain                      \\
+2               & Choose an algorithm domain specification strategy      \\
+3               & Evolve a general solution design specification         \\
+4               & Refine solution design recursively to low-level design \\
+5               & Map low-level design to selected programming language  \\
+6               & Evaluate implementation and document process           \\
+\hline
+\end{tabular}
+\end{table}
+
+\end{document}

@@ -1,0 +1,231 @@
+\documentclass[../main.tex]{subfiles}
+ 
+\begin{document}
+
+Stochastic algorithms are those that generate and use random variables to solve, approximate, or optimize various problems. Examples include simulated annealing, random-restart hill-climbing, and tabu search, among many, many more. These algorithms use random variables to avoid plateaus or locally-but-not-globally optimal solutions \cite{wikipedia:stochastic-optimization, Brownlee2011}. As described in Section \ref{sec:experiment}, the sheer size of the \probs search space means that our deterministic search algorithm -- A$^*$ -- cannot solve anything but very small problem instances. For this reason, we now attempt to solve \probs using a stochastic algorithm: \ac{sbs} \cite{wikipedia:beam-search}. Although \ac{sbs} is not guaranteed to return an optimal solution, it is all-but-guaranteed to terminate, and often with a reasonable -- if not optimal -- solution.
+
+In each iteration, \ac{sbs} generates all unseen neighbors of all \texttt{open} nodes. It then probabilistically selects the best $k$ of these neighbors; all others are moved to the \texttt{closed} set. (In this research, we let $k=5$ to ensure termination.) Each node is weighted by its value $v$; a random number generator (akin to a roulette wheel) selects $k$ nodes, but those with greater $v$ values are more likely to be selected.
+
+As in Section \ref{sec:deterministic}, we must employ the \ac{pdad} process to develop an effective \ac{sbs} algorithm. We again refine the standard search constructs (see Table \ref{tab:search-constructs}) from the algorithm domain (see Section \ref{sec:domain}) to our exact \ac{sbs} implementation.
+
+The remainder of this section discusses Steps 2--6 for the stochastic approach to \prob. Details for these steps can be found in Sections \ref{sto:specification}, \ref{sto:refinement}, \ref{sto:pseudocode}, and \ref{sto:implementation}.
+
+\subsection{Design Specification}\label{sto:specification}
+
+Step 2 of the \ac{pdad} process requires that we select an algorithm domain specification strategy. We define the standard search constructs for our eventual \ac{sbs} implementation as follows:
+
+\begin{itemize}
+    \item Set of candidates
+    \begin{itemize}
+        \item \ac{sbs} stores its set of candidates in an \texttt{open} list
+        \item To reduce the search space, we also store \textit{visited} candidates in a \texttt{closed} list
+    \end{itemize}
+    
+    \item Next-state generator
+    \begin{itemize}
+        \item Given an empty world of size $d\times d$, we create $P(4d-4,n)$ initial next-states, one for each starting configuration of $n$ \acp{uav}
+        \item For a given world, the set of next-states includes all copies of the world with one additional movement of one \ac{uav}
+        \begin{itemize}
+            \item \textit{Constraint}: the \ac{uav}'s path length $p$ must be less than $b$
+            \item \textit{Constraint}: the \ac{uav} cannot move to a non-edge square if $p=b-1$
+        \end{itemize}
+    
+    \end{itemize}
+    
+    \item Feasibility
+    \begin{itemize}
+        \item For a given state $S$, determine whether, for every \ac{uav} $u\in S$, $u$ is on an edge square and either \textit{a)} remaining\_battery($u$) $=0$ or \textit{b)} every square $s\in S$ is covered
+        \item Determine whether $S$ meets constraints defined in the problem domain
+    \end{itemize}
+
+    \item Selection
+    \begin{itemize}
+        \item \ac{sbs} \textit{attempts} to select the $k$ candidates with the lowest $h(S)$ values, where $S$ is the state, and $h(S)$ is the estimate of the remaining cost to the goal
+        \item Delete those candidates for which $\exists u\in$ \acp{uav} such that remaining\_battery($u$) $=0$ and $u$ is not on an edge square
+        \item Additionally, probabilistically delete all but the best $k$ candidates
+        \begin{itemize}
+            \item To ensure our \ac{sbs}\ \probs solution is feasible, let $k=5$
+            \item Random number generation ensures we can't always select the states we want to select -- the random number must be less than or equal to $V_S\div \max V_S'$ to select $S$
+        \end{itemize} 
+    \end{itemize}
+
+    \item Solution
+    \begin{itemize}
+        \item If \textit{feasibility} constraints are met and $V_S$ is minimized, return $S$
+    \end{itemize}
+
+    \item Objective
+    \begin{itemize}
+        \item Minimize $f(S)$ using \textit{heuristics} (defined in Section \ref{sto:refinement}) while meeting the \textit{feasibility} constraints
+    \end{itemize}
+\end{itemize}
+
+\subsection{Design Refinement}\label{sto:refinement}
+
+The \ac{pdad} process's third and fourth steps require that one evolves a general solution design specification and instantiates the problem design. In this section, we discuss the abstract data types and structures required in our \ac{sbs} implementation. Additionally, we refine the standard search constructs previously detailed in Section \ref{sto:specification}.
+
+Step 6 of the \ac{pdad} is functional Python code, so we must first specify the \ac{sbs} data structures used to solve \prob. As stated previously, \ac{sbs} requires \texttt{open} and \texttt{closed} sets, so, like in our A$^*$ implementation, we utilize Python-style lists to store all new and previously-visited states. 
+
+As in Section \ref{det:refinement}, we must now refine the high-level standard search constructs. This will allow us to map our problem and algorithm domains onto pseudocode and executable code.
+
+\begin{itemize}
+    \item Set of candidates
+    \begin{itemize}
+        \item open $=\emptyset$
+        \item closed $=\emptyset$
+    \end{itemize}
+    
+    \item Next-state generator
+    \begin{itemize}
+        \item If $S=\emptyset$, $\forall c\in$ start\_configurations, $S=S\cup \{c\}$
+        \item Otherwise, $\forall u\in$ \acp{uav} and $\forall a\in$ adjacent\_squares$_u$, $S=S\cup \{u\cup \{u_a\}\}$
+        \begin{itemize}
+            \item \textit{Constraint}: $|u|\leq b$
+            \item \textit{Constraint}: If $p=b-1$, let adjacent\_squares$_u=$ adjacent\_edge\_squares$_u$
+        \end{itemize}
+    \end{itemize}
+    
+    \pagebreak
+
+    \item Feasibility
+    \begin{itemize}
+        \item Feasible if, $\forall u\in$ \acp{uav}, edge(location($u$)) $=1$ and one of the following holds:
+        \begin{itemize} 
+            \item remaining\_battery($u$) $=0$
+            \item $\forall s\in S$, covered($s$) $=1$
+        \end{itemize}
+
+        \item Additionally, each of these problem domain constraints must hold:
+        \begin{itemize}
+            \item $|P|=n$; every \ac{uav} must have a path (even if the path is empty)
+            \item $\forall p\in P, |p|\leq b$; no \ac{uav} can fly more than $b$ unit squares
+            \item $\forall p\in P, \ edge(first(p)) = 1, \ edge(last(p)) = 1$; every \ac{uav} must start and end on an edge square
+            \item $\forall Q, \ Q\neq P \Rightarrow V_Q<V_P$; the value of the path set $P$ must be maximal
+        \end{itemize}
+    \end{itemize}
+
+    \item Selection
+    \begin{itemize}
+        \item At each time $t$, probabilistically select up to $k=5$ $\argmax_S h(S)$
+        \item Delete $S$ if $\exists u\in$ \acp{uav} s.t. remaining\_battery($u$) $=0$ and edge(location($u$)) $\neq 1$
+        \item Delete $S$ if random\_number $>V_S\div\max V_S'$
+        \item Delete $S$ if \textbar frontier\textbar\ $\geq k=5$
+    \end{itemize}
+
+    \item Solution
+    \begin{itemize}
+        \item Return \[
+            \begin{cases}
+                S & \text{if feasibility(}S\text{)}=1 \text{ and }V_s\text{ is maximized} \\
+                \emptyset & \text{otherwise} \\
+            \end{cases}
+        \]
+    \end{itemize}
+
+    \item Objective
+    \begin{itemize}
+        \item Maximize $f(S)$ using \textit{heuristics} while meeting the \textit{feasibility} constraints
+        \item As defined in the problem domain, $f(S)=v$, the overall state value, which concerns the following: 
+        \begin{itemize}
+            \item Maximized $\sum_{i=1}^{n}{squares\_covered_i}$
+            \item Minimized $\sum_{i=1}^{n}{risk_i}$
+        \end{itemize}
+    \end{itemize}
+
+    \item Heuristics
+    \begin{itemize}
+        \item For a given state $S$, $h(S)$ concerns the following:
+        \begin{itemize}
+            \item $total\_ratio=squares\_covered\div d^2$
+            \item $edge\_ratio=edges\_covered\div (4d-4)$
+            \item $same\_repeats$, number of times a \ac{uav} visits a square it has already visited
+            \item $other\_repeats$, number of times a \ac{uav} visits a square another \ac{uav} has already visited
+            \item $risk=total\_risk\div path\_length$
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+
+\subsection{Pseudocode}\label{sto:pseudocode}
+
+The \ac{pdad} process's Step 5 requirement is effective pseudocode. The \ac{sbs} implementation used in this research is very similar to the A$^*$ implementation detailed in Section \ref{sec:deterministic}. In fact, the Python implementation consists of just one class, and this class contains the A$^*$, \ac{sbs}, and local beam search (see Section \ref{sec:local}) implementations. As before, then, the pseudocode given here contains only the essential \ac{sbs} functionality. The reader can find further details in Appendix \ref{app:code}. 
+
+\begin{algorithm}
+\caption{A Stochastic Approach for \prob}
+\label{fig:sto-pseudocode}
+    \begin{algorithmic}[1]
+        \REQUIRE $w$, an empty $d\times d$ grid
+        \REQUIRE $p$, a set of $n$ empty paths
+        \ENSURE $p'$, a set of $n$ paths
+        \ENSURE $v$, the value of $p'$ in $w$
+
+        \STATE \textcolor{red}{// set of candidates}
+        \STATE frontier $=\emptyset$
+        \STATE explored $=\emptyset$
+
+        \FOR{each starting configuration $s$ of $n$ \acp{uav} in $w$}
+            \STATE new\_world $=w$
+            \STATE new\_paths $=p$
+
+            \FOR{all $u\in$ \acp{uav}}
+                \STATE new\_world[location($u$)] $=1$
+                \STATE new\_paths $=$ new\_paths$_u$ $\cup$ \{location($u$)\}
+            \ENDFOR
+
+            \STATE $v=$ value(new\_world, new\_paths)
+            \STATE frontier $=$ frontier $\cup$ \{$v$, new\_world, new\_paths\}
+        \ENDFOR
+
+        \WHILE{$|$frontier$|\neq 0$}
+            \STATE \textcolor{red}{// selection}
+            \STATE $v,w,p=$ frontier.pop\_front()
+            \STATE explored $=$ frontier $\cup\ \{w\}$
+
+            \STATE \textcolor{red}{// objective}
+            \IF{$\forall u\in$ \acp{uav}, edge(location($u$)) $=1$ \AND every square is covered or every \ac{uav}'s battery is depleted}
+                \STATE \textcolor{red}{// solution}
+                \RETURN $(w,p)$
+            \ENDIF
+
+            \STATE \textcolor{red}{// feasibility}
+            \FOR{all $u\in$ \acp{uav}}
+                \IF{$u$'s battery has $1$ unit remaining}
+                    \STATE neighbors $=$ adjacent\_edges($u$)
+                \ELSE
+                    \STATE neighbors $=$ adjacent($u$)
+                \ENDIF
+
+                \FOR{all $q\in$ neighbors}
+                    \STATE $w'=w$
+                    \STATE $p'=p$
+                    \STATE $w'$[location($q$)] $=1$
+                    \STATE $p'_u=p'_u\ \cup$ location($q$)
+                    \STATE state $=$ \{value($w',p'$), $w'$, $p'$\}
+                    \IF{state $\notin$ frontier \AND state $\notin$ explored}
+                    \STATE \textcolor{red}{// next-state generator}
+                        \STATE frontier $=$ frontier $\cup$ \{state\}
+                    \ENDIF
+                \ENDFOR
+            \ENDFOR
+
+            \STATE \textcolor{red}{// heuristics}
+            \STATE frontier $=$ frontier.probabilistically\_select\_best($5$)
+        \ENDWHILE
+        \RETURN ``No solution found!"
+    \end{algorithmic}
+\end{algorithm}
+
+Like A$^*$, \ac{sbs} requires a \texttt{frontier} set and an \texttt{explored} set. Python lists suffice for both of these sets. As previously described, each \texttt{world} instance (that is, the \ac{2d} $d\times d$ grid that contains the sensors and the \ac{uav} paths) is contained within a \ac{2d} Python list; the path sets are also stored as \ac{2d} lists. All other data structures are one of the primitive Python types: \texttt{string}, \texttt{integer}, \texttt{float}, or \texttt{boolean} \cite{python:primitives}.
+
+Pseudocode for the stochastic approach -- with the standard search elements labeled with comments -- is shown in Algorithm \ref{fig:sto-pseudocode}.
+
+\subsection{Implementation}\label{sto:implementation}
+
+In this section, we describe Step 6 of the \ac{pdad} process, which requires a one-to-one mapping from Section \ref{sto:pseudocode} pseudocode to an actual, executable implementation. Like we did with the deterministic approach, we decided to implement the \ac{sbs} function in Python because it an easy-to-write language, it's moderately-fast, and it has a large, well-documented set of tools. We again used PyCharm Professional 2019.1 on a 2017 MacBook Pro to develop the stochastic approach implementation.
+
+This code was written using good software development principles. Our undergraduate- and graduate-level computer science courses in software engineering -- and the previously-cited references \cite{Sommerville2010, Gamma1994, Gomaa2011} -- serve as useful softare engineering resources when we need assistance.
+
+Because the \ac{sbs} implementation is so similar to the A$^*$ implementation, the algorithm's complexity is effectively the same as described in Section \ref{det:implementation}. Note, however, that the stochastic approach complexity \textit{is} slightly different. Because this \ac{sbs} implementation probabilistically deletes all but the best $k=5$ states, the \texttt{while-loop} on line 14 is not bounded by $O(8n^2\times P(d^2,b))$. Instead, it's bounded by $O(8n^2\times P(d^2,b)\div 5)$, which is certainly very similar. However, Big O notation does not consider constants, so the overall Big O complexity (which is not identical to the exact complexity) is the same as for the A$^*$ implementation. We restate that complexity here: $O(n\times P(4d-4,n)+8n^2\times P(d^2,b)\div 5)=O(n^2\times P(d^2,b))$.
+
+The reader can view the full software implementation -- including \acl{sbs} -- in Appendix \ref{app:code}.
+
+\end{document}

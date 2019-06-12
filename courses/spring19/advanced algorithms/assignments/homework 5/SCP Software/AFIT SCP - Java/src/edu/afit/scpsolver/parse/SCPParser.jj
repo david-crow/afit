@@ -1,0 +1,44 @@
+options {STATIC=false;}
+
+PARSER_BEGIN(SCPParser)
+package edu.afit.scpsolver.parse;
+
+import edu.afit.scpsolver.ast.*;
+import edu.afit.scpsolver.*;
+import java.util.*;
+
+@SuppressWarnings("all")
+public class SCPParser {
+}
+PARSER_END(SCPParser)
+
+SKIP : {" "|"\t"|"\n"|"\r"|"\f"}
+
+TOKEN :
+{ < INT_LITERAL: (["0"-"9"])(["0"-"9"])* >
+}
+
+SCP SCP() :
+{ RSet r;  FamilySet f; }
+{ r=RSet() f=FamilySet() <EOF>  { return new SCP(r, f); }
+}
+
+RSet RSet() :
+{Set <Integer> r = new TreeSet <Integer>(); Integer i;}
+{ "{" (i=IntLiteral() {r.add(i);})* "}" { return new RSet(r);}
+}
+
+FamilySet FamilySet() :
+{Set <Family> fs = new TreeSet <Family>(new IDFunction()); Family f; int id = 1;}
+{ "{" (f=Family(id) {fs.add(f); id++;})* "}" { return new FamilySet(fs);}
+}
+
+Family Family(int id) :
+{RSet r; Integer i;}
+{ "(" r=RSet() "," i=IntLiteral() ")" { return new Family(r, i, id);}
+}
+
+Integer IntLiteral() :
+{ Token t; }
+{ t=<INT_LITERAL> { return Integer.parseInt(t.image); }
+}

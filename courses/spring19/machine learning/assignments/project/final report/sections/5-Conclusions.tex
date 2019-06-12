@@ -1,0 +1,32 @@
+\documentclass[../main.tex]{subfiles}
+ 
+\begin{document}
+
+% overview of conclusions (possibly bullets) and top-level explanation of future work
+
+The results obtained in this research indicate two outcomes:
+
+\begin{enumerate}
+    \item A human responsible for labeling aircraft data requires expert knowledge to accurately classify an aircraft's maneuvers; and
+    \item A \acl{ml} model can adequately represent a human labeler of flight maneuvers, and thus such a model can classify large amounts of data and reduce manpower requirements.
+\end{enumerate}
+
+\noindent The remainder of this section describes these conclusions in detail. Additionally, it discusses future research possibilities, including the use of a more robust simulator and a much larger number of flight maneuvers.
+
+% at least one paragraph describing conclusions on how well the research went – preferably one paragraph per major finding
+
+If an expert system's labels are significantly different\footnote{A significant difference is one in which Cohen's kappa coefficient is less than $0.90$ (where $1$ is the maximum possible value).} from those of the model fit to a layman's labels, we know that the layman's labels are unreliable. The results clearly show this to be the case for the best \ac{ml} models\footnote{For logistic regression, \ac{qda}, and the ridge, model prediction performance for the layman labels is similar to the prediction performance for the expert labels, but the performance is relatively bad in both cases.}. In other words, the results detailed in Section \ref{sec:results} indicate that the layman's label for a given observation is often \textit{not} representative of the true aircraft maneuver for that observation. Thus, we can conclude that a human observer needs expert knowledge to accurately classify aircraft maneuvers. This conclusion likely applies to more than just aircraft maneuvers (for example, in evaluating the validity of crime-scene witness testimony), but further research is required to validate this claim.
+
+Although the results show that a model fit to the layman's labels does not adequately predict the expert's labels, they also show that the model fits the layman's labels exceptionally well. The best model's kappa coefficient is $0.996973$ (where $1$ is the maximum possible value), so it is clear that the model is representative of the non-expert. It is assumed that an expert applies labels in a more consistent manner than does a non-expert, so we believe a \acl{ml} model can fit an expert at least as well as it fits the layman. Thus, one could fit a model to an expert and then use such a model to classify large amounts of aircraft flight data (for whatever purpose is required). In doing so, one would reduce manpower requirements -- at least for one's expert maneuver-labelers.
+
+% at least one paragraph on future work – preferably one paragraph for each major idea
+
+The \ac{avas}, while useful for this research, is limited in scope. The control scheme is low-quality, the visual representation is sub-par, and the code is far too convoluted to allow for significant modifications. Future researchers who wish to affirm the conclusions found here should generate data with a higher-quality, professional simulator, or they should work to obtain real data from real aircraft. The latter is ideal.
+
+Additionally, future research should analyze whether our conclusions hold when the number of classes is significantly large. A powered aircraft's movements can be classified by so much more than just \textit{takeoff}, \textit{cruise}, and \textit{turn}, and future researchers would do well to apply more labels to their observations. Of course, the expert system would also need to be improved to allow for a greater number of classes.
+
+% closing paragraph which re-emphasizes the importance of findings and future work to the DoD / AF or field of interest
+
+This research examined the reliability of non-expert labelers of aircraft maneuvers. According to the results presented, the labels given by a non-expert are significantly different from those given by an expert, and thus the layman's labels are not reliable. However, the results also showed that a \acl{ml} model fit to human-defined labels can effectively replace the human in labeling future flight observations. For this reason, we believe \ac{ml} can be used to reduce manpower hours in labeling large quantities of flight data. We expect this conclusion is generalizable to other, unrelated domains.
+
+\end{document}

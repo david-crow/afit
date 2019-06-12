@@ -1,0 +1,31 @@
+Y   //directed
+N   //weighted
+12   //number of vertices 
+2   //(out) degree of vertex 1
+6   //  arc/link to vertex 6
+3   //  arc/link to vertex 3
+1   //(out) degree of vertex 2
+7   //  arc/link to vertex 7
+4   //(out) degree of vertex 3
+2   //  arc/link to vertex 2
+4   //  arc/link to vertex 4
+5   //  arc/link to vertex 5
+12   //  arc/link to vertex 12
+2   //(out) degree of vertex 4
+4   //  arc/link to vertex 4
+10   //  arc/link to vertex 10
+1   //(out) degree of vertex 5
+10   //  arc/link to vertex 10
+1   //(out) degree of vertex 6
+9   //  arc/link to vertex 9
+0   //(out) degree of vertex 7
+2   //(out) degree of vertex 8
+4   //  arc/link to vertex 4
+11   //  arc/link to vertex 11
+1   //(out) degree of vertex 9
+2   //  arc/link to vertex 2
+0   //(out) degree of vertex 10
+1   //(out) degree of vertex 11
+8   //  arc/link to vertex 8
+1   //(out) degree of vertex 12
+1   //  arc/link to vertex 1

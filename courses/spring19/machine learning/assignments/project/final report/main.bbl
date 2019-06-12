@@ -1,0 +1,28 @@
+\begin{thebibliography}{1}
+
+\bibitem{Rodin1992}
+E.~Y. Rodin and M.~Amin, ``{Maneuver prediction in air combat via artificial
+  neural networks},'' {\em Computers and Mathematics with Applications},
+  vol.~24, no.~3, pp.~95--112, 1992.
+
+\bibitem{James2013}
+G.~James, D.~Witten, T.~Hastie, and R.~Tibshirani, {\em {An introduction to
+  statistical learning}}.
+\newblock New York: Springer, 2013.
+
+\bibitem{Bishop2006}
+C.~M. Bishop, {\em {Pattern recognition and machine learning}}.
+\newblock New York: Springer, 2006.
+
+\bibitem{Blanks2017}
+Z.~Blanks, A.~Sedgwick, B.~Bone, and A.~Mayerchak, ``{Identification of flight
+  maneuvers and aircraft Types utilizing unsupervised learning with big
+  data},'' in {\em Systems and Information Engineering Design Symposium},
+  (Charlottesville, VA), pp.~180--185, IEEE, 2017.
+
+\bibitem{Kappa}
+J.~Sim and C.~C. Wright, ``{The Kappa Statistic in Reliability Studies: Use,
+  Interpretation, and Sample Size Requirements},'' {\em Physical Therapy},
+  vol.~85, pp.~257--268, 03 2005.
+
+\end{thebibliography}

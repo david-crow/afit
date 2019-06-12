@@ -1,0 +1,1217 @@
+
+***********************************************************************
+
+                Air Force Institute of Technology
+                 Graduate School of Engineering
+          Department of Electrical and Computer Engineering
+
+***********************************************************************
+
+                 STANDARD GRAPH ROUTINES IN C++
+
+                Welcome to the AFIT Graph Program
+
+***********************************************************************
+        What type of graph input method do you desire?
+                        Your options are:
+ F) for file Input, I) for interactive input, H) for help, X) to exit
+***********************************************************************
+F
+Please enter the name of graph input file:
+graphs/small-planar-1.txt
+***********************************************************************
+
+                What functions are desired?
+
+        The available options for directed/undirected graphs are:
+
+                S for strong components
+                D for depth first search
+                M for maximum independent set/clique
+                T for the number of spanning trees
+                K for Kruskal's minimum spanning tree
+                P for Prim's minimum spanning tree
+                B for both Kruskal's and Prim's MST
+                A for all of the above
+                J for Dijkstra's algorithm
+                N for entry of a new graph
+                X to terminate program
+
+All outputs are stored in graph.output except MISs which are stored in
+MIS.data and the information about each step of the MIS calculation which,
+if desired, is stored in MISinfo.data
+***********************************************************************
+
+M
+Do you want to print the intermediate results of the MIS calculation? (Y/N)
+Y
+Maximal independent set:  [  1  3  4  7]
+Maximal independent set:  [  1  3  5  6]
+Maximal independent set:  [  1  3  5  7]
+Maximal independent set:  [  2  5  6]
+independence number = 4
+clique:  [  1]
+clique:  [  2  3]
+clique:  [  4  5]
+clique:  [  6  7]
+clique number = 2
+***********************************************************************
+
+                What functions are desired?
+
+        The available options for directed/undirected graphs are:
+
+                S for strong components
+                D for depth first search
+                M for maximum independent set/clique
+                T for the number of spanning trees
+                K for Kruskal's minimum spanning tree
+                P for Prim's minimum spanning tree
+                B for both Kruskal's and Prim's MST
+                A for all of the above
+                J for Dijkstra's algorithm
+                N for entry of a new graph
+                X to terminate program
+
+All outputs are stored in graph.output except MISs which are stored in
+MIS.data and the information about each step of the MIS calculation which,
+if desired, is stored in MISinfo.data
+***********************************************************************
+
+N
+***********************************************************************
+        What type of graph input method do you desire?
+                        Your options are:
+ F) for file Input, I) for interactive input, H) for help, X) to exit
+***********************************************************************
+F
+Please enter the name of graph input file:
+graphs/small-planar-2.txt
+***********************************************************************
+
+                What functions are desired?
+
+        The available options for directed/undirected graphs are:
+
+                S for strong components
+                D for depth first search
+                M for maximum independent set/clique
+                T for the number of spanning trees
+                K for Kruskal's minimum spanning tree
+                P for Prim's minimum spanning tree
+                B for both Kruskal's and Prim's MST
+                A for all of the above
+                J for Dijkstra's algorithm
+                N for entry of a new graph
+                X to terminate program
+
+All outputs are stored in graph.output except MISs which are stored in
+MIS.data and the information about each step of the MIS calculation which,
+if desired, is stored in MISinfo.data
+***********************************************************************
+
+M
+Do you want to print the intermediate results of the MIS calculation? (Y/N)
+Y
+Maximal independent set:  [  1  6]
+Maximal independent set:  [  2  5]
+Maximal independent set:  [  3  4]
+independence number = 2
+clique:  [  1]
+clique:  [  2]
+clique:  [  3]
+clique:  [  4]
+clique:  [  5  6]
+clique number = 2
+***********************************************************************
+
+                What functions are desired?
+
+        The available options for directed/undirected graphs are:
+
+                S for strong components
+                D for depth first search
+                M for maximum independent set/clique
+                T for the number of spanning trees
+                K for Kruskal's minimum spanning tree
+                P for Prim's minimum spanning tree
+                B for both Kruskal's and Prim's MST
+                A for all of the above
+                J for Dijkstra's algorithm
+                N for entry of a new graph
+                X to terminate program
+
+All outputs are stored in graph.output except MISs which are stored in
+MIS.data and the information about each step of the MIS calculation which,
+if desired, is stored in MISinfo.data
+***********************************************************************
+
+N
+***********************************************************************
+        What type of graph input method do you desire?
+                        Your options are:
+ F) for file Input, I) for interactive input, H) for help, X) to exit
+***********************************************************************
+F
+Please enter the name of graph input file:
+graphs/small-nonplanar-1.txt
+***********************************************************************
+
+                What functions are desired?
+
+        The available options for directed/undirected graphs are:
+
+                S for strong components
+                D for depth first search
+                M for maximum independent set/clique
+                T for the number of spanning trees
+                K for Kruskal's minimum spanning tree
+                P for Prim's minimum spanning tree
+                B for both Kruskal's and Prim's MST
+                A for all of the above
+                J for Dijkstra's algorithm
+                N for entry of a new graph
+                X to terminate program
+
+All outputs are stored in graph.output except MISs which are stored in
+MIS.data and the information about each step of the MIS calculation which,
+if desired, is stored in MISinfo.data
+***********************************************************************
+
+M
+Do you want to print the intermediate results of the MIS calculation? (Y/N)
+Y
+Maximal independent set:  [  1  3]
+Maximal independent set:  [  2  4  5]
+Maximal independent set:  [  2  5  6]
+independence number = 3
+clique:  [  1  2]
+clique:  [  1  4  6]
+clique:  [  1  5]
+clique:  [  2  3]
+clique:  [  3  4  6]
+clique:  [  3  5]
+clique number = 3
+***********************************************************************
+
+                What functions are desired?
+
+        The available options for directed/undirected graphs are:
+
+                S for strong components
+                D for depth first search
+                M for maximum independent set/clique
+                T for the number of spanning trees
+                K for Kruskal's minimum spanning tree
+                P for Prim's minimum spanning tree
+                B for both Kruskal's and Prim's MST
+                A for all of the above
+                J for Dijkstra's algorithm
+                N for entry of a new graph
+                X to terminate program
+
+All outputs are stored in graph.output except MISs which are stored in
+MIS.data and the information about each step of the MIS calculation which,
+if desired, is stored in MISinfo.data
+***********************************************************************
+
+N
+***********************************************************************
+        What type of graph input method do you desire?
+                        Your options are:
+ F) for file Input, I) for interactive input, H) for help, X) to exit
+***********************************************************************
+F
+Please enter the name of graph input file:
+graphs/small-nonplanar-2.txt
+***********************************************************************
+
+                What functions are desired?
+
+        The available options for directed/undirected graphs are:
+
+                S for strong components
+                D for depth first search
+                M for maximum independent set/clique
+                T for the number of spanning trees
+                K for Kruskal's minimum spanning tree
+                P for Prim's minimum spanning tree
+                B for both Kruskal's and Prim's MST
+                A for all of the above
+                J for Dijkstra's algorithm
+                N for entry of a new graph
+                X to terminate program
+
+All outputs are stored in graph.output except MISs which are stored in
+MIS.data and the information about each step of the MIS calculation which,
+if desired, is stored in MISinfo.data
+***********************************************************************
+
+M
+Do you want to print the intermediate results of the MIS calculation? (Y/N)
+Y
+Maximal independent set:  [  1]
+Maximal independent set:  [  2  5]
+Maximal independent set:  [  2  6]
+Maximal independent set:  [  3]
+Maximal independent set:  [  4]
+independence number = 2
+clique:  [  1  2  3  4]
+clique:  [  1  3  4  5  6]
+clique number = 5
+***********************************************************************
+
+                What functions are desired?
+
+        The available options for directed/undirected graphs are:
+
+                S for strong components
+                D for depth first search
+                M for maximum independent set/clique
+                T for the number of spanning trees
+                K for Kruskal's minimum spanning tree
+                P for Prim's minimum spanning tree
+                B for both Kruskal's and Prim's MST
+                A for all of the above
+                J for Dijkstra's algorithm
+                N for entry of a new graph
+                X to terminate program
+
+All outputs are stored in graph.output except MISs which are stored in
+MIS.data and the information about each step of the MIS calculation which,
+if desired, is stored in MISinfo.data
+***********************************************************************
+
+N
+***********************************************************************
+        What type of graph input method do you desire?
+                        Your options are:
+ F) for file Input, I) for interactive input, H) for help, X) to exit
+***********************************************************************
+F
+Please enter the name of graph input file:
+graphs/medium-planar-1.txt
+***********************************************************************
+
+                What functions are desired?
+
+        The available options for directed/undirected graphs are:
+
+                S for strong components
+                D for depth first search
+                M for maximum independent set/clique
+                T for the number of spanning trees
+                K for Kruskal's minimum spanning tree
+                P for Prim's minimum spanning tree
+                B for both Kruskal's and Prim's MST
+                A for all of the above
+                J for Dijkstra's algorithm
+                N for entry of a new graph
+                X to terminate program
+
+All outputs are stored in graph.output except MISs which are stored in
+MIS.data and the information about each step of the MIS calculation which,
+if desired, is stored in MISinfo.data
+***********************************************************************
+
+M
+Do you want to print the intermediate results of the MIS calculation? (Y/N)
+Y
+Maximal independent set:  [  1  3  7]
+Maximal independent set:  [  1  3  8  9]
+Maximal independent set:  [  1  3 10]
+Maximal independent set:  [  1  5  9]
+Maximal independent set:  [  1  5 10]
+Maximal independent set:  [  1  6  7]
+Maximal independent set:  [  1  6  9]
+Maximal independent set:  [  1  6 10]
+Maximal independent set:  [  2  5  9]
+Maximal independent set:  [  2  5 10]
+Maximal independent set:  [  2  6  7]
+Maximal independent set:  [  2  6  9]
+Maximal independent set:  [  2  6 10]
+Maximal independent set:  [  2  8  9]
+Maximal independent set:  [  4  6  7]
+Maximal independent set:  [  4  6  9]
+Maximal independent set:  [  4  6 10]
+Maximal independent set:  [  4  8  9]
+independence number = 4
+clique:  [  1  2  4]
+clique:  [  2  3  4]
+clique:  [  3  4  5]
+clique:  [  3  5  6]
+clique:  [  5  6  8]
+clique:  [  5  7  8]
+clique:  [  7  8 10]
+clique:  [  7  9 10]
+clique number = 3
+***********************************************************************
+
+                What functions are desired?
+
+        The available options for directed/undirected graphs are:
+
+                S for strong components
+                D for depth first search
+                M for maximum independent set/clique
+                T for the number of spanning trees
+                K for Kruskal's minimum spanning tree
+                P for Prim's minimum spanning tree
+                B for both Kruskal's and Prim's MST
+                A for all of the above
+                J for Dijkstra's algorithm
+                N for entry of a new graph
+                X to terminate program
+
+All outputs are stored in graph.output except MISs which are stored in
+MIS.data and the information about each step of the MIS calculation which,
+if desired, is stored in MISinfo.data
+***********************************************************************
+
+N
+***********************************************************************
+        What type of graph input method do you desire?
+                        Your options are:
+ F) for file Input, I) for interactive input, H) for help, X) to exit
+***********************************************************************
+F
+Please enter the name of graph input file:
+graphs/medium-planar-2.txt
+***********************************************************************
+
+                What functions are desired?
+
+        The available options for directed/undirected graphs are:
+
+                S for strong components
+                D for depth first search
+                M for maximum independent set/clique
+                T for the number of spanning trees
+                K for Kruskal's minimum spanning tree
+                P for Prim's minimum spanning tree
+                B for both Kruskal's and Prim's MST
+                A for all of the above
+                J for Dijkstra's algorithm
+                N for entry of a new graph
+                X to terminate program
+
+All outputs are stored in graph.output except MISs which are stored in
+MIS.data and the information about each step of the MIS calculation which,
+if desired, is stored in MISinfo.data
+***********************************************************************
+
+M
+Do you want to print the intermediate results of the MIS calculation? (Y/N)
+Y
+Maximal independent set:  [  1  2  4  5 11]
+Maximal independent set:  [  1  2  8 10]
+Maximal independent set:  [  1  2 10 11]
+Maximal independent set:  [  1  4  5  7  9 11]
+Maximal independent set:  [  1  7  8  9 10]
+Maximal independent set:  [  1  7  9 10 11]
+Maximal independent set:  [  2  4  5  6 11 12]
+Maximal independent set:  [  2  6  8 10 12]
+Maximal independent set:  [  2  6 10 11 12]
+Maximal independent set:  [  3  6  7  8 10]
+Maximal independent set:  [  3  6  7 10 11]
+Maximal independent set:  [  3  7  8  9 10]
+Maximal independent set:  [  3  7  9 10 11]
+Maximal independent set:  [  4  5  6  7 11 12]
+Maximal independent set:  [  6  7  8 10 12]
+Maximal independent set:  [  6  7 10 11 12]
+Maximal independent set:  [  7  8  9 10 12]
+Maximal independent set:  [  7  9 10 11 12]
+independence number = 6
+clique:  [  1]
+clique:  [  2]
+clique:  [  3]
+clique:  [  4]
+clique:  [  5]
+clique:  [  6]
+clique:  [  7]
+clique:  [  8 11]
+clique:  [  9]
+clique:  [ 10]
+clique:  [ 12]
+clique number = 2
+***********************************************************************
+
+                What functions are desired?
+
+        The available options for directed/undirected graphs are:
+
+                S for strong components
+                D for depth first search
+                M for maximum independent set/clique
+                T for the number of spanning trees
+                K for Kruskal's minimum spanning tree
+                P for Prim's minimum spanning tree
+                B for both Kruskal's and Prim's MST
+                A for all of the above
+                J for Dijkstra's algorithm
+                N for entry of a new graph
+                X to terminate program
+
+All outputs are stored in graph.output except MISs which are stored in
+MIS.data and the information about each step of the MIS calculation which,
+if desired, is stored in MISinfo.data
+***********************************************************************
+
+N
+***********************************************************************
+        What type of graph input method do you desire?
+                        Your options are:
+ F) for file Input, I) for interactive input, H) for help, X) to exit
+***********************************************************************
+F
+Please enter the name of graph input file:
+graphs/medium-nonplanar-1.txt
+***********************************************************************
+
+                What functions are desired?
+
+        The available options for directed/undirected graphs are:
+
+                S for strong components
+                D for depth first search
+                M for maximum independent set/clique
+                T for the number of spanning trees
+                K for Kruskal's minimum spanning tree
+                P for Prim's minimum spanning tree
+                B for both Kruskal's and Prim's MST
+                A for all of the above
+                J for Dijkstra's algorithm
+                N for entry of a new graph
+                X to terminate program
+
+All outputs are stored in graph.output except MISs which are stored in
+MIS.data and the information about each step of the MIS calculation which,
+if desired, is stored in MISinfo.data
+***********************************************************************
+
+M
+Do you want to print the intermediate results of the MIS calculation? (Y/N)
+Y
+Maximal independent set:  [  1  2  3  4  5  6]
+Maximal independent set:  [  1  2  3  4 13]
+Maximal independent set:  [  1  2  4  5 12]
+Maximal independent set:  [  1  2  4 12 13]
+Maximal independent set:  [  1  2 10 12 13]
+Maximal independent set:  [  1  3  4 11 13]
+Maximal independent set:  [  1  3  5  9]
+Maximal independent set:  [  1  3  9 11 13]
+Maximal independent set:  [  1  4  5  6  8]
+Maximal independent set:  [  1  4  5  8 12]
+Maximal independent set:  [  1  4  8 11 12 13]
+Maximal independent set:  [  1  5  8  9 12]
+Maximal independent set:  [  1  8  9 10 11 12 13]
+Maximal independent set:  [  4  5  6  7  8]
+Maximal independent set:  [  4  5  7  8 12]
+Maximal independent set:  [  4  7  8 11 12 13]
+Maximal independent set:  [  5  7  8  9 12]
+Maximal independent set:  [  7  8  9 10 11 12 13]
+independence number = 7
+clique:  [  1  7]
+clique:  [  2  7]
+clique:  [  2  8]
+clique:  [  2  9]
+clique:  [  2 11]
+clique:  [  3  7]
+clique:  [  3  8]
+clique:  [  3 10]
+clique:  [  3 12]
+clique:  [  4  9]
+clique:  [  4 10]
+clique:  [  5 10]
+clique:  [  5 11]
+clique:  [  5 13]
+clique:  [  6  9]
+clique:  [  6 10]
+clique:  [  6 11]
+clique:  [  6 12]
+clique:  [  6 13]
+clique number = 2
+***********************************************************************
+
+                What functions are desired?
+
+        The available options for directed/undirected graphs are:
+
+                S for strong components
+                D for depth first search
+                M for maximum independent set/clique
+                T for the number of spanning trees
+                K for Kruskal's minimum spanning tree
+                P for Prim's minimum spanning tree
+                B for both Kruskal's and Prim's MST
+                A for all of the above
+                J for Dijkstra's algorithm
+                N for entry of a new graph
+                X to terminate program
+
+All outputs are stored in graph.output except MISs which are stored in
+MIS.data and the information about each step of the MIS calculation which,
+if desired, is stored in MISinfo.data
+***********************************************************************
+
+N
+***********************************************************************
+        What type of graph input method do you desire?
+                        Your options are:
+ F) for file Input, I) for interactive input, H) for help, X) to exit
+***********************************************************************
+F
+Please enter the name of graph input file:
+graphs/large-planar-1.txt
+***********************************************************************
+
+                What functions are desired?
+
+        The available options for directed/undirected graphs are:
+
+                S for strong components
+                D for depth first search
+                M for maximum independent set/clique
+                T for the number of spanning trees
+                K for Kruskal's minimum spanning tree
+                P for Prim's minimum spanning tree
+                B for both Kruskal's and Prim's MST
+                A for all of the above
+                J for Dijkstra's algorithm
+                N for entry of a new graph
+                X to terminate program
+
+All outputs are stored in graph.output except MISs which are stored in
+MIS.data and the information about each step of the MIS calculation which,
+if desired, is stored in MISinfo.data
+***********************************************************************
+
+M
+Do you want to print the intermediate results of the MIS calculation? (Y/N)
+Y
+Maximal independent set:  [  1  3  5  6  8  9 10 13 15 17 23 24]
+Maximal independent set:  [  1  3  5  6  8  9 10 13 16 17 23]
+Maximal independent set:  [  1  3  5  6  8  9 11 13 15 17 23 24]
+Maximal independent set:  [  1  3  5  6  9 10 13 15 17 20 23 24]
+Maximal independent set:  [  1  3  5  6  9 10 13 16 17 20 23]
+Maximal independent set:  [  1  3  5  6  9 11 13 15 17 20 23 24]
+Maximal independent set:  [  1  3  5  6 10 13 15 17 19 20 23 24]
+Maximal independent set:  [  1  3  5  6 10 13 16 17 19 20 23]
+Maximal independent set:  [  1  3  5  6 11 13 15 17 19 20 23 24]
+Maximal independent set:  [  1  3  5  6 11 13 15 18 19 20 23 24]
+Maximal independent set:  [  1  3  5  6 13 16 18 19 20 23]
+Maximal independent set:  [  1  3  5  7  8  9 10 15 17 23 24]
+Maximal independent set:  [  1  3  5  7  8  9 10 16 17 23]
+Maximal independent set:  [  1  3  5  7  8  9 11 15 17 23 24]
+Maximal independent set:  [  1  3  5  7  8 10 15 17 19 21 23 24]
+Maximal independent set:  [  1  3  5  7  8 10 16 17 19 21 23]
+Maximal independent set:  [  1  3  5  7  8 11 15 17 19 21 23 24]
+Maximal independent set:  [  1  3  5  7  8 11 15 18 19 21 23 24]
+Maximal independent set:  [  1  3  5  7  8 16 18 19 21 23]
+Maximal independent set:  [  1  3  5  7  9 10 15 17 20 23 24]
+Maximal independent set:  [  1  3  5  7  9 10 16 17 20 23]
+Maximal independent set:  [  1  3  5  7  9 11 15 17 20 23 24]
+Maximal independent set:  [  1  3  5  7 10 15 17 19 20 23 24]
+Maximal independent set:  [  1  3  5  7 10 16 17 19 20 23]
+Maximal independent set:  [  1  3  5  7 11 15 17 19 20 23 24]
+Maximal independent set:  [  1  3  5  7 11 15 18 19 20 23 24]
+Maximal independent set:  [  1  3  5  7 16 18 19 20 23]
+Maximal independent set:  [  1  3  5  8 10 13 15 17 19 21 23 24]
+Maximal independent set:  [  1  3  5  8 10 13 16 17 19 21 23]
+Maximal independent set:  [  1  3  5  8 11 13 15 17 19 21 23 24]
+Maximal independent set:  [  1  3  5  8 11 13 15 18 19 21 23 24]
+Maximal independent set:  [  1  3  5  8 13 16 18 19 21 23]
+Maximal independent set:  [  1  4  5  6  8  9 10 13 15 17 23]
+Maximal independent set:  [  1  4  5  6  8  9 10 13 16 17 23]
+Maximal independent set:  [  1  4  5  6  8  9 11 13 15 17 23]
+Maximal independent set:  [  1  4  5  6  9 10 13 15 17 20 23]
+Maximal independent set:  [  1  4  5  6  9 10 13 16 17 20 23]
+Maximal independent set:  [  1  4  5  6  9 11 13 15 17 20 23]
+Maximal independent set:  [  1  4  5  6 10 13 15 17 19 20 23]
+Maximal independent set:  [  1  4  5  6 10 13 16 17 19 20 23]
+Maximal independent set:  [  1  4  5  6 11 13 15 17 19 20 23]
+Maximal independent set:  [  1  4  5  6 11 13 15 18 19 20 23]
+Maximal independent set:  [  1  4  5  6 13 16 18 19 20 23]
+Maximal independent set:  [  1  4  5  7  8  9 10 15 17 23]
+Maximal independent set:  [  1  4  5  7  8  9 10 16 17 23]
+Maximal independent set:  [  1  4  5  7  8  9 11 15 17 23]
+Maximal independent set:  [  1  4  5  7  8 10 15 17 19 21 23]
+Maximal independent set:  [  1  4  5  7  8 10 16 17 19 21 23]
+Maximal independent set:  [  1  4  5  7  8 11 15 17 19 21 23]
+Maximal independent set:  [  1  4  5  7  8 11 15 18 19 21 23]
+Maximal independent set:  [  1  4  5  7  8 16 18 19 21 23]
+Maximal independent set:  [  1  4  5  7  9 10 15 17 20 23]
+Maximal independent set:  [  1  4  5  7  9 10 16 17 20 23]
+Maximal independent set:  [  1  4  5  7  9 11 15 17 20 23]
+Maximal independent set:  [  1  4  5  7 10 15 17 19 20 23]
+Maximal independent set:  [  1  4  5  7 10 16 17 19 20 23]
+Maximal independent set:  [  1  4  5  7 11 15 17 19 20 23]
+Maximal independent set:  [  1  4  5  7 11 15 18 19 20 23]
+Maximal independent set:  [  1  4  5  7 16 18 19 20 23]
+Maximal independent set:  [  1  4  5  8 10 13 15 17 19 21 23]
+Maximal independent set:  [  1  4  5  8 10 13 16 17 19 21 23]
+Maximal independent set:  [  1  4  5  8 11 13 15 17 19 21 23]
+Maximal independent set:  [  1  4  5  8 11 13 15 18 19 21 23]
+Maximal independent set:  [  1  4  5  8 13 16 18 19 21 23]
+Maximal independent set:  [  2  4  5  6  8  9 10 13 14 17 23]
+Maximal independent set:  [  2  4  5  6  8  9 10 13 15 17 23]
+Maximal independent set:  [  2  4  5  6  8  9 10 13 16 17 23]
+Maximal independent set:  [  2  4  5  6  8  9 11 13 14 17 23]
+Maximal independent set:  [  2  4  5  6  8  9 11 13 15 17 23]
+Maximal independent set:  [  2  4  5  6  9 10 13 14 17 20 23]
+Maximal independent set:  [  2  4  5  6  9 10 13 15 17 20 23]
+Maximal independent set:  [  2  4  5  6  9 10 13 16 17 20 23]
+Maximal independent set:  [  2  4  5  6  9 11 13 14 17 20 23]
+Maximal independent set:  [  2  4  5  6  9 11 13 15 17 20 23]
+Maximal independent set:  [  2  4  5  6 10 13 14 17 19 20 23]
+Maximal independent set:  [  2  4  5  6 10 13 15 17 19 20 23]
+Maximal independent set:  [  2  4  5  6 10 13 16 17 19 20 23]
+Maximal independent set:  [  2  4  5  6 11 13 14 17 19 20 23]
+Maximal independent set:  [  2  4  5  6 11 13 14 18 19 20 23]
+Maximal independent set:  [  2  4  5  6 11 13 15 17 19 20 23]
+Maximal independent set:  [  2  4  5  6 11 13 15 18 19 20 23]
+Maximal independent set:  [  2  4  5  6 13 16 18 19 20 23]
+Maximal independent set:  [  2  4  5  7  8  9 10 14 17 23]
+Maximal independent set:  [  2  4  5  7  8  9 10 15 17 23]
+Maximal independent set:  [  2  4  5  7  8  9 10 16 17 23]
+Maximal independent set:  [  2  4  5  7  8  9 11 14 17 23]
+Maximal independent set:  [  2  4  5  7  8  9 11 15 17 23]
+Maximal independent set:  [  2  4  5  7  8 10 14 17 19 21 23]
+Maximal independent set:  [  2  4  5  7  8 10 15 17 19 21 23]
+Maximal independent set:  [  2  4  5  7  8 10 16 17 19 21 23]
+Maximal independent set:  [  2  4  5  7  8 11 14 17 19 21 23]
+Maximal independent set:  [  2  4  5  7  8 11 14 18 19 21 23]
+Maximal independent set:  [  2  4  5  7  8 11 15 17 19 21 23]
+Maximal independent set:  [  2  4  5  7  8 11 15 18 19 21 23]
+Maximal independent set:  [  2  4  5  7  8 16 18 19 21 23]
+Maximal independent set:  [  2  4  5  7  9 10 14 17 20 23]
+Maximal independent set:  [  2  4  5  7  9 10 15 17 20 23]
+Maximal independent set:  [  2  4  5  7  9 10 16 17 20 23]
+Maximal independent set:  [  2  4  5  7  9 11 14 17 20 23]
+Maximal independent set:  [  2  4  5  7  9 11 15 17 20 23]
+Maximal independent set:  [  2  4  5  7 10 14 17 19 20 23]
+Maximal independent set:  [  2  4  5  7 10 15 17 19 20 23]
+Maximal independent set:  [  2  4  5  7 10 16 17 19 20 23]
+Maximal independent set:  [  2  4  5  7 11 14 17 19 20 23]
+Maximal independent set:  [  2  4  5  7 11 14 18 19 20 23]
+Maximal independent set:  [  2  4  5  7 11 15 17 19 20 23]
+Maximal independent set:  [  2  4  5  7 11 15 18 19 20 23]
+Maximal independent set:  [  2  4  5  7 16 18 19 20 23]
+Maximal independent set:  [  2  4  5  8 10 13 14 17 19 21 23]
+Maximal independent set:  [  2  4  5  8 10 13 15 17 19 21 23]
+Maximal independent set:  [  2  4  5  8 10 13 16 17 19 21 23]
+Maximal independent set:  [  2  4  5  8 11 13 14 17 19 21 23]
+Maximal independent set:  [  2  4  5  8 11 13 14 18 19 21 23]
+Maximal independent set:  [  2  4  5  8 11 13 15 17 19 21 23]
+Maximal independent set:  [  2  4  5  8 11 13 15 18 19 21 23]
+Maximal independent set:  [  2  4  5  8 13 16 18 19 21 23]
+Maximal independent set:  [  3  5  6  8  9 10 13 14 17 23]
+Maximal independent set:  [  3  5  6  8  9 11 13 14 17 23]
+Maximal independent set:  [  3  5  6  9 10 13 14 17 20 23]
+Maximal independent set:  [  3  5  6  9 11 13 14 17 20 23]
+Maximal independent set:  [  3  5  6 10 13 14 17 19 20 23]
+Maximal independent set:  [  3  5  6 11 13 14 17 19 20 23]
+Maximal independent set:  [  3  5  6 11 13 14 18 19 20 23]
+Maximal independent set:  [  3  5  7  8  9 10 14 17 23]
+Maximal independent set:  [  3  5  7  8  9 11 14 17 23]
+Maximal independent set:  [  3  5  7  8 10 14 17 19 21 23]
+Maximal independent set:  [  3  5  7  8 11 14 17 19 21 23]
+Maximal independent set:  [  3  5  7  8 11 14 18 19 21 23]
+Maximal independent set:  [  3  5  7  9 10 14 17 20 23]
+Maximal independent set:  [  3  5  7  9 11 14 17 20 23]
+Maximal independent set:  [  3  5  7 10 14 17 19 20 23]
+Maximal independent set:  [  3  5  7 11 14 17 19 20 23]
+Maximal independent set:  [  3  5  7 11 14 18 19 20 23]
+Maximal independent set:  [  3  5  8 10 13 14 17 19 21 23]
+Maximal independent set:  [  3  5  8 11 13 14 17 19 21 23]
+Maximal independent set:  [  3  5  8 11 13 14 18 19 21 23]
+Maximal independent set:  [  3  6  9 10 12 14 17 20 22]
+Maximal independent set:  [  3  6 12 14 18 19 20 22]
+Maximal independent set:  [  3  7  9 10 12 14 17 20 22]
+Maximal independent set:  [  3  7 10 12 14 17 19 20 22]
+Maximal independent set:  [  3  7 10 12 14 17 19 21]
+Maximal independent set:  [  3  7 12 14 18 19 20 22]
+Maximal independent set:  [  3  7 12 14 18 19 21]
+independence number = 12
+clique:  [  1]
+clique:  [  2]
+clique:  [  3]
+clique:  [  4]
+clique:  [  5]
+clique:  [  6]
+clique:  [  7]
+clique:  [  8]
+clique:  [  9 21]
+clique:  [ 10]
+clique:  [ 11 16]
+clique:  [ 12]
+clique:  [ 13]
+clique:  [ 14]
+clique:  [ 15]
+clique:  [ 17]
+clique:  [ 18]
+clique:  [ 19]
+clique:  [ 20]
+clique:  [ 22]
+clique:  [ 23]
+clique:  [ 24]
+clique number = 2
+***********************************************************************
+
+                What functions are desired?
+
+        The available options for directed/undirected graphs are:
+
+                S for strong components
+                D for depth first search
+                M for maximum independent set/clique
+                T for the number of spanning trees
+                K for Kruskal's minimum spanning tree
+                P for Prim's minimum spanning tree
+                B for both Kruskal's and Prim's MST
+                A for all of the above
+                J for Dijkstra's algorithm
+                N for entry of a new graph
+                X to terminate program
+
+All outputs are stored in graph.output except MISs which are stored in
+MIS.data and the information about each step of the MIS calculation which,
+if desired, is stored in MISinfo.data
+***********************************************************************
+
+N
+***********************************************************************
+        What type of graph input method do you desire?
+                        Your options are:
+ F) for file Input, I) for interactive input, H) for help, X) to exit
+***********************************************************************
+F
+Please enter the name of graph input file:
+graphs/large-nonplanar-1.txt
+***********************************************************************
+
+                What functions are desired?
+
+        The available options for directed/undirected graphs are:
+
+                S for strong components
+                D for depth first search
+                M for maximum independent set/clique
+                T for the number of spanning trees
+                K for Kruskal's minimum spanning tree
+                P for Prim's minimum spanning tree
+                B for both Kruskal's and Prim's MST
+                A for all of the above
+                J for Dijkstra's algorithm
+                N for entry of a new graph
+                X to terminate program
+
+All outputs are stored in graph.output except MISs which are stored in
+MIS.data and the information about each step of the MIS calculation which,
+if desired, is stored in MISinfo.data
+***********************************************************************
+
+M
+Do you want to print the intermediate results of the MIS calculation? (Y/N)
+Y
+Maximal independent set:  [  1  3  6  8 10 16 19]
+Maximal independent set:  [  1  3  6  8 10 17 18]
+Maximal independent set:  [  1  3  6  8 10 18 20]
+Maximal independent set:  [  1  3  6 11 12 13 17]
+Maximal independent set:  [  1  3  6 11 12 13 20]
+Maximal independent set:  [  1  3  6 11 12 17 19]
+Maximal independent set:  [  1  3  6 11 13 17 18]
+Maximal independent set:  [  1  3  6 11 13 18 20]
+Maximal independent set:  [  1  3  8 10 14 15 16 19]
+Maximal independent set:  [  1  3  8 10 14 15 18]
+Maximal independent set:  [  1  3  8 11 14 15 18]
+Maximal independent set:  [  1  3 10 13 14 15 16]
+Maximal independent set:  [  1  3 10 13 14 15 18]
+Maximal independent set:  [  1  3 11 12 13 14 15]
+Maximal independent set:  [  1  3 11 12 14 15 19]
+Maximal independent set:  [  1  3 11 12 14 17 19]
+Maximal independent set:  [  1  3 11 13 14 15 18]
+Maximal independent set:  [  1  3 11 13 14 17 18]
+Maximal independent set:  [  1  3 12 14 15 16 19]
+Maximal independent set:  [  1  5  6  9 10 16 19]
+Maximal independent set:  [  1  5  6  9 10 17 18]
+Maximal independent set:  [  1  5  6  9 10 18 20]
+Maximal independent set:  [  1  5  6  9 11 12 17 19]
+Maximal independent set:  [  1  5  6  9 11 12 20]
+Maximal independent set:  [  1  5  6  9 11 17 18]
+Maximal independent set:  [  1  5  6  9 11 18 20]
+Maximal independent set:  [  1  5  6 10 13 16 20]
+Maximal independent set:  [  1  5  6 10 13 17 18]
+Maximal independent set:  [  1  5  6 10 13 18 20]
+Maximal independent set:  [  1  5  6 11 12 13 17]
+Maximal independent set:  [  1  5  6 11 12 13 20]
+Maximal independent set:  [  1  5  6 11 13 17 18]
+Maximal independent set:  [  1  5  6 11 13 18 20]
+Maximal independent set:  [  1  5 10 13 14 15 16]
+Maximal independent set:  [  1  5 10 13 14 15 18]
+Maximal independent set:  [  1  5 10 14 15 16 19]
+Maximal independent set:  [  1  5 10 14 17 19]
+Maximal independent set:  [  1  5 11 12 13 14 15]
+Maximal independent set:  [  1  5 11 12 14 15 19]
+Maximal independent set:  [  1  5 11 12 14 17 19]
+Maximal independent set:  [  1  5 11 13 14 15 18]
+Maximal independent set:  [  1  5 11 13 14 17 18]
+Maximal independent set:  [  1  5 12 14 15 16 19]
+Maximal independent set:  [  2  3  6  7  8 16 19]
+Maximal independent set:  [  2  3  6  7  8 17 18]
+Maximal independent set:  [  2  3  6  7 12 13 16]
+Maximal independent set:  [  2  3  6  7 12 16 19]
+Maximal independent set:  [  2  3  6  7 12 17 19]
+Maximal independent set:  [  2  3  6  7 13 17 18]
+Maximal independent set:  [  2  3  7  8 14 16 19]
+Maximal independent set:  [  2  3  7  8 14 17 18]
+Maximal independent set:  [  2  3  7 12 13 14 16]
+Maximal independent set:  [  2  3  7 12 14 16 19]
+Maximal independent set:  [  2  3  7 12 14 17 19]
+Maximal independent set:  [  2  3  7 13 14 17 18]
+Maximal independent set:  [  2  3  8 11 14 15 18]
+Maximal independent set:  [  2  3 11 12 13 14 15]
+Maximal independent set:  [  2  3 11 12 14 15 19]
+Maximal independent set:  [  2  3 11 12 14 17 19]
+Maximal independent set:  [  2  3 11 13 14 15 18]
+Maximal independent set:  [  2  3 11 13 14 17 18]
+Maximal independent set:  [  2  3 12 14 15 16 19]
+Maximal independent set:  [  3  6  7  8 10 16 19]
+Maximal independent set:  [  3  6  7  8 10 17 18]
+Maximal independent set:  [  3  6  7  8 10 18 20]
+Maximal independent set:  [  3  6  7 12 13 16 20]
+Maximal independent set:  [  3  7  8 10 14 16 19]
+Maximal independent set:  [  3  7  8 10 14 17 18]
+Maximal independent set:  [  3  7 10 13 14 16]
+Maximal independent set:  [  3  7 10 13 14 17 18]
+Maximal independent set:  [  4  5  7  9 10 16 19]
+Maximal independent set:  [  4  5  7  9 10 17 18]
+Maximal independent set:  [  4  5  7  9 10 18 20]
+Maximal independent set:  [  4  5  7  9 12 16 19]
+Maximal independent set:  [  4  5  7 10 13 14 16]
+Maximal independent set:  [  4  5  7 10 13 14 17 18]
+Maximal independent set:  [  4  5  7 10 14 16 19]
+Maximal independent set:  [  4  5  7 10 14 17 19]
+Maximal independent set:  [  4  5  7 12 13 14 16]
+Maximal independent set:  [  4  5  7 12 14 16 19]
+Maximal independent set:  [  4  5  7 12 14 17 19]
+Maximal independent set:  [  4  7  8  9 10 16 19]
+Maximal independent set:  [  4  7  8  9 10 17 18]
+Maximal independent set:  [  4  7  8  9 10 18 20]
+Maximal independent set:  [  4  7  8 10 14 16 19]
+Maximal independent set:  [  4  7  8 10 14 17 18]
+Maximal independent set:  [  4  8  9 11 15 18 20]
+Maximal independent set:  [  5  6  7  9 10 16 19]
+Maximal independent set:  [  5  6  7  9 10 17 18]
+Maximal independent set:  [  5  6  7  9 10 18 20]
+Maximal independent set:  [  5  6  7  9 12 16 19]
+Maximal independent set:  [  5  6  7 10 13 16 20]
+Maximal independent set:  [  5  6  7 10 13 17 18]
+Maximal independent set:  [  5  6  7 10 13 18 20]
+Maximal independent set:  [  5  6  7 12 13 16 20]
+Maximal independent set:  [  6  7  8  9 10 16 19]
+Maximal independent set:  [  6  7  8  9 10 17 18]
+Maximal independent set:  [  6  7  8  9 10 18 20]
+independence number = 8
+clique:  [  1  7]
+clique:  [  2]
+clique:  [  3]
+clique:  [  4]
+clique:  [  5]
+clique:  [  6]
+clique:  [  8 12]
+clique:  [  9]
+clique:  [ 10]
+clique:  [ 11]
+clique:  [ 13]
+clique:  [ 14]
+clique:  [ 15]
+clique:  [ 16]
+clique:  [ 17]
+clique:  [ 18]
+clique:  [ 19]
+clique:  [ 20]
+clique number = 2
+***********************************************************************
+
+                What functions are desired?
+
+        The available options for directed/undirected graphs are:
+
+                S for strong components
+                D for depth first search
+                M for maximum independent set/clique
+                T for the number of spanning trees
+                K for Kruskal's minimum spanning tree
+                P for Prim's minimum spanning tree
+                B for both Kruskal's and Prim's MST
+                A for all of the above
+                J for Dijkstra's algorithm
+                N for entry of a new graph
+                X to terminate program
+
+All outputs are stored in graph.output except MISs which are stored in
+MIS.data and the information about each step of the MIS calculation which,
+if desired, is stored in MISinfo.data
+***********************************************************************
+
+N
+***********************************************************************
+        What type of graph input method do you desire?
+                        Your options are:
+ F) for file Input, I) for interactive input, H) for help, X) to exit
+***********************************************************************
+F
+Please enter the name of graph input file:
+graphs/large-nonplanar-2.txt
+***********************************************************************
+
+                What functions are desired?
+
+        The available options for directed/undirected graphs are:
+
+                S for strong components
+                D for depth first search
+                M for maximum independent set/clique
+                T for the number of spanning trees
+                K for Kruskal's minimum spanning tree
+                P for Prim's minimum spanning tree
+                B for both Kruskal's and Prim's MST
+                A for all of the above
+                J for Dijkstra's algorithm
+                N for entry of a new graph
+                X to terminate program
+
+All outputs are stored in graph.output except MISs which are stored in
+MIS.data and the information about each step of the MIS calculation which,
+if desired, is stored in MISinfo.data
+***********************************************************************
+
+M
+Do you want to print the intermediate results of the MIS calculation? (Y/N)
+Y
+Maximal independent set:  [  1  3  5  8 10 12 14 17 19 21 23 26]
+Maximal independent set:  [  1  3  5  8 10 12 14 17 19 22]
+Maximal independent set:  [  1  3  5  8 10 12 14 17 21 23 25]
+Maximal independent set:  [  1  3  5  8 10 12 14 17 22 25]
+Maximal independent set:  [  1  3  5  8 10 14 17 20 22 25]
+Maximal independent set:  [  1  3  5  8 10 14 18 20 22 25]
+Maximal independent set:  [  1  3  5  8 10 15 17 20 22 25]
+Maximal independent set:  [  1  3  5  8 10 15 18 20 22 25]
+Maximal independent set:  [  1  3  5  8 11 14 17 19 21 23 26]
+Maximal independent set:  [  1  3  5  8 11 14 17 19 22]
+Maximal independent set:  [  1  3  5  8 11 14 17 21 23 25]
+Maximal independent set:  [  1  3  5  8 11 14 17 22 25]
+Maximal independent set:  [  1  3  5  9 11 14 16 18 21 23 25]
+Maximal independent set:  [  1  3  5  9 11 14 16 18 22 25]
+Maximal independent set:  [  1  3  5  9 11 14 17 19 21 23 26]
+Maximal independent set:  [  1  3  5  9 11 14 17 19 22]
+Maximal independent set:  [  1  3  5  9 11 14 17 21 23 25]
+Maximal independent set:  [  1  3  5  9 11 14 17 22 25]
+Maximal independent set:  [  1  3  6  8 10 12 14 17 19 21 23 26]
+Maximal independent set:  [  1  3  6  8 10 12 14 17 19 21 24 26]
+Maximal independent set:  [  1  3  6  8 10 12 14 17 19 22 24]
+Maximal independent set:  [  1  3  6  8 10 12 14 17 21 23 25]
+Maximal independent set:  [  1  3  6  8 10 12 14 17 22 25]
+Maximal independent set:  [  1  3  6  8 10 14 17 20 22 24]
+Maximal independent set:  [  1  3  6  8 10 14 17 20 22 25]
+Maximal independent set:  [  1  3  6  8 10 14 18 20 22 24]
+Maximal independent set:  [  1  3  6  8 10 14 18 20 22 25]
+Maximal independent set:  [  1  3  6  8 10 15 17 20 22 25]
+Maximal independent set:  [  1  3  6  8 10 15 18 20 22 25]
+Maximal independent set:  [  1  3  6  8 11 14 17 19 21 23 26]
+Maximal independent set:  [  1  3  6  8 11 14 17 19 21 24 26]
+Maximal independent set:  [  1  3  6  8 11 14 17 19 22 24]
+Maximal independent set:  [  1  3  6  8 11 14 17 21 23 25]
+Maximal independent set:  [  1  3  6  8 11 14 17 22 25]
+Maximal independent set:  [  1  3  6  9 11 14 16 18 21 23 25]
+Maximal independent set:  [  1  3  6  9 11 14 16 18 21 24]
+Maximal independent set:  [  1  3  6  9 11 14 16 18 22 24]
+Maximal independent set:  [  1  3  6  9 11 14 16 18 22 25]
+Maximal independent set:  [  1  3  6  9 11 14 17 19 21 23 26]
+Maximal independent set:  [  1  3  6  9 11 14 17 19 21 24 26]
+Maximal independent set:  [  1  3  6  9 11 14 17 19 22 24]
+Maximal independent set:  [  1  3  6  9 11 14 17 21 23 25]
+Maximal independent set:  [  1  3  6  9 11 14 17 22 25]
+Maximal independent set:  [  1  4  6  8 10 12 14 17 19 21 24 26]
+Maximal independent set:  [  1  4  6  8 10 12 14 17 19 22 24]
+Maximal independent set:  [  1  4  6  8 10 12 14 17 21 25]
+Maximal independent set:  [  1  4  6  8 10 12 14 17 22 25]
+Maximal independent set:  [  1  4  6  8 10 14 17 20 22 24]
+Maximal independent set:  [  1  4  6  8 10 14 17 20 22 25]
+Maximal independent set:  [  1  4  6  8 10 14 18 20 22 24]
+Maximal independent set:  [  1  4  6  8 10 14 18 20 22 25]
+Maximal independent set:  [  1  4  6  8 10 15 17 20 22 25]
+Maximal independent set:  [  1  4  6  8 10 15 18 20 22 25]
+Maximal independent set:  [  1  4  6  8 11 14 17 19 21 24 26]
+Maximal independent set:  [  1  4  6  8 11 14 17 19 22 24]
+Maximal independent set:  [  1  4  6  8 11 14 17 21 25]
+Maximal independent set:  [  1  4  6  8 11 14 17 22 25]
+Maximal independent set:  [  1  4  6  9 11 14 16 18 21 24]
+Maximal independent set:  [  1  4  6  9 11 14 16 18 21 25]
+Maximal independent set:  [  1  4  6  9 11 14 16 18 22 24]
+Maximal independent set:  [  1  4  6  9 11 14 16 18 22 25]
+Maximal independent set:  [  1  4  6  9 11 14 17 19 21 24 26]
+Maximal independent set:  [  1  4  6  9 11 14 17 19 22 24]
+Maximal independent set:  [  1  4  6  9 11 14 17 21 25]
+Maximal independent set:  [  1  4  6  9 11 14 17 22 25]
+Maximal independent set:  [  2  4  6  8 10 12 14 17 19 21 24 26]
+Maximal independent set:  [  2  4  6  8 10 12 14 17 19 22 24]
+Maximal independent set:  [  2  4  6  8 10 12 14 17 21 25]
+Maximal independent set:  [  2  4  6  8 10 12 14 17 22 25]
+Maximal independent set:  [  2  4  6  8 10 13 15 17 19 21 26]
+Maximal independent set:  [  2  4  6  8 10 13 15 17 19 22]
+Maximal independent set:  [  2  4  6  8 10 13 15 17 20 22 25]
+Maximal independent set:  [  2  4  6  8 10 13 15 17 21 25]
+Maximal independent set:  [  2  4  6  8 10 14 17 20 22 24]
+Maximal independent set:  [  2  4  6  8 10 14 17 20 22 25]
+Maximal independent set:  [  2  4  6  8 10 14 18 20 22 24]
+Maximal independent set:  [  2  4  6  8 10 14 18 20 22 25]
+Maximal independent set:  [  2  4  6  8 11 13 15 17 19 21 26]
+Maximal independent set:  [  2  4  6  8 11 13 15 17 19 22]
+Maximal independent set:  [  2  4  6  8 11 13 15 17 21 25]
+Maximal independent set:  [  2  4  6  8 11 13 15 17 22 25]
+Maximal independent set:  [  2  4  6  8 11 14 17 19 21 24 26]
+Maximal independent set:  [  2  4  6  8 11 14 17 19 22 24]
+Maximal independent set:  [  2  4  6  8 11 14 17 21 25]
+Maximal independent set:  [  2  4  6  8 11 14 17 22 25]
+Maximal independent set:  [  2  4  6  9 11 13 15 17 19 21 26]
+Maximal independent set:  [  2  4  6  9 11 13 15 17 19 22]
+Maximal independent set:  [  2  4  6  9 11 13 15 17 21 25]
+Maximal independent set:  [  2  4  6  9 11 13 15 17 22 25]
+Maximal independent set:  [  2  4  6  9 11 13 16 18 21 24]
+Maximal independent set:  [  2  4  6  9 11 13 16 18 21 25]
+Maximal independent set:  [  2  4  6  9 11 13 16 18 22 24]
+Maximal independent set:  [  2  4  6  9 11 13 16 18 22 25]
+Maximal independent set:  [  2  4  6  9 11 14 16 18 21 24]
+Maximal independent set:  [  2  4  6  9 11 14 16 18 21 25]
+Maximal independent set:  [  2  4  6  9 11 14 16 18 22 24]
+Maximal independent set:  [  2  4  6  9 11 14 16 18 22 25]
+Maximal independent set:  [  2  4  6  9 11 14 17 19 21 24 26]
+Maximal independent set:  [  2  4  6  9 11 14 17 19 22 24]
+Maximal independent set:  [  2  4  6  9 11 14 17 21 25]
+Maximal independent set:  [  2  4  6  9 11 14 17 22 25]
+Maximal independent set:  [  2  5  8 10 12 14 17 19 21 26]
+Maximal independent set:  [  2  5  8 10 12 14 17 19 22]
+Maximal independent set:  [  2  5  8 10 12 14 17 21 25]
+Maximal independent set:  [  2  5  8 10 12 14 17 22 25]
+Maximal independent set:  [  2  5  8 10 13 15 17 19 21 26]
+Maximal independent set:  [  2  5  8 10 13 15 17 19 22]
+Maximal independent set:  [  2  5  8 10 13 15 17 20 22 25]
+Maximal independent set:  [  2  5  8 10 13 15 17 21 25]
+Maximal independent set:  [  2  5  8 10 14 17 20 22 25]
+Maximal independent set:  [  2  5  8 10 14 18 20 22 25]
+Maximal independent set:  [  2  5  8 11 13 15 17 19 21 26]
+Maximal independent set:  [  2  5  8 11 13 15 17 19 22]
+Maximal independent set:  [  2  5  8 11 13 15 17 21 25]
+Maximal independent set:  [  2  5  8 11 13 15 17 22 25]
+Maximal independent set:  [  2  5  8 11 14 17 19 21 26]
+Maximal independent set:  [  2  5  8 11 14 17 19 22]
+Maximal independent set:  [  2  5  8 11 14 17 21 25]
+Maximal independent set:  [  2  5  8 11 14 17 22 25]
+Maximal independent set:  [  2  5  9 11 13 15 17 19 21 26]
+Maximal independent set:  [  2  5  9 11 13 15 17 19 22]
+Maximal independent set:  [  2  5  9 11 13 15 17 21 25]
+Maximal independent set:  [  2  5  9 11 13 15 17 22 25]
+Maximal independent set:  [  2  5  9 11 13 16 18 21 25]
+Maximal independent set:  [  2  5  9 11 13 16 18 22 25]
+Maximal independent set:  [  2  5  9 11 14 16 18 21 25]
+Maximal independent set:  [  2  5  9 11 14 16 18 22 25]
+Maximal independent set:  [  2  5  9 11 14 17 19 21 26]
+Maximal independent set:  [  2  5  9 11 14 17 19 22]
+Maximal independent set:  [  2  5  9 11 14 17 21 25]
+Maximal independent set:  [  2  5  9 11 14 17 22 25]
+Maximal independent set:  [  3  5  8 10 13 15 17 19 21 23 26]
+Maximal independent set:  [  3  5  8 10 13 15 17 19 22]
+Maximal independent set:  [  3  5  8 10 13 15 17 20 22 25]
+Maximal independent set:  [  3  5  8 10 13 15 17 21 23 25]
+Maximal independent set:  [  3  5  8 11 13 15 17 19 21 23 26]
+Maximal independent set:  [  3  5  8 11 13 15 17 19 22]
+Maximal independent set:  [  3  5  8 11 13 15 17 21 23 25]
+Maximal independent set:  [  3  5  8 11 13 15 17 22 25]
+Maximal independent set:  [  3  5  9 11 13 15 17 19 21 23 26]
+Maximal independent set:  [  3  5  9 11 13 15 17 19 22]
+Maximal independent set:  [  3  5  9 11 13 15 17 21 23 25]
+Maximal independent set:  [  3  5  9 11 13 15 17 22 25]
+Maximal independent set:  [  3  5  9 11 13 16 18 21 23 25]
+Maximal independent set:  [  3  5  9 11 13 16 18 22 25]
+Maximal independent set:  [  3  6  8 10 13 15 17 19 21 23 26]
+Maximal independent set:  [  3  6  8 10 13 15 17 19 22]
+Maximal independent set:  [  3  6  8 10 13 15 17 20 22 25]
+Maximal independent set:  [  3  6  8 10 13 15 17 21 23 25]
+Maximal independent set:  [  3  6  8 11 13 15 17 19 21 23 26]
+Maximal independent set:  [  3  6  8 11 13 15 17 19 22]
+Maximal independent set:  [  3  6  8 11 13 15 17 21 23 25]
+Maximal independent set:  [  3  6  8 11 13 15 17 22 25]
+Maximal independent set:  [  3  6  9 11 13 15 17 19 21 23 26]
+Maximal independent set:  [  3  6  9 11 13 15 17 19 22]
+Maximal independent set:  [  3  6  9 11 13 15 17 21 23 25]
+Maximal independent set:  [  3  6  9 11 13 15 17 22 25]
+Maximal independent set:  [  3  6  9 11 13 16 18 21 23 25]
+Maximal independent set:  [  3  6  9 11 13 16 18 21 24]
+Maximal independent set:  [  3  6  9 11 13 16 18 22 24]
+Maximal independent set:  [  3  6  9 11 13 16 18 22 25]
+Maximal independent set:  [  4  7  9 13 15 17 19 21 26]
+Maximal independent set:  [  4  7  9 13 15 17 19 22]
+Maximal independent set:  [  4  7  9 13 16 18 20 22 24]
+Maximal independent set:  [  4  7  9 13 16 18 21 24]
+Maximal independent set:  [  4  7 10 13 15 17 19 21 26]
+Maximal independent set:  [  4  7 10 13 15 17 19 22]
+Maximal independent set:  [  4  7 10 13 16 18 20 22 24]
+Maximal independent set:  [  4  7 10 13 16 18 21 24]
+Maximal independent set:  [  5  7  9 13 15 17 19 21 23 26]
+Maximal independent set:  [  5  7  9 13 15 17 19 22]
+Maximal independent set:  [  5  7  9 13 16 18 20 22]
+Maximal independent set:  [  5  7  9 13 16 18 21 23]
+Maximal independent set:  [  5  7 10 13 15 17 19 21 23 26]
+Maximal independent set:  [  5  7 10 13 15 17 19 22]
+Maximal independent set:  [  5  7 10 13 16 18 20 22]
+Maximal independent set:  [  5  7 10 13 16 18 21 23]
+independence number = 12
+clique:  [  1]
+clique:  [  2]
+clique:  [  3  4]
+clique:  [  5]
+clique:  [  6]
+clique:  [  7 25]
+clique:  [  8]
+clique:  [  9]
+clique:  [ 10]
+clique:  [ 11]
+clique:  [ 12]
+clique:  [ 13]
+clique:  [ 14]
+clique:  [ 15 16]
+clique:  [ 17]
+clique:  [ 18]
+clique:  [ 19]
+clique:  [ 20]
+clique:  [ 21]
+clique:  [ 22]
+clique:  [ 23 24]
+clique:  [ 26]
+clique number = 2
+***********************************************************************
+
+                What functions are desired?
+
+        The available options for directed/undirected graphs are:
+
+                S for strong components
+                D for depth first search
+                M for maximum independent set/clique
+                T for the number of spanning trees
+                K for Kruskal's minimum spanning tree
+                P for Prim's minimum spanning tree
+                B for both Kruskal's and Prim's MST
+                A for all of the above
+                J for Dijkstra's algorithm
+                N for entry of a new graph
+                X to terminate program
+
+All outputs are stored in graph.output except MISs which are stored in
+MIS.data and the information about each step of the MIS calculation which,
+if desired, is stored in MISinfo.data
+***********************************************************************
+
+X
