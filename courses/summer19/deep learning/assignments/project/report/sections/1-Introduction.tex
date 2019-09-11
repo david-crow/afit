@@ -1,0 +1,29 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+
+% motivate the problem
+
+The \ac{can} bus, which connects to a large number of the devices in a modern vehicle (including vital systems like the brakes, steering wheel, and transmission), is vulnerable. It is vulnerable to cyber attacks capable of altering, preventing, or otherwise modifying the operator's desired behavior. This research presents a new vulnerability: the packets that broadcast on a vehicle's \ac{can} bus uniquely identify the vehicle. This means that an attacker can construct a database of known \ac{can} packet formats and, using one of the tools presented here, reference the database and effectively identify a new vehicle. This allows the attacker to strengthen the attack and place the passengers at greater risk.
+
+% todo: details of the problem domain
+
+We illustrate this vulnerability by building, tuning, and evaluating deep learning models. When given a sample of \ac{can} data from a specific vehicle, these models correctly predict the generating vehicle 80\% of the time. We train these models by giving as input \ac{can} data samples and each sample's generating vehicle. We test these models by giving as input \ac{can} data samples and comparing the predicted vehicle to the actual vehicle. This is a supervised multiclass classification problem. This research seeks to determine which of 20 different vehicles generated each test sample.
+
+% overview of dataset
+
+Data comes from two primary sources and consists of a few gigabytes of raw \ac{can} data captured from 20 distinct vehicles. By parsing, formatting, and partitioning the available data, we generate two disparate datasets. The first is composed of all available 1,024-byte \ac{can} samples; the second contains randomly selected samples from the first such that the classes are evenly represented. Each sample's target label is the ID of the vehicle that generated it.
+
+% overview of deep learning task
+
+We then feed these samples into two different deep learning models. The first, a \ac{mlp}, is simple enough that a non-expert can easily implement it and use it to classify \ac{can} samples. The second, a \ac{cnn}, is a bit more complex, but it achieves better classification performance than does the \ac{mlp}.
+
+% overview of results and implications
+
+Results indicate that one can use these deep learning methods to effectively determine which vehicle generated a given \ac{can} data. This risks vehicle operator and passenger safety because it gives bad cyber actors another tool to correctly structure malicious \ac{can} packets.
+
+% transition paragraph
+
+The remainder of this report presents the research in detail. Section \ref{sec:background} examines some of the related work in current literature and explains why this work is insufficient for the research at hand. Section \ref{sec:method} describes the data, the deep learning model, the model-fitting process, and the model analysis and evaluation tools. Section \ref{sec:results} presents and discusses the results obtained. Section \ref{sec:conclusion} explains the implication of these results and suggests possible opportunities for future research.
+
+\end{document}

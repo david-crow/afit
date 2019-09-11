@@ -1,0 +1,117 @@
+% the document itself
+\documentclass[11pt]{article}
+\usepackage[margin=0.5in, includefoot]{geometry}
+
+% tables
+\usepackage{makecell}
+\usepackage{caption} 
+\captionsetup[table]{skip=10pt}
+
+% other packages
+\usepackage{acronym}
+\usepackage{indentfirst}
+
+% acronyms
+\newacro{can}[CAN]{controller area network}
+\newacro{csv}[CSV]{comma-separated values}
+\newacro{dl}[DL]{deep learning}
+\newacro{edm}[EDM]{empirical domain modeling}
+\newacro{ids}[IDS]{intrusion detection system}
+\newacro{ornl}[ORNL]{Oak Ridge National Laboratory}
+\newacro{snn}[SNN]{siamese neural network}
+\newacro{sql}[SQL]{structured query language}
+
+\title{Fingerprinting Vehicles Using \acs{can} Bus Data Snapshots}
+\author{David R Crow, 2d Lt, USAF}
+
+\begin{document}
+\maketitle
+
+\section{Problem Domain}
+
+In an environment of ever-increasing numbers of malicious actors, the Air Force requires a reliable \ac{ids} in each of its vital systems. My thesis research project hopes to determine whether inherent causal relationships between various functions or metrics in a car can be identified and then leveraged as an \ac{ids}. This project aims to provide the foundation for such a system.
+
+To do so, we will attempt to identify which of nine distinct vehicles generated a given segment of \ac{can} bus data. This is a multiclass classification problem which asks the following question: does a given vehicle generate data with some characteristic unique to that vehicle? In other words, does a given vehicle leave identifiable fingerprints on its data?
+
+A demonstrated ability to identify a vehicle using only its \ac{can} bus data likely implies that unique relationships are present (and evident) in the data. Although success in this domain will not necessarily alter the course of my thesis research, failure may indicate that the causal relationships necessary for an \ac{ids} are simply not present.
+
+\section{Deep Learning Task}
+
+One-shot learning is a \ac{dl} fingerprinting method that may prove useful for this project. Says Andriy Burkov: ``In one-shot learning, typically applied in face recognition, we want to build a model that can recognize that two photos of the same person represent that same person. If we present to the model two photos of two different people, we expect the model to recognize that the two people are different'' \cite{Burkov2019}. By treating relatively small segments of \ac{can} bus data like photographs, we can build a \textit{vehicle} recognition model.
+
+One type of neural network, the \ac{snn}, allows for effective one-shot learning without requiring exceptionally large numbers of training examples. With an \ac{snn}, we do not need to split the data for a given car into a large number of tiny snapshots; instead, we can utilize relatively large snapshots that are much more likely to capture potential vehicle-specific fingerprints. Ideally, an \ac{snn} trained on these snapshots can then effectively classify data segments.
+
+\section{Data}
+
+The dataset comes from \ac{ornl} in the form of a \texttt{.db} file. In total, the lab shared over three gigabytes of temporally-organized \ac{can} bus data recorded during 34 captures of nine different vehicles. The database details each vehicle's \textit{make}, \textit{model}, \textit{year}, \textit{electrification\_level}, and fuel types; this information is shown in Table \ref{tab:vehicles}.
+
+Some vehicles, like the Subaru Outback, only have one capture; others, like the Ford Fusion and the Nissan Leaf, have several (the Leaf has the most captures with 14). Each capture contains metadata which includes
+a \textit{vehicle\_id} (values in 1-9),
+a \textit{capture\_id} (values in 1-32, 46, 52),
+a \textit{timestamp} (the Unix time at the start of the capture),
+a \textit{tag} (e.g., cmax\_diagnostics, f150\_drive, or leaf\_eco),
+a \textit{diagnostics} flag (a boolean which represents whether or not the capture is for diagnostic purposes),
+and a \textit{description} (e.g., ``eco mode from calhouns-oak-ridge to Bobby home'' or ``driving around ORNL campus while injecting diagnostics on loop''). 
+
+Additionally, each capture contains between 37,333 and 7,076,525 messages; the mean and median values over all captures are 1,197,984.76 and 1,062,873.50, respectively. In total, the dataset includes 40,731,482 \ac{can} bus messages. Each of these messages includes a \textit{capture\_id}, a \textit{timestamp}, an \textit{arbitration\_id} (which ``identifies the message and indicates the message's priority'' \cite{can:overview}), a \textit{dlc} (or data length code, which simply counts the number of data bytes), and the hexademical \textit{data} itself.
+
+\begin{table}
+    \caption{The \ac{ornl} Dataset's Vehicle Metadata}
+    \centering
+    \label{tab:vehicles}
+    \begin{tabular}{|c|c|c|c|c|c|c|}
+    \hline
+    \textbf{vehicle\_id} & \textbf{make} & \textbf{model} & \textbf{year} & \makecell{\textbf{electrification\_} \\ \textbf{level}} & \makecell{\textbf{fuel\_type\_} \\ \textbf{primary}} & \makecell{\textbf{fuel\_type\_} \\ \textbf{secondary}} \\
+    \hline
+    1 & Toyota    & Tacoma  & 2008 & NULL                           & Gasoline & NULL     \\
+    2 & Toyota    & Corolla & 2009 & NULL                           & Gasoline & NULL     \\
+    3 & Nissan    & Leaf    & 2011 & BEV (battery electric vehicle) & Electric & NULL     \\
+    4 & Ford      & C-Max   & 2013 & Plug-in hybrid                 & Electric & Gasoline \\
+    5 & Chevrolet & Volt    & 2015 & Plug-in hybrid                 & Electric & Gasoline \\
+    6 & Ford      & F-150   & 2014 & NULL                           & Gasoline & NULL     \\
+    7 & Ford      & Fusion  & 2016 & Plug-in hybrid                 & Electric & Gasoline \\
+    8 & Subaru    & WRX     & 2017 & NULL                           & Gasoline & NULL     \\
+    9 & Subaru    & Outback & 2009 & NULL                           & NULL     & NULL     \\
+    \hline
+    \end{tabular}
+\end{table}
+
+The wrangling process for these data is straightforward. DB Browser for SQLite, a program that allows one to view and modify \texttt{.db} files, enables \ac{sql} queries and \ac{csv} file output. One can use an \ac{sql} query to export exactly those fields one desires to a \ac{csv} file, which one can then read into a Pandas dataframe for \ac{dl} purposes.
+
+\section{Truth Data and Performance}
+
+The nine vehicles detailed in Table \ref{tab:vehicles} constitute the nine classes for this classification task. Every message in the dataset has an associated capture, and every capture has an associated vehicle; thus, the \ac{ornl} dataset is fully-labeled. As Table \ref{tab:class-balance} shows, the messages are not evenly distributed over the nine classes. However, many \ac{dl} techniques consider imbalanced datasets, and so training an effective model is still possible.
+
+\begin{table}
+    \caption{Percentage of Messages Belonging to Each Vehicle in the \ac{ornl} Dataset}
+    \centering
+    \label{tab:class-balance}
+    \begin{tabular}{|c|r|r|}
+    \hline
+    \textbf{Vehicle ID} & \textbf{Messages} & \textbf{Proportion} \\
+    \hline
+    1 & 640,591    & 1.57  \% \\
+    2 & 1,044,769  & 2.57  \% \\
+    3 & 22,526,385 & 55.30 \% \\
+    4 & 1,897,692  & 4.66  \% \\
+    5 & 7,076,525  & 17.37 \% \\
+    6 & 1,222,985  & 3.00  \% \\
+    7 & 4,570,278  & 11.22 \% \\
+    8 & 1,080,978  & 2.65  \% \\
+    9 & 671,279    & 1.65  \% \\
+    \hline
+    \end{tabular}
+\end{table}
+
+It is relatively easy to measure the performance of a sufficiently-trained model. For a multiclass classification problem, one-versus-all confusion matrices often prove useful. The F-measure for each confusion matrix (as detailed in \cite{James2014}) highlights the model's performance over the nine classes. Specifically, it indicates whether a vehicle's unique fingerprint -- if such a fingerprint even exists -- is present in a snapshot of that vehicle's \ac{can} bus data. If necessary, we can also micro- or macro-average these scores to obtain a single performance metric for the model.
+
+\section{Research Support}
+
+This project supports my own research. We aim to determine whether forecasting methods like \ac{edm} and machine learning can be used as an effective \ac{ids}. To do so, we hope to identify significant causal relationships; if we can use (say) \ac{edm} to demonstrate that Value A always precedes Value B, then an observed Value A or Value B – but not both – could indicate faulty equipment or a malicious actor in the system. We can devise more complex relationships, but the theory is essentially the same.
+
+In this context, this project will be useful. By employing modern \ac{dl} techniques, we hope to determine whether \ac{can} bus data can uniquely identify a vehicle. If so, it's likely that causal relationships unique to a given vehicle are present in the vehicle's data; it may be possible to then leverage these relationships into an \ac{ids}. However, if instead this project shows that \ac{can} bus data cannot fingerprint a given vehicle, attempts to construct a viable \ac{ids} for said vehicle using assumed relationships in the \ac{can} bus data may prove infeasible.
+
+\bibliographystyle{ieeetr}
+\bibliography{references}
+
+\end{document}

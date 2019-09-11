@@ -1,0 +1,34 @@
+\documentclass[../main.tex]{subfiles}
+ 
+\begin{document}
+
+% overview of conclusions (possibly bullets) and top-level explanation of future work
+
+This research has two primary conclusions:
+
+\begin{enumerate}
+    \item A vehicle's \ac{can} data uniquely identifies said vehicle; and
+    \item An attacker can use one of the tools presented to improve attacks on vehicle-based \aclp{can}.
+\end{enumerate}
+
+\noindent Future work should examine and improve upon the consistency of the data used in this research, and future work should also evaluate other, more robust methods for vehicle fingerprinting.
+
+% at least one paragraph describing conclusions on how well the research went – preferably one paragraph per major finding
+
+Clearly, one can fingerprint vehicles with \ac{can} data samples. The best classifier in our research uses a \acl{cnn} on an imbalanced dataset, and it achieves a balanced classification accuracy of 83.18\%. Further model tuning will likely yield a stronger model capable of better distinguishing \ac{can} samples. One can even utilize more sophisticated classification techniques if one so desires. Still, our best model's performance is significant: it indicates that deep learning methods can uniquely identify a vehicle using only its \ac{can} data.
+
+This means a malicious intruder can employ deep learning for personal gain. Such an attacker can use a well-tuned \ac{cnn} (or \ac{mlp} if resources are limited) to build a database of known vehicles; the attacker can then reference this database when intruding on a new \acl{can} bus to better format the desired attack. This, of course, presents a risk to today's vehicles.
+
+% at least one paragraph on future work – preferably one paragraph for each major idea
+
+Devising a \ac{snn} capable of learning the difference between \ac{can} segments is the logical next step for this research. An \ac{snn} can generalize to new classes because it learns why two observations come from the same class or from different classes. Standard classifiers (e.g., \acp{mlp} and \acp{cnn}), on the other hand, must learn every class. For this reason, an \ac{snn} is extensible: one can train an \ac{snn} on a set of vehicles and, because it knows why samples from two vehicles are different, one can introduce new vehicles and still maintain solid performance. This is a boon for the malicious intruder: such an attacker need not collect \ac{can} segments from every potential vehicle to effectively attack new vehicles.
+
+One other avenue for future work concerns \ac{can} data consistency. We cannot guarantee that all data captures used the same route, driving conditions, or even driver, so it is possible that the deep learning models learned to classify these characteristics instead of the \ac{can} packet structures.\footnotemark[3] For this reason, future work could entail a similar experiment on a more consistent corpus, one in which the researchers hold constant more of the variables during data collection.
+
+\footnotetext[3]{\cite{Stone2018} captured data along the same route and in the same conditions for all vehicles, so the strong classification performance of Vehicles 106 and 107---both Honda Accords---indicates that the models do learn \ac{can} structure to some extent.}
+
+% closing paragraph which re-emphasizes the importance of findings and future work to the DoD / AF or field of interest
+
+Overall, our findings indicate a significant \acl{can} vulnerability that an attacker familiar with deep learning can easily exploit. A bad actor who gains access to an unknown vehicle's \ac{can} bus can employ deep learning to identify the vehicle---or at least determine that the vehicle is not one of his known vehicles---and improve his attack. This risks operator and passenger safety, and it warrants action on the part of automobile manufacturers. It also warrants further research into other deep learning applications on the \acl{can}.
+
+\end{document}

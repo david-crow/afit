@@ -1,0 +1,161 @@
+Epoch 1 -----
+Loaded trained model from /Users/david/Library/CloudStorage/iCloud Drive/Documents/masters/summer19/deep learning/assignments/homework 4/saved-models/LSTM_model_1.h5 
+seed string -->  certainly
+The generated text is: 
+certainly     t   t   t   t   t   t   t   t   t   t   t   t   t   t   t   t   t   t   t   t   t   t   t   t   t   t   t   t   t   t   t   t   t   t   t   t   t   t   t   t   t   t   t   t   t   t   t   t   t  
+
+Epoch 2 -----
+Loaded trained model from /Users/david/Library/CloudStorage/iCloud Drive/Documents/masters/summer19/deep learning/assignments/homework 4/saved-models/LSTM_model_2.h5 
+seed string -->  certainly
+The generated text is: 
+certainly ao terte te te te te te te te te te te te te te te te te te te te te te te te te te te te te te te te te te te te te te te te te te te te te te te te te te te te te te te te te te te te te te te te t
+
+Epoch 3 -----
+Loaded trained model from /Users/david/Library/CloudStorage/iCloud Drive/Documents/masters/summer19/deep learning/assignments/homework 4/saved-models/LSTM_model_3.h5 
+seed string -->  certainly
+The generated text is: 
+certainly and the sor and the the son an the the the sor and the the sor and the the sor and the the sor and the the sor and the the sor and the the sor and the the sor and the the sor and the the sor and the 
+
+Epoch 4 -----
+Loaded trained model from /Users/david/Library/CloudStorage/iCloud Drive/Documents/masters/summer19/deep learning/assignments/homework 4/saved-models/LSTM_model_4.h5 
+seed string -->  certainly
+The generated text is: 
+certainly and the sprens of the prens and all the the prebee sor the sore an and the serred and the sore an and the serred and the sore an and the serred and the sore an and the serred and the sore an and the 
+
+Epoch 5 -----
+Loaded trained model from /Users/david/Library/CloudStorage/iCloud Drive/Documents/masters/summer19/deep learning/assignments/homework 4/saved-models/LSTM_model_5.h5 
+seed string -->  certainly
+The generated text is: 
+certainly whe forre stings and an and an and an and an and an and an and an and an and an and an and an and an and an and an and an and an and an and an and an and an and an and an and an and an and an and an 
+
+Epoch 6 -----
+Loaded trained model from /Users/david/Library/CloudStorage/iCloud Drive/Documents/masters/summer19/deep learning/assignments/homework 4/saved-models/LSTM_model_6.h5 
+seed string -->  certainly
+The generated text is: 
+certainly be coned the mers the
+furthesterto themertit themertil themert the gormatist have
+hitherto we were to the struggle against the errors the fore the beol the tile to the ground style to un erropat to t
+
+Epoch 7 -----
+Loaded trained model from /Users/david/Library/CloudStorage/iCloud Drive/Documents/masters/summer19/deep learning/assignments/homework 4/saved-models/LSTM_model_7.h5 
+seed string -->  certainly
+The generated text is: 
+certainly be once
+and again understood of ablobout of the prist
+on ondemation of this "pillopore has fores and agsala to the frrist
+of the posipe and agsuand ag and atsor of frest of astilosupers
+and the word 
+
+Epoch 8 -----
+Loaded trained model from /Users/david/Library/CloudStorage/iCloud Drive/Documents/masters/summer19/deep learning/assignments/homework 4/saved-models/LSTM_model_8.h5 
+seed string -->  certainly
+The generated text is: 
+certainly sof this will to truth not
+laid before us! who was a dererous of the problem had never been propounded beforrits is it we who dretintit of irerererition, and probenin finit boul peripersing, mad in i
+
+Epoch 9 -----
+Loaded trained model from /Users/david/Library/CloudStorage/iCloud Drive/Documents/masters/summer19/deep learning/assignments/homework 4/saved-models/LSTM_model_9.h5 
+seed string -->  certainly
+The generated text is: 
+certainly serpansed any prestice have been spent than on any
+actual science hitherto: we owe to it, and to its "super-terrestrial"
+pretensions in asia and egypt, the grand style of architecture. it seems
+that 
+
+Epoch 10 -----
+Loaded trained model from /Users/david/Library/CloudStorage/iCloud Drive/Documents/masters/summer19/deep learning/assignments/homework 4/saved-models/LSTM_model_10.h5 
+seed string -->  certainly
+The generated text is: 
+certainly she has never allowed herself to be won; and
+at present every kind of dogma stands with sad and discouraged mien--if,
+indeed, it stands at all! for there are scoffers who maintain that it
+has fallen,
+
+Epoch 11 -----
+Loaded trained model from /Users/david/Library/CloudStorage/iCloud Drive/Documents/masters/summer19/deep learning/assignments/homework 4/saved-models/LSTM_model_11.h5 
+seed string -->  certainly
+The generated text is: 
+certainly be confessed that the worst, the most tiresome,
+and the most dangerous of errors hitherto has been a dogmatist
+error--namely, plato's invention of pure spirit and the good as plato
+spoke of them; ind
+
+Epoch 12 -----
+Loaded trained model from /Users/david/Library/CloudStorage/iCloud Drive/Documents/masters/summer19/deep learning/assignments/homework 4/saved-models/LSTM_model_12.h5 
+seed string -->  certainly
+The generated text is: 
+certainly seems in e aroun efers this tension as
+a state of distress, and twice attempts have been made in grand style to
+unbend the bow: once by means of jesuitism, and the second time by means
+of democratic 
+
+Epoch 13 -----
+Loaded trained model from /Users/david/Library/CloudStorage/iCloud Drive/Documents/masters/summer19/deep learning/assignments/homework 4/saved-models/LSTM_model_13.h5 
+seed string -->  certainly
+The generated text is: 
+certainly sor this will to truth not
+laid before us! what strange, perplexing, questionable questions! it is
+already a long story; yet it seems as if it were hardly commenced. is
+it any wonder if we at last gr
+
+Epoch 14 -----
+Loaded trained model from /Users/david/Library/CloudStorage/iCloud Drive/Documents/masters/summer19/deep learning/assignments/homework 4/saved-models/LSTM_model_14.h5 
+seed string -->  certainly
+The generated text is: 
+certainly she has never allowed herself to be won; and
+at present every kind of dogma stands with sad and discouraged mien--if,
+indeed, it stands at all! for there are scoffers who maintain that it
+has fallen,
+
+Epoch 15 -----
+Loaded trained model from /Users/david/Library/CloudStorage/iCloud Drive/Documents/masters/summer19/deep learning/assignments/homework 4/saved-models/LSTM_model_15.h5 
+seed string -->  certainly
+The generated text is: 
+certainly be confessed that the worst, the most tiresome,
+and the most dangerous of errors hitherto has been a dogmatist
+error--namely, plato's invention of pure spirit and the good in itself.
+but now when it 
+
+Epoch 16 -----
+Loaded trained model from /Users/david/Library/CloudStorage/iCloud Drive/Documents/masters/summer19/deep learning/assignments/homework 4/saved-models/LSTM_model_16.h5 
+seed string -->  certainly
+The generated text is: 
+certainly be confessed that the worst, the most tiresome,
+and the most dangerous of errors hitherto has been a dogmatist
+error--namely, plato's invention of pure spirit and the good ig its itsilientian to the 
+
+Epoch 17 -----
+Loaded trained model from /Users/david/Library/CloudStorage/iCloud Drive/Documents/masters/summer19/deep learning/assignments/homework 4/saved-models/LSTM_model_17.h5 
+seed string -->  certainly
+The generated text is: 
+certainly be confessed that the worst, the most tiresome,
+and the most dangerous of errors hitherto has been a dogmatist
+error--namely, plato's invention of pure spirit and the good in itself.
+but now when it 
+
+Epoch 18 -----
+Loaded trained model from /Users/david/Library/CloudStorage/iCloud Drive/Documents/masters/summer19/deep learning/assignments/homework 4/saved-models/LSTM_model_18.h5 
+seed string -->  certainly
+The generated text is: 
+certainly be confessed that the worst, the most tiresome,
+and the most dangerous of errors hitherto has been a dogmatist
+error--namely, plato's invention of pure spirit and the good in itself.
+but now when it 
+
+Epoch 19 -----
+Loaded trained model from /Users/david/Library/CloudStorage/iCloud Drive/Documents/masters/summer19/deep learning/assignments/homework 4/saved-models/LSTM_model_19.h5 
+seed string -->  certainly
+The generated text is: 
+certainly she has never allowed herself to be won; and
+at present every kind of dogma stands with sad and discouraged mien--if,
+indeed, it stands at all! for there are scoffers who maintain that it
+has fallen,
+
+Epoch 20 -----
+Loaded trained model from /Users/david/Library/CloudStorage/iCloud Drive/Documents/masters/summer19/deep learning/assignments/homework 4/saved-models/LSTM_model_20.h5 
+seed string -->  certainly
+The generated text is: 
+certainly she has never allowed herself to be won; and
+at present every kind of dogma stands with sad and discouraged mien--if,
+indeed, it stands at all! for there are scoffers who maintain that it
+has fallen,

@@ -1,0 +1,58 @@
+\documentclass[journal, 12pt]{IEEEtran}
+\usepackage[printonlyused]{acronym}
+\usepackage{color}
+\usepackage{colortbl}
+\usepackage{graphicx}
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{subfiles}
+
+\definecolor{grey}{rgb}{0.85,0.85,0.85}
+\graphicspath{{images/}}
+
+\title{Fingerprinting Automobiles with \\ CAN Bus Data Samples}
+\author{David R Crow, 2d Lt, USAF}
+
+% acronyms
+
+\newacro{can}[CAN]{controller area network}
+\newacro{cnn}[CNN]{convolutional neural network}
+\newacro{csv}[CSV]{comma-separated values}
+\newacro{ids}[IDS]{intrusion detection system}
+\newacro{mlp}[MLP]{multilayer perceptron}
+\newacro{ornl}[ORNL]{Oak Ridge National Laboratory}
+\newacro{snn}[SNN]{siamese neural network}
+\newacro{usaf}[USAF]{United States Air Force}
+
+\begin{document}
+\onecolumn
+\maketitle
+
+\subfile{sections/0-Abstract}
+
+\begin{IEEEkeywords}
+classification, deep learning, controller area network, CAN security, fingerprinting vehicles
+\end{IEEEkeywords}
+
+\section{Introduction}\label{sec:intro}
+\subfile{sections/1-Introduction}
+
+\section{Background}\label{sec:background}
+\subfile{sections/2-Background}
+
+\section{Methodology}\label{sec:method}
+\subfile{sections/3-Methodology}
+
+\section{Results}\label{sec:results}
+\subfile{sections/4-Results}
+
+\section{Conclusion}\label{sec:conclusion}
+\subfile{sections/5-Conclusion}
+
+\bibliographystyle{ieeetr}
+\bibliography{references}
+
+% \appendices
+% \subfile{sections/6-Appendix}
+
+\end{document}
