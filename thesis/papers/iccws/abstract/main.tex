@@ -1,0 +1,36 @@
+\documentclass{letter}
+\usepackage[margin=1in]{geometry}
+\usepackage{acronym}
+
+\pagenumbering{gobble}
+\linespread{2.0}
+
+% acronyms
+
+\newacro{can}[CAN]{controller area network}
+\newacro{cnn}[CNN]{convolutional neural network}
+\newacro{mlp}[MLP]{multi-layer perceptron}
+\newacro{ornl}[ORNL]{Oak Ridge National Laboratory}
+
+\begin{document}
+
+\textbf{Fingerprinting Automobiles With CAN Bus Data Samples \\ 2d Lt David R Crow}
+
+% motivate the problem
+% details of the problem domain
+
+\medskip
+Today's vehicle manufacturers do not tend to publish proprietary \ac{can} packet formats. This is a form of \textit{security through obscurity}---it makes reverse engineering efforts more difficult for would-be intruders---but obfuscating the \ac{can} data in this way does not adequately hide the vehicle's unique signature. Specifically, modern methods can effectively identify a vehicle's signature in a segment of its \ac{can} data, even if this data is unprocessed or limited in scope. In machine learning, this is a multiclass classification problem which asks the following question: given a sample of \ac{can} data, can we successfully determine which vehicle generated the sample?
+
+% overview of dataset
+
+\medskip
+This research employs two datasets, one from \ac{ornl} and one from Stone et al (2018). \ac{ornl}'s corpus is comprised of nearly 2.5 gigabytes of data captured on the \ac{can} buses of nine different vehicles; Stone et al's corpus contains over 230 megabytes of data from 11 different vehicles. In this research, 1,024 bytes of sequential \ac{can} data constitute one data sample, so formatting and partitioning the datasets gives a new dataset of nearly three hundred thousand individual samples. We label every sample with its generating vehicle to enable fully supervised learning.
+
+% overview of deep learning task
+% implications/benefit of research
+
+\medskip
+We train two distinct machine learning models on this dataset. The results indicate that a standard \ac{mlp} can effectively classify these \ac{can} data samples. The results also indicate that a deep \ac{cnn} can classify the samples at a greater performance level than can the \ac{mlp}, but both models still surpass a balanced classification accuracy of 80\% on the full dataset. Clearly, one can effectively determine which vehicle generated a given sample of \ac{can} data. This erodes consumer safety: a sophisticated attacker who establishes a presence on an unknown vehicle can use similar techniques to identify the vehicle and better format attacks.
+
+\end{document}

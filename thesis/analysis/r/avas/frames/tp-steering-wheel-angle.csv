@@ -1,0 +1,12 @@
+"E","tau","tp","nn","num_pred","rho","mae","rmse","perc","p_val","const_pred_num_pred","const_pred_rho","const_pred_mae","const_pred_rmse","const_pred_perc","const_p_val"
+1,1,0,2,0,NA,NA,NA,NA,NA,0,NA,NA,NA,NA,NA
+1,1,10,2,0,NA,NA,NA,NA,NA,0,NA,NA,NA,NA,NA
+1,1,20,2,0,NA,NA,NA,NA,NA,0,NA,NA,NA,NA,NA
+1,1,30,2,0,NA,NA,NA,NA,NA,0,NA,NA,NA,NA,NA
+1,1,40,2,0,NA,NA,NA,NA,NA,0,NA,NA,NA,NA,NA
+1,1,50,2,0,NA,NA,NA,NA,NA,0,NA,NA,NA,NA,NA
+1,1,60,2,0,NA,NA,NA,NA,NA,0,NA,NA,NA,NA,NA
+1,1,70,2,0,NA,NA,NA,NA,NA,0,NA,NA,NA,NA,NA
+1,1,80,2,0,NA,NA,NA,NA,NA,0,NA,NA,NA,NA,NA
+1,1,90,2,0,NA,NA,NA,NA,NA,0,NA,NA,NA,NA,NA
+1,1,100,2,0,NA,NA,NA,NA,NA,0,NA,NA,NA,NA,NA
